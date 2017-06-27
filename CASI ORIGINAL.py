@@ -64,7 +64,7 @@ def makeWebhookResult(data):
     if query is None:
         return {}
 
-"""    result = query.get('results')
+    result = query.get('results')
     if result is None:
         return {}
 
@@ -81,7 +81,7 @@ def makeWebhookResult(data):
     condition = item.get('condition')
     if condition is None:
         return {}
-"""
+
     # print(json.dumps(item, indent=4))
 
 #    speech = "Hoy Mauricio in " + location.get('city') + ": " + condition.get('text') + ", SI ENTENDIO LA TEMPERATURA " + condition.get('temp') + " " + units.get('temperature')
