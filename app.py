@@ -23,8 +23,8 @@ app = Flask(__name__)
 def webhook():
     req = request.get_json(silent=True, force=True)
 
-    print("Request:")
-    print(json.dumps(req, indent=4))
+#    print("Request:")
+#    print(json.dumps(req, indent=4))
 
     res = processRequest(req)
 
@@ -35,57 +35,88 @@ def webhook():
     return r
 
 
-def processRequest(req):
-    if req.get("result").get("action") != "yahooWeatherForecast":
+#def processRequest(req):
+#    if req.get("result").get("action") != "yahooWeatherForecast":
+#        return {}
+#    baseurl = "https://query.yahooapis.com/v1/public/yql?"
+#    yql_query = makeYqlQuery(req)
+#    if yql_query is None:
+#        return {}
+#    yql_url = baseurl + urlencode({'q': yql_query}) + "&format=json"
+#    result = urlopen(yql_url).read()
+#    data = json.loads(result)
+#    res = makeWebhookResult(data)
+#    return res
+
+#INICIANDO LA FUNCIÓN PARA SITUR
+def procesarSolicitud(req):
+    if req.get("result").get("action") != "yahooWeatherforecast":
         return {}
-    baseurl = "https://query.yahooapis.com/v1/public/yql?"
-    yql_query = makeYqlQuery(req)
-    if yql_query is None:
+    baseurl = "http://situr.boyaca.gov.co/wp-json/wp/v2/atractivo_turistico/4643"
+    tomar_datos = hacerTomarDatos(req)
+    if tomar_datos is None:
         return {}
-    yql_url = baseurl + urlencode({'q': yql_query}) + "&format=json"
-    result = urlopen(yql_url).read()
+    tomar_situr_url = baseurl + urlencode({: tomar_datos})
+    result = urlopen(tomar_situr_url).read()
     data = json.loads(result)
-    res = makeWebhookResult(data)
+    res = hacerResultadoWebhook(data)
     return res
 
 
-def makeYqlQuery(req):
+#def makeYqlQuery(req):
+#    result = req.get("result")
+#    parameters = result.get("parameters")
+#    city = parameters.get("geo-city")
+#    if city is None:
+#        return None
+
+#    return "select * from weather.forecast where woeid in (select woeid from geo.places(1) where text='" + city + "')"
+
+#OBTENIENDO LOS DATOS DE API.AI
+def hacerTomarDatos(req):
     result = req.get("result")
     parameters = result.get("parameters")
-    city = parameters.get("geo-city")
+    city = parameters.get("geo.city")
     if city is None:
         return None
 
-    return "select * from weather.forecast where woeid in (select woeid from geo.places(1) where text='" + city + "')"
+    return "paso de la variable" + city    
 
+#def makeWebhookResult(data):
+#    query = data.get('query')
+#    if query is None:
+#        return {}
 
-def makeWebhookResult(data):
-    query = data.get('query')
-    if query is None:
-        return {}
+#    result = query.get('results')
+#    if result is None:
+#        return {}
 
-    result = query.get('results')
-    if result is None:
-        return {}
+#    channel = result.get('channel')
+#    if channel is None:
+#        return {}
 
-    channel = result.get('channel')
-    if channel is None:
-        return {}
+#    item = channel.get('item')
+#    location = channel.get('location')
+#    units = channel.get('units')
 
-    item = channel.get('item')
-    location = channel.get('location')
-    units = channel.get('units')
-    if (location is None) or (item is None) or (units is None):
-        return {}
+#    if (location is None) or (item is None) or (units is None):
+#       return {}
 
-    condition = item.get('condition')
-    if condition is None:
-        return {}
+#    condition = item.get('condition')
+#    if condition is None:
+#        return {}
 
     # print(json.dumps(item, indent=4))
 
-    speech = "Hoy Mauricio in " + location.get('city') + ": " + condition.get('text') + \
-             ", the temperature is " + condition.get('temp') + " " + units.get('temperature')
+def hacerResultadoWebhook(data):
+    query = data.get('link')
+    if query is None:
+        return {}
+
+    
+
+    speech = "Hoy Mauricio in " + data.get('link') + \
+             ", the temperature is "
 
     print("Response:")
     print(speech)
