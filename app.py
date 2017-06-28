@@ -82,10 +82,12 @@ def makeWebhookResult(data):
     if condition is None:
         return {}
 
+    mahoobox = "hola mundo"
+
     # print(json.dumps(item, indent=4))
 
 #    speech = "Hoy Mauricio in " + location.get('city') + ": " + condition.get('text') + ", SI ENTENDIO LA TEMPERATURA " + condition.get('temp') + " " + units.get('temperature')
-    speech = "Hoy Mauricio in here " + location.get('city')
+    speech = "Hoy Mauricio in here " + location.get('city') + mahoobox
 
     print("Response:")
     print(speech)
