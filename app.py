@@ -87,12 +87,12 @@ def makeWebhookResult(data):
         return {}
 
     mahoobox = " hola mundo dato ingresado: "
-    datoapi = "por qué no me muestra este texto"
+    datoapi = (json.dumps(item, indent=4))
 
     # print(json.dumps(item, indent=4))
 
 #    speech = "Hoy Mauricio in " + location.get('city') + ": " + condition.get('text') + ", SI ENTENDIO LA TEMPERATURA " + condition.get('temp') + " " + units.get('temperature')
-    speech = "Hoy Mauricio in here " + location.get('city') + mahoobox + condition.get('temp') + test + datoapi + res
+    speech = "Hoy Mauricio in here " + location.get('city') + mahoobox + condition.get('temp') + test + datoapi
 
     print("Response:")
     print(speech)
