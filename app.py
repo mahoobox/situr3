@@ -56,7 +56,6 @@ def makeYqlQuery(req):
     if city is None:
         return None
 
-    ciudad = city
     return "select * from weather.forecast where woeid in (select woeid from geo.places(1) where text='" + city + "')"
 
 
@@ -88,7 +87,7 @@ def makeWebhookResult(data):
         return {}
 
     mahoobox = " hola mundo dato ingresado: "
-    datoapi = "que vaina esta" + ciudad
+    datoapi = "que vaina esta"
 
     # print(json.dumps(item, indent=4))
 
