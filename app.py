@@ -47,6 +47,9 @@ def processRequest(req):
     data = json.loads(result)
     res = makeWebhookResult(data)
     return res
+    #CODIGO SITUR DENTRO DE  ESTA FUNCIÓN
+    jsonsitur = urlopen('http://situr.boyaca.gov.co/wp-json/wp/v2/atractivo_turistico?search=pisba').read()
+    datos = json.loads(jsonsitur)
 
 
 def makeYqlQuery(req):
@@ -100,8 +103,8 @@ def makeWebhookResult(data):
     return {
         "speech": speech,
         "displayText": speech,
-         "data": data,
-         "contextOut": [],
+         "data": datos,
+        # "contextOut": [],
         "source": "apiai-weather-webhook-sample"
     }
 
