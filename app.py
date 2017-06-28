@@ -86,8 +86,11 @@ def makeWebhookResult(data):
     if condition is None:
         return {}
 
+    resultado = data.get("result")
+    parametros = resultado.get("parameters")
+    ciudad = parametros.get("geo-city")
     mahoobox = " hola mundo dato ingresado: "
-    datoapi = "que vaina esta"
+    datoapi = "que vaina esta" + ciudad
 
     # print(json.dumps(item, indent=4))
 
