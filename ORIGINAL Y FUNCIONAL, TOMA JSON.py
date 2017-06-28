@@ -60,6 +60,10 @@ def makeYqlQuery(req):
 
 
 def makeWebhookResult(data):
+    buscasitur = "tunja"
+    buscasitur_sin_espacio = buscasitur.replace(" ", "%20")
+    leer = json.loads(urlopen('http://situr.boyaca.gov.co/wp-json/wp/v2/atractivo_turistico?search=' + buscasitur_sin_espacio).read())
+    test = leer[0].get('link')
     query = data.get('query')
     if query is None:
         return {}
@@ -82,10 +86,13 @@ def makeWebhookResult(data):
     if condition is None:
         return {}
 
+    mahoobox = " hola mundo dato ingresado: "
+    datoapi = (json.dumps(item, indent=4))
+
     # print(json.dumps(item, indent=4))
 
 #    speech = "Hoy Mauricio in " + location.get('city') + ": " + condition.get('text') + ", SI ENTENDIO LA TEMPERATURA " + condition.get('temp') + " " + units.get('temperature')
-    speech = "Hoy Mauricio in " + location.get('city')
+    speech = "Hoy Mauricio in here " + location.get('city') + mahoobox + condition.get('temp') + test
 
     print("Response:")
     print(speech)
