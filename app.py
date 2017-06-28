@@ -46,10 +46,7 @@ def processRequest(req):
     result = urlopen(yql_url).read()
     data = json.loads(result)
     res = makeWebhookResult(data)
-    return res
-    #CODIGO SITUR DENTRO DE  ESTA FUNCIÓN
-    jsonsitur = urlopen('http://situr.boyaca.gov.co/wp-json/wp/v2/atractivo_turistico?search=pisba').read()
-    datos = json.loads(jsonsitur)
+    return res 
 
 
 def makeYqlQuery(req):
@@ -66,6 +63,7 @@ def makeWebhookResult(data):
     buscasitur = "tunja"
     buscasitur_sin_espacio = buscasitur.replace(" ", "%20")
     leer = json.loads(urlopen('http://situr.boyaca.gov.co/wp-json/wp/v2/atractivo_turistico?search=' + buscasitur_sin_espacio).read())
+    datos = json.loads(leer)
     test = leer[0].get('link')
     query = data.get('query')
     if query is None:
@@ -103,7 +101,7 @@ def makeWebhookResult(data):
     return {
         "speech": speech,
         "displayText": speech,
-         "data": datos,
+         "data": data,
         # "contextOut": [],
         "source": "apiai-weather-webhook-sample"
     }
