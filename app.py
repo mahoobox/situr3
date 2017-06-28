@@ -58,6 +58,13 @@ def makeYqlQuery(req):
 
     return "select * from weather.forecast where woeid in (select woeid from geo.places(1) where text='" + city + "')"
 
+def consultaAtractivo(req):
+#    buscasitur = str(input("Ingrese el atractivo que desea buscar:   "))
+    buscasitur = "pisba"
+    buscasitur_sin_espacio = buscasitur.replace(" ", "%20")
+    leer = json.loads(urlopen('http://situr.boyaca.gov.co/wp-json/wp/v2/atractivo_turistico?search=' + buscasitur_sin_espacio).read())
+    test = leer[0].get('link')
+
 
 def makeWebhookResult(data):
     query = data.get('query')
@@ -82,12 +89,12 @@ def makeWebhookResult(data):
     if condition is None:
         return {}
 
-    mahoobox = " hola mundo"
+    mahoobox = " hola mundo "
 
     # print(json.dumps(item, indent=4))
 
 #    speech = "Hoy Mauricio in " + location.get('city') + ": " + condition.get('text') + ", SI ENTENDIO LA TEMPERATURA " + condition.get('temp') + " " + units.get('temperature')
-    speech = "Hoy Mauricio in here " + location.get('city') + mahoobox + condition.get('temp')
+    speech = "Hoy Mauricio in here " + location.get('city') + mahoobox + condition.get('temp') + test
 
     print("Response:")
     print(speech)
