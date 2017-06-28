@@ -20,7 +20,7 @@ app = Flask(__name__)
 
 
 @app.route('/webhook', methods=['POST'])
-"""def webhook():
+def webhook():
     req = request.get_json(silent=True, force=True)
 
     print("Request:")
@@ -103,21 +103,7 @@ def makeWebhookResult(data):
         # "data": data,
         # "contextOut": [],
         "source": "apiai-weather-webhook-sample"
-    }"""
-
-buscasitur = "tunja"
-buscasitur_sin_espacio = buscasitur.replace(" ", "%20")
-leer = json.loads(urlopen('http://situr.boyaca.gov.co/wp-json/wp/v2/atractivo_turistico?search=' + buscasitur_sin_espacio).read())
-test = leer[0].get('link')
-speech = "Hoy Mauricio in here " + test
-print("Response:")
-print(speech)
-return {
-    "speech": speech,
-    "displayText": speech,
-    # "data": data,
-    # "contextOut": [],
-    "source": "apiai-weather-webhook-sample"
+    }
 
 
 if __name__ == '__main__':
