@@ -58,15 +58,12 @@ def makeYqlQuery(req):
 
     return "select * from weather.forecast where woeid in (select woeid from geo.places(1) where text='" + city + "')"
 
-def consultaAtractivo(req):
-#    buscasitur = str(input("Ingrese el atractivo que desea buscar:   "))
+
+def makeWebhookResult(data):
     buscasitur = "pisba"
     buscasitur_sin_espacio = buscasitur.replace(" ", "%20")
     leer = json.loads(urlopen('http://situr.boyaca.gov.co/wp-json/wp/v2/atractivo_turistico?search=' + buscasitur_sin_espacio).read())
     test = leer[0].get('link')
-
-
-def makeWebhookResult(data):
     query = data.get('query')
     if query is None:
         return {}
