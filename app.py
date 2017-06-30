@@ -29,7 +29,7 @@ def webhook():
     res = processRequest(req)
 
     res = json.dumps(res, indent=4)
-    print(res)
+    # print(res)
     r = make_response(res)
     r.headers['Content-Type'] = 'application/json'
     return r
@@ -52,6 +52,7 @@ def processRequest(req):
 def makeYqlQuery(req):
     result = req.get("result")
     parameters = result.get("parameters")
+    global city
     city = parameters.get("geo-city")
     if city is None:
         return None
@@ -92,7 +93,7 @@ def makeWebhookResult(data):
     # print(json.dumps(item, indent=4))
 
 #    speech = "Hoy Mauricio in " + location.get('city') + ": " + condition.get('text') + ", SI ENTENDIO LA TEMPERATURA " + condition.get('temp') + " " + units.get('temperature')
-    speech = "Hoy Mauricio in here " + location.get('city') + mahoobox + condition.get('temp') + test
+    speech = "Hoy Mauricio in here " + location.get('city') + mahoobox + condition.get('temp') + test + city
 
     print("Response:")
     print(speech)
