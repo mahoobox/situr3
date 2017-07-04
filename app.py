@@ -65,7 +65,9 @@ def makeWebhookResult(data):
     buscasitur_sin_espacio = buscasitur.replace(" ", "%20")
     leer = json.loads(urlopen('http://situr.boyaca.gov.co/wp-json/wp/v2/atractivo_turistico?search=' + buscasitur_sin_espacio).read())
     test = leer[0].get('slug')
-    test2 = leer[0]['title']['rendered']
+    nombre_atractivo = leer[0]['title']['rendered']
+    descripcion_atractivo = leer[0]['excerpt']['rendered']
+    url_atractivo = leer[0].get('link')
     query = data.get('query')
     if query is None:
         return {}
@@ -94,7 +96,7 @@ def makeWebhookResult(data):
     # print(json.dumps(item, indent=4))
 
 #    speech = "Hoy Mauricio in " + location.get('city') + ": " + condition.get('text') + ", SI ENTENDIO LA TEMPERATURA " + condition.get('temp') + " " + units.get('temperature')
-    speech = "Detalles del atractivo  " + test2 + ": " + mahoobox + condition.get('temp') + test + city
+    speech = "Mira, encontré esta información sobre  " + nombre_atractivo + ": <br />" + descripcion_atractivo + "<br /> Si quieres ver más info visita:  "  + url_atractivo + city
 
     print("Response:")
     print(speech)
