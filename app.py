@@ -53,7 +53,7 @@ def makeYqlQuery(req):
     result = req.get("result")
     parameters = result.get("parameters")
     global city
-    city = parameters.get("geo-city")
+    city = parameters.get("atractivos")
     if city is None:
         return None
 
