@@ -12,6 +12,7 @@ print (buscasitur_sin_espacio)
 
 leer = json.loads(urlopen('http://situr.boyaca.gov.co/wp-json/wp/v2/atractivo_turistico?search=' + buscasitur_sin_espacio).read())
 test = leer[0].get('link')
+test2 = leer[0]['title']['rendered']
 
 print (" ")
 
@@ -20,4 +21,4 @@ print ("Url del atractivo:       " + leer[0]['link'])
 print ("Ciudad del atractivo:    " + leer[0]['ciudad'])
 print ("Excerpt del atractivo:   " + leer[0]['excerpt']['rendered'])
 print (" ")
-print (test)
+print (test2)
