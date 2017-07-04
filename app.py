@@ -94,7 +94,7 @@ def makeWebhookResult(data):
     # print(json.dumps(item, indent=4))
 
 #    speech = "Hoy Mauricio in " + location.get('city') + ": " + condition.get('text') + ", SI ENTENDIO LA TEMPERATURA " + condition.get('temp') + " " + units.get('temperature')
-    speech = "Detalles del atractivo  " + nombre_atractivo + ": " + mahoobox + condition.get('temp') + test + city
+    speech = "Detalles del atractivo  " + test + ": " + mahoobox + condition.get('temp') + test + city
 
     print("Response:")
     print(speech)
