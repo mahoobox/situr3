@@ -64,7 +64,7 @@ def makeWebhookResult(data):
     buscasitur = city
     buscasitur_sin_espacio = buscasitur.replace(" ", "%20")
     leer = json.loads(urlopen('http://situr.boyaca.gov.co/wp-json/wp/v2/atractivo_turistico?search=' + buscasitur_sin_espacio).read())
-    test = leer[0].get('link')
+    test = leer[0].get('title')
     query = data.get('query')
     if query is None:
         return {}
