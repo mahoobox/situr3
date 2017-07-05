@@ -38,7 +38,7 @@ def webhook():
 def processRequest(req):
     if req.get("result").get("action") != "buscarAtractivos":
         return {}
-    urlsitur = 'http://situr.boyaca.gov.co/wp-json/wp/v2/atractivo_turistico?search='
+    urlsitur = "http://situr.boyaca.gov.co/wp-json/wp/v2/atractivo_turistico?search="
     baseurl = "https://query.yahooapis.com/v1/public/yql?"
     yql_query = makeYqlQuery(req)
     if yql_query is None:
