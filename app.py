@@ -20,8 +20,6 @@ app = Flask(__name__)
 
 
 @app.route('/webhook', methods=['POST'])
-global urlsitur
-urlsitur = "http://situr.boyaca.gov.co/wp-json/wp/v2/atractivo_turistico?search="
 def webhook():
     req = request.get_json(silent=True, force=True)
 
@@ -40,6 +38,7 @@ def webhook():
 def processRequest(req):
     if req.get("result").get("action") != "buscarAtractivos":
         return {}
+    urlsitur = 'http://situr.boyaca.gov.co/wp-json/wp/v2/atractivo_turistico?search='
     baseurl = "https://query.yahooapis.com/v1/public/yql?"
     yql_query = makeYqlQuery(req)
     if yql_query is None:
