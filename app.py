@@ -20,7 +20,7 @@ app = Flask(__name__)
 
 
 @app.route('/webhook', methods=['POST'])
-urlsitur = 'http://situr.boyaca.gov.co/wp-json/wp/v2/atractivo_turistico?search='
+urlsitur = "http://situr.boyaca.gov.co/wp-json/wp/v2/atractivo_turistico?search="
 def webhook():
     req = request.get_json(silent=True, force=True)
 
