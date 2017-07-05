@@ -65,7 +65,7 @@ def makeYqlQuery(req):
 def makeWebhookResult(data):
     buscasitur = city
     buscasitur_sin_espacio = buscasitur.replace(" ", "%20")
-    leer = json.loads(urlopen(urlsitur + buscasitur_sin_espacio).read())
+    leer = json.loads(urlopen('http://situr.boyaca.gov.co/wp-json/wp/v2/atractivo_turistico?search=' + buscasitur_sin_espacio).read())
     test = leer[0].get('slug')
     nombre_atractivo = leer[0]['title']['rendered']
     descripcion_atractivo = leer[0]['excerpt']['rendered']
