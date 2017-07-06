@@ -52,8 +52,6 @@ def processRequest(req):
     return res
 
 
-
-
 def makeYqlQuery(req):
     result = req.get("result")
     parameters = result.get("parameters")
