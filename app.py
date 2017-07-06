@@ -36,9 +36,9 @@ def webhook():
 
 
 def processRequest(req):
- #   if req.get("result").get("action") != "buscarAtractivos":
- #       return {}
- #   buscasitur = makeYqlQuery(req)
+    if req.get("result").get("action") != "buscarAtractivos":
+        return {}
+ #   datoingresdo = makeYqlQuery(req)
  #   if buscasitur is None:
  #       return{}
     datoingresado = "parque solano"
