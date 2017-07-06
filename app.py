@@ -38,11 +38,11 @@ def webhook():
 def processRequest(req):
     if req.get("result").get("action") != "buscarAtractivos":
         return {}
-    baseurl = "http://situr.boyaca.gov.co/wp-json/wp/v2/atractivo_turistico?search"
+    baseurl = "https://query.yahooapis.com/v1/public/yql?"
     yql_query = makeYqlQuery(req)
     if yql_query is None:
         return {}
-    yql_url = baseurl + urlencode({'=': yql_query})
+    yql_url = baseurl + urlencode({'q': yql_query}) + "&format=json"
     result = urlopen(yql_url).read()
     data = json.loads(result)
     res = makeWebhookResult(data)
@@ -57,7 +57,7 @@ def makeYqlQuery(req):
     if city is None:
         return None
 
-    return city
+    return "select * from weather.forecast where woeid in (select woeid from geo.places(1) where text='" + city + "')"
 
 
 def makeWebhookResult(data):
