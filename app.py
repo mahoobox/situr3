@@ -72,27 +72,6 @@ def makeWebhookResult(data):
     nombre_atractivo = leer[0]['title']['rendered']
     descripcion_atractivo = leer[0]['excerpt']['rendered']
     url_atractivo = leer[0].get('link')
-    query = data.get('query')
-    if query is None:
-        return {}
-
-    result = query.get('results')
-    if result is None:
-        return {}
-
-    channel = result.get('channel')
-    if channel is None:
-        return {}
-
-    item = channel.get('item')
-    location = channel.get('location')
-    units = channel.get('units')
-    if (location is None) or (item is None) or (units is None):
-        return {}
-
-    condition = item.get('condition')
-    if condition is None:
-        return {}
 
     mahoobox = " hola mundo dato ingresado: "
     datoapi = (json.dumps(item, indent=4))
