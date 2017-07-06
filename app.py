@@ -36,18 +36,16 @@ def webhook():
 
 
 def processRequest(req):
-    if req.get("result").get("action") != "buscarAtractivos":
-        return {}
-    buscasitur = makeYqlQuery(req)
-    if buscasitur is None:
-        return{}
+ #   if req.get("result").get("action") != "buscarAtractivos":
+ #       return {}
+ #   buscasitur = makeYqlQuery(req)
+ #   if buscasitur is None:
+ #       return{}
+    datoingresado = "parque solano"
     urlsitur = "http://situr.boyaca.gov.co/wp-json/wp/v2/atractivo_turistico?search="
-    buscasitur_sin_espacio = buscasitur.replace(" ", "%20")
-    data = json.loads(urlopen(urlsitur + buscasitur_sin_espacio).read())#en esta se obtiene todo el contenido... equivale a data
-    test = data[0].get('slug')
-    nombre_atractivo = leer[0]['title']['rendered']
-    descripcion_atractivo = leer[0]['excerpt']['rendered']
-    url_atractivo = leer[0].get('link')
+    quitar_espacios = datoingresado.replace(" ", "%20")
+    data = json.loads(urlopen(urlsitur + quitar_espacios).read())#en esta se obtiene todo el contenido... equivale a data
+    testproceso = data[0].get('slug')
     res = makeWebhookResult(data)
     return res
 
