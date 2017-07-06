@@ -40,11 +40,11 @@ def processRequest(req):
         return {}
     baseurl = "http://situr.boyaca.gov.co/wp-json/wp/v2/atractivo_turistico?search="
     yql_query = makeYqlQuery(req)
-    if yql_query is None:
-        return {}
+#    if yql_query is None:
+#        return {}
     yql_url = baseurl + yql_query
-    result = urlopen(yql_url).read()
-    data = json.loads(result)
+    result = json.loads(urlopen(yql_query).read())
+    data = result[0].get('slug')
     res = makeWebhookResult(data)
     return res
 
