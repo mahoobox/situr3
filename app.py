@@ -43,6 +43,7 @@ def makeWebhookResult(req):
     
     baseUrl = "http://situr.boyaca.gov.co/wp-json/wp/v2/atractivo_turistico?search="
     retirarEspacios = atractivos.replace(" ",  "%20")
+    retirarEspacios = retirarEspacios.replace("ñ" "n")
     
     leer = json.loads(urlopen(baseUrl + retirarEspacios).read())
     nombre_atractivo = leer[0]['title']['rendered']
