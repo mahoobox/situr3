@@ -37,13 +37,21 @@ def webhook():
 def makeWebhookResult(req):
     if req.get("result").get("action") != "buscarAtractivos":
         return {}
-    result = req.get("result")
-    parameters = result.get("parameters")
-    atractivos = parameters.get("atractivos")
+    result = req.get("result")#invocar el result del json 
+    parameters = result.get("parameters")#invocar el parameters dentro de result
+    atractivos = parameters.get("atractivos")#DATO TRAÍDO DE API.AI - ATRACTIVOS
+    
+    baseUrl = "http://situr.boyaca.gov.co/wp-json/wp/v2/atractivo_turistico?search="
+    retirarEspacios = atractivos.replace(" ",  "%20")
+    
+    leer = json.loads(urlopen(baseUrl + retirarEspacios).read())
+    nombre_atractivo = leer[0]['title']['rendered']
+    descripcion_atractivo = leer[0]['excerpt']['rendered']
+    url_atractivo = leer[0].get('link')
 
-    cost = {'parque':100, 'casa':200, 'carro':300, 'reloj':400}
+    cost = {'parque':100, 'casa':200, 'carro':300, 'reloj':400}#diccionario de datos
 
-    speech = "El elemento que solicitaste es: " + atractivos + " y su valor asignado es " + str(cost[atractivos]) + " euros."
+    speech = "El elemento que solicitaste es: " + atractivos + " y su valor asignado es " + str(cost[atractivos]) + "          además estos datos del JSON: " + nombre_atractivo
 
     print("Response:")
     print(speech)
