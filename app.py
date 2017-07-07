@@ -70,6 +70,13 @@ def makeWebhookResult(req):
                                 "title" : nombre_atractivo,
                                 "image_url" : "http://www.situr.boyaca.gov.co/wp-content/uploads/2017/05/P%C3%A1ramo-de-PisbaSocota01-min-570x320.jpg",
                                 "subtitle": descripcion_atractivo,
+                                "default_action": {
+                                    "type": "web_url",
+                                    "url": url_atractivo,
+                                    "messenger_extensions": true,
+                                    "webview_height_ratio": "tall",
+                                    "fallback_url": url_atractivo
+                                }
                             }
                        ]
                    }
