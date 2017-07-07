@@ -73,7 +73,7 @@ def makeWebhookResult(req):
                                 "default_action": {
                                     "type": "web_url",
                                     "url": url_atractivo,
-                                    "messenger_extensions": True,
+                                    "messenger_extensions": true,
                                     "webview_height_ratio": "tall",
                                     "fallback_url": url_atractivo
                                 },
