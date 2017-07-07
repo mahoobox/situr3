@@ -68,7 +68,7 @@ def makeWebhookResult(req):
                        "elements" : [ 
                             {
                                 "title" : nombre_atractivo,
-                                "image_url" : "http://www.situr.boyaca.gov.co/wp-content/uploads/2017/05/P%C3%A1ramo-de-PisbaSocota01-min-570x320.jpg",
+                                "image_url" : "http://somosargus.com/wp-content/uploads/2017/05/Captura-de-pantalla-2017-05-20-12.30.25.png",
                                 "subtitle": descripcion_atractivo,
                             }
                        ]
