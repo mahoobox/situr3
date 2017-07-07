@@ -26,7 +26,7 @@ def webhook():
     print("Request:")
     print(json.dumps(req, indent=4))
 
-    res = makeWebhookResult(req)#DIFERENCIA 1
+    res = makeWebhookResult(req)#Invoca función de consulta y muestra speech al situr3
 
     res = json.dumps(res, indent=4)
     print(res)
@@ -39,11 +39,11 @@ def makeWebhookResult(req):
         return {}
     result = req.get("result")
     parameters = result.get("parameters")
-    zone = parameters.get("atractivos")
+    atractivos = parameters.get("atractivos")
 
     cost = {'parque':100, 'casa':200, 'carro':300, 'reloj':400}
 
-    speech = "El elemento que solicitaste es: " + zone + " y su valor asignado es " + str(cost[zone]) + " euros."
+    speech = "El elemento que solicitaste es: " + atractivos + " y su valor asignado es " + str(cost[atractivos]) + " euros."
 
     print("Response:")
     print(speech)
@@ -51,9 +51,9 @@ def makeWebhookResult(req):
     return {
         "speech": speech,
         "displayText": speech,
-        "data": {},
-        "contextOut": [],
-        "source": "apiai-onlinestore-shipping"
+        #"data": {},
+        # "contextOut": [],
+        "source": "apiai-situr3"
     }
     
 if __name__ == '__main__':
