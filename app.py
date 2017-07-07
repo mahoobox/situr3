@@ -67,8 +67,9 @@ def makeWebhookResult(req):
                         "template_type" : "generic",
                        "elements" : [ 
                             {
-                                "title" : "Hola soy el titulo",
-                                "image_url" : "http://www.maestrosdelweb.com/images/2009/08/crayones_png24.png"
+                                "title" : nombre_atractivo,
+                                "image_url" : "http://www.situr.boyaca.gov.co/wp-content/uploads/2017/05/P%C3%A1ramo-de-PisbaSocota01-min-570x320.jpg",
+                                "subtitle": descripcion_atractivo,
                             }
                        ]
                    }
