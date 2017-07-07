@@ -18,37 +18,31 @@ from flask import make_response
 # Flask app should start in global layout
 app = Flask(__name__)
 
-
 @app.route('/webhook', methods=['POST'])
-def makeWebhookResult(data):
-    buscasitur = "parque solano"
-    urlsitur = "http://situr.boyaca.gov.co/wp-json/wp/v2/atractivo_turistico?search="
-    buscasitur_sin_espacio = buscasitur.replace(" ", "%20")
-    leer = json.loads(urlopen(urlsitur + buscasitur_sin_espacio).read())
-    test = leer[0].get('slug')
-    nombre_atractivo = leer[0]['title']['rendered']
-    descripcion_atractivo = leer[0]['excerpt']['rendered']
-    url_atractivo = leer[0].get('link')
-
-    mahoobox = " hola mundo dato ingresado: "
+buscasitur = "parque solano"
+urlsitur = "http://situr.boyaca.gov.co/wp-json/wp/v2/atractivo_turistico?search="
+buscasitur_sin_espacio = buscasitur.replace(" ", "%20")
+leer = json.loads(urlopen(urlsitur + buscasitur_sin_espacio).read())
+nombre_atractivo = leer[0]['title']['rendered']
+descripcion_atractivo = leer[0]['excerpt']['rendered']
+url_atractivo = leer[0].get('link')
 
     # print(json.dumps(item, indent=4))
-
 #    speech = "Hoy Mauricio in " + location.get('city') + ": " + condition.get('text') + ", SI ENTENDIO LA TEMPERATURA " + condition.get('temp') + " " + units.get('temperature')
-    speech = "Mira, encontré esta información sobre  " + nombre_atractivo + ": " + descripcion_atractivo + "        Si quieres ver más info visita:   "  + url_atractivo + city
+speech = "Mira, encontré esta información sobre  " + nombre_atractivo + ": " + descripcion_atractivo + "        Si quieres ver más info visita:   "  + url_atractivo
 
-    print("Response:")
-    print(speech)
+print("Response:")
+print(speech)
   #  print(salidapruebas)
 
-    return {
-        "speech": speech,
+return {
+    "speech": speech,
  #       "salidapruebas": salidapruebas
-        "displayText": speech,
+    "displayText": speech,
        # "data": data,
        # "contextOut": [],
-        "source": "apiai-weather-webhook-sample"
-    }
+    "source": "apiai-weather-webhook-sample"
+}
 
 
 if __name__ == '__main__':
