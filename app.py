@@ -60,7 +60,7 @@ def makeWebhookResult(req):
         "speech": speech,
         "displayText": speech,
         #"data": {},
-        "contextOut": [{cost}],
+        "contextOut": [{"name":"weather", "lifespan":2, "parameters":{"city":"Rome"}}],
         "source": "apiai-situr3"
     }
     
