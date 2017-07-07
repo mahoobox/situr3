@@ -60,7 +60,7 @@ def makeWebhookResult(req):
         "speech": speech,
         "displayText": speech,
         #"data": {},
-        "contextOut": [cost],
+        "contextOut": [{cost}],
         "source": "apiai-situr3"
     }
     
