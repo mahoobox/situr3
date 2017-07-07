@@ -59,41 +59,22 @@ def makeWebhookResult(req):
     return {
         "speech": speech,
         "displayText": speech,
-    """    "data": {
+        "data" : {
             "facebook" : {
-                "attachment":{
-                  "type":"template",
-                  "payload":{
-                    "template_type":"generic",
-                    "elements":[
-                       {
-                        "title":"Hola soy situr",
-                        "image_url":"https://public.tableau.com/static/images/SI/SITURBoyacTurismoEmisor0_1/Inicio/1_rss.png",
-                        "subtitle":"Texto inferior",
-                        "default_action": {
-                          "type": "web_url",
-                          "url": "https://peterssendreceiveapp.ngrok.io/view?item=103",
-                          "messenger_extensions": true,
-                          "webview_height_ratio": "tall",
-                          "fallback_url": "https://peterssendreceiveapp.ngrok.io/"
-                        },
-                        "buttons":[
-                          {
-                            "type":"web_url",
-                            "url":"https://petersfancybrownhats.com",
-                            "title":"Ver Atractivo"
-                          },{
-                            "type":"postback",
-                            "title":"Iniciar Chat",
-                            "payload":"DEVELOPER_DEFINED_PAYLOAD"
-                          }              
-                        ]      
-                      }
-                    ]
-                  }
+                "attachment" : {
+                    "type" : "template",
+                    "payload" : {
+                        "template_type" : "generic",
+                       "elements" : [ 
+                            {
+                                "title" : "Hola soy el titulo",
+                                "image_url" : "http://www.maestrosdelweb.com/images/2009/08/crayones_png24.png"
+                            }
+                       ]
+                   }
                 }
             }
-        },"""
+        },
         "contextOut": [{"name":"desdepython", "lifespan":2, "parameters":{"slug":url_atractivo}}],
         "source": "apiai-situr3"
     }
