@@ -76,7 +76,14 @@ def makeWebhookResult(req):
                                     "messenger_extensions": True,
                                     "webview_height_ratio": "tall",
                                     "fallback_url": url_atractivo
-                                }
+                                },
+                                "buttons":[
+                                    {
+                                        "type":"web_url",
+                                        "url":"https://petersfancybrownhats.com",
+                                        "title":"View Website"
+                                    }
+                                ]
                             }
                        ]
                    }
