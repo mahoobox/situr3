@@ -61,38 +61,38 @@ def makeWebhookResult(req):
         "displayText": speech,
         "data": {
             "facebook" : {
-    "attachment":{
-      "type":"template",
-      "payload":{
-        "template_type":"generic",
-        "elements":[
-           {
-            "title":"Welcome to Peter\'s Hats",
-            "image_url":"https://public.tableau.com/static/images/SI/SITURBoyacTurismoEmisor0_1/Inicio/1_rss.png",
-            "subtitle":"We\'ve got the right hat for everyone.",
-            "default_action": {
-              "type": "web_url",
-              "url": "https://peterssendreceiveapp.ngrok.io/view?item=103",
-              "messenger_extensions": true,
-              "webview_height_ratio": "tall",
-              "fallback_url": "https://peterssendreceiveapp.ngrok.io/"
-            },
-            "buttons":[
-              {
-                "type":"web_url",
-                "url":"https://petersfancybrownhats.com",
-                "title":"View Website"
-              },{
-                "type":"postback",
-                "title":"Start Chatting",
-                "payload":"DEVELOPER_DEFINED_PAYLOAD"
-              }              
-            ]      
-          }
-        ]
-      }
-    }
-  }
+                "attachment":{
+                  "type":"template",
+                  "payload":{
+                    "template_type":"generic",
+                    "elements":[
+                       {
+                        "title":"b",
+                        "image_url":"https://public.tableau.com/static/images/SI/SITURBoyacTurismoEmisor0_1/Inicio/1_rss.png",
+                        "subtitle":"Weve got the right hat for everyone.",
+                        "default_action": {
+                          "type": "web_url",
+                          "url": "https://peterssendreceiveapp.ngrok.io/view?item=103",
+                          "messenger_extensions": true,
+                          "webview_height_ratio": "tall",
+                          "fallback_url": "https://peterssendreceiveapp.ngrok.io/"
+                        },
+                        "buttons":[
+                          {
+                            "type":"web_url",
+                            "url":"https://petersfancybrownhats.com",
+                            "title":"View Website"
+                          },{
+                            "type":"postback",
+                            "title":"Start Chatting",
+                            "payload":"DEVELOPER_DEFINED_PAYLOAD"
+                          }              
+                        ]      
+                      }
+                    ]
+                  }
+                }
+            }
         },
         "contextOut": [{"name":"desdepython", "lifespan":2, "parameters":{"slug":url_atractivo}}],
         "source": "apiai-situr3"
