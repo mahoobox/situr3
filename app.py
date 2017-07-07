@@ -59,7 +59,7 @@ def makeWebhookResult(req):
     return {
         "speech": speech,
         "displayText": speech,
-        "data": {
+    """    "data": {
             "facebook" : {
                 "attachment":{
                   "type":"template",
@@ -67,9 +67,9 @@ def makeWebhookResult(req):
                     "template_type":"generic",
                     "elements":[
                        {
-                        "title":"b",
+                        "title":"Hola soy situr",
                         "image_url":"https://public.tableau.com/static/images/SI/SITURBoyacTurismoEmisor0_1/Inicio/1_rss.png",
-                        "subtitle":"Weve got the right hat for everyone.",
+                        "subtitle":"Texto inferior",
                         "default_action": {
                           "type": "web_url",
                           "url": "https://peterssendreceiveapp.ngrok.io/view?item=103",
@@ -81,10 +81,10 @@ def makeWebhookResult(req):
                           {
                             "type":"web_url",
                             "url":"https://petersfancybrownhats.com",
-                            "title":"View Website"
+                            "title":"Ver Atractivo"
                           },{
                             "type":"postback",
-                            "title":"Start Chatting",
+                            "title":"Iniciar Chat",
                             "payload":"DEVELOPER_DEFINED_PAYLOAD"
                           }              
                         ]      
@@ -93,7 +93,7 @@ def makeWebhookResult(req):
                   }
                 }
             }
-        },
+        },"""
         "contextOut": [{"name":"desdepython", "lifespan":2, "parameters":{"slug":url_atractivo}}],
         "source": "apiai-situr3"
     }
