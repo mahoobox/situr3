@@ -20,49 +20,6 @@ app = Flask(__name__)
 
 
 @app.route('/webhook', methods=['POST'])
-def webhook():
-    req = request.get_json(silent=True, force=True)
-
-    print("Request:")
-    print(json.dumps(req, indent=4))
-
-    res = processRequest(req)
-
-    res = json.dumps(res, indent=4)
-    # print(res)
-    r = make_response(res)
-    r.headers['Content-Type'] = 'application/json'
-    return r
-
-
-def processRequest(req):
-    if req.get("result").get("action") != "buscarAtractivos":
-        return {}
- #   datoingresdo = makeYqlQuery(req)
- #   if buscasitur is None:
- #       return{}
-    datoingresado = "parque solano"
-    urlsitur = "http://situr.boyaca.gov.co/wp-json/wp/v2/atractivo_turistico?search="
-    quitar_espacios = datoingresado.replace(" ", "%20")
-    data = json.loads(urlopen(urlsitur + quitar_espacios).read())#en esta se obtiene todo el contenido... equivale a data
-    testproceso = data[0].get('slug')
-    res = makeWebhookResult(data)
-    return res
-
-
-def makeYqlQuery(req):
-    result = req.get("result")
-    parameters = result.get("parameters")
-    global city
-    global city2
-    city = parameters.get("atractivos")
-    city2 = "select * from weather.forecast where woeid in (select woeid from geo.places(1) where text='" + city + "')"
-    if city is None:
-        return None
-
-    return city
-
-
 def makeWebhookResult(data):
     buscasitur = "parque solano"
     urlsitur = "http://situr.boyaca.gov.co/wp-json/wp/v2/atractivo_turistico?search="
@@ -74,7 +31,6 @@ def makeWebhookResult(data):
     url_atractivo = leer[0].get('link')
 
     mahoobox = " hola mundo dato ingresado: "
-    datoapi = (json.dumps(item, indent=4))
 
     # print(json.dumps(item, indent=4))
 
