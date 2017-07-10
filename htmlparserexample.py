@@ -1,14 +1,9 @@
-from html.parser import HTMLParser
+import re
 
-# create a subclass and override the handler methods
-class MyHTMLParser(HTMLParser):
-    def handle_data(self, datos):
-        print ("Encountered some data  :", datos)
-        global mostrados
-        mostrados = datos
+# This string contains HTML.
+v = """<p id=1>Sometimes, <b>simpler</b> is better,
+but <i>not</i> always.</p>"""
 
-# instantiate the parser and fed it some HTML
-parsero = MyHTMLParser()
-parsero.feed('<html><head><title>Test</title></head>'
-            '<body><h1>hola yo soy el texto que está en medio</h1></body></html><p>esta es la descripción</p>')
-print (mostrados)
+# Replace HTML tags with an empty string.
+result = re.sub("<.*?>", "", v)
+print(result)
