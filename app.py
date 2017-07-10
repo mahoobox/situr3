@@ -53,7 +53,7 @@ def makeWebhookResult(req):
     leer = json.loads(urlopen(baseUrl + retirarEspacios).read())
     parsero = MyHTMLParser()
     nombre_atractivo = leer[0]['title']['rendered']
-    descripcion_atractivo = re.sub("<.*?>", "", leer[0]['excerpt']['rendered'])
+    descripcion_atractivo = leer[0]['excerpt']['rendered'])
     url_atractivo = leer[0].get('link')
 
     #cost = {'parque':100, 'casa':200, 'carro':300, 'reloj':400, 'Parque El Solano':500}#diccionario de datos
