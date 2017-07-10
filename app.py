@@ -34,10 +34,6 @@ def webhook():
     r.headers['Content-Type'] = 'application/json'
     return r
 
-class MyHTMLParser(HTMLParser):
-    def handle_data(self, daticos):
-        print (daticos)
-
 def makeWebhookResult(req):
     if req.get("result").get("action") != "buscarAtractivos":
         return {}
@@ -49,7 +45,6 @@ def makeWebhookResult(req):
     retirarEspacios = atractivos.replace(" ",  "%20")
     
     leer = json.loads(urlopen(baseUrl + retirarEspacios).read())
-    parsero = MyHTMLParser()
     nombre_atractivo = leer[0]['title']['rendered']
     descripcion_atractivo = leer[0]['excerpt']['rendered']
     url_atractivo = leer[0].get('link')
