@@ -11,6 +11,8 @@ from urllib.error import HTTPError
 import json
 import os
 
+from html.parser import HTMLParser
+
 from flask import Flask
 from flask import request
 from flask import make_response
@@ -34,6 +36,10 @@ def webhook():
     r.headers['Content-Type'] = 'application/json'
     return r
 
+class MyHTMLParser(HTMLParser):
+    def handle_data(self, daticos):
+        print (daticos)
+
 def makeWebhookResult(req):
     if req.get("result").get("action") != "buscarAtractivos":
         return {}
@@ -45,13 +51,14 @@ def makeWebhookResult(req):
     retirarEspacios = atractivos.replace(" ",  "%20")
     
     leer = json.loads(urlopen(baseUrl + retirarEspacios).read())
+    parsero = MyHTMLParser()
     nombre_atractivo = leer[0]['title']['rendered']
     descripcion_atractivo = leer[0]['excerpt']['rendered']
     url_atractivo = leer[0].get('link')
 
     #cost = {'parque':100, 'casa':200, 'carro':300, 'reloj':400, 'Parque El Solano':500}#diccionario de datos
 
-    speech = "El atractivo que solicitaste es: " + nombre_atractivo + "     y su descripción es   " + descripcion_atractivo
+    speech = "El atractivo que solicitaste es: " + nombre_atractivo + "     y su descripción es   " , parsero.feed(descripcion
 
     print("Response:")
     print(speech)
