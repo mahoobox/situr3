@@ -49,7 +49,7 @@ def makeWebhookResult(req):
     descripcion_atractivo = leer[0]['excerpt']['rendered']
     url_atractivo = leer[0].get('link')
 
-    cost = {'parque':100, 'casa':200, 'carro':300, 'reloj':400, 'Parque El Solano':500}#diccionario de datos
+    #cost = {'parque':100, 'casa':200, 'carro':300, 'reloj':400, 'Parque El Solano':500}#diccionario de datos
 
     speech = "El atractivo que solicitaste es: " + nombre_atractivo + "     y su descripción es   " + descripcion_atractivo
 
