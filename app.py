@@ -43,17 +43,21 @@ def makeWebhookResult(req):
     parameters = result.get("parameters")#invocar el parameters dentro de result
     atractivos = parameters.get("atractivos")#DATO TRAÍDO DE API.AI - ATRACTIVOS
     
-    baseUrl = "http://situr.boyaca.gov.co/wp-json/wp/v2/atractivo_turistico?search="
-    retirarEspacios = atractivos.replace(" ",  "%20")
-    
-    leer = json.loads(urlopen(baseUrl + retirarEspacios).read())
-    nombre_atractivo = leer[0]['title']['rendered']
-    descripcion_atractivo = re.sub("<.*?>", "", leer[0]['excerpt']['rendered'])
-    url_atractivo = leer[0].get('link')
+    #URL BASE CONSULTA ATRACTIVOS JSON
+    baseUrlAtractivos = "http://situr.boyaca.gov.co/wp-json/wp/v2/atractivo_turistico?search="#URL Base Atractivos
+    baseUrlImgAtract = "http://www.situr.boyaca.gov.co/wp-json/wp/v2/media/"#URL Base Imagenes Atractivos
+    retirarEspacios = atractivos.replace(" ",  "%20")#Retirar Espacios Atractivos
 
-    #cost = {'parque':100, 'casa':200, 'carro':300, 'reloj':400, 'Parque El Solano':500}#diccionario de datos
+    leerAtractivo = json.loads(urlopen(baseUrlAtractivos + retirarEspacios).read())
+    tituloAtractivo = leerAtractivo[0]['title']['rendered']
+    descripcionAtractivo = re.sub("<.*?>", "", leerAtractivo[0]['excerpt']['rendered'])
+    urlAtractivo = leerAtractivo[0].get('link')
+    idImagenAtractivo = str(leerAtractivo[0]['featured_media'])
 
-    speech = "El atractivo que solicitaste es: " + nombre_atractivo + "     y su descripción es   " + descripcion_atractivo
+    leerImagenAtr = json.loads(urlopen(baseUrlImgAtract + idImagenAtractivo).read())
+    imagenAtractivo = leerImagenAtr['media_details']['sizes']['full']['source_url']
+
+    speech = "El atractivo que solicitaste es: " + tituloAtractivo + "     y su descripción es   " + descripcionAtractivo + "    y la url de la imagen es: " + imagenAtractivo
 
     print("Response:")
     print(speech)
@@ -69,16 +73,16 @@ def makeWebhookResult(req):
                         "template_type" : "generic",
                        "elements" : [ 
                             {
-                                "title" : nombre_atractivo,
-                                "image_url" : "http://somosargus.com/wp-content/uploads/2017/05/Captura-de-pantalla-2017-05-20-12.30.25.png",
-                                "subtitle": descripcion_atractivo,
+                                "title" : tituloAtractivo,
+                                "image_url" : imagenAtractivo,
+                                "subtitle": descripcionAtractivo,
                             }
                        ]
                    }
                 }
             }
         },
- #       "contextOut": [{"name":"desdepython", "lifespan":2, "parameters":{"slug":url_atractivo}}],
+ #       "contextOut": [{"name":"desdepython", "lifespan":2, "parameters":{"slug":urlAtractivo}}],
         "source": "apiai-situr3"
     }
     
