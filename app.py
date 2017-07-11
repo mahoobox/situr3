@@ -55,7 +55,7 @@ def makeWebhookResult(req):
     idImagenAtractivo = str(leerAtractivo[0]['featured_media'])
 
     leerImagenAtr = json.loads(urlopen(baseUrlImgAtract + idImagenAtractivo).read())
-    imagenAtractivo = leerImagenAtr['media_details']['sizes']['full']['source_url']
+    imagenAtractivo = leerImagenAtr['media_details']['sizes']['medium']['source_url']
 
     speech = "El atractivo que solicitaste es: " + tituloAtractivo + "     y su descripción es   " + descripcionAtractivo + "    y la url de la imagen es: " + imagenAtractivo
 

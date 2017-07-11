@@ -19,7 +19,7 @@ descripcion = re.sub("<.*?>", "", leer[0]['excerpt']['rendered'])
 #idJsonImagen = str(2739)
 idJsonImagen = str(leer[0]['featured_media'])
 leerImagen = json.loads(urlopen('http://www.situr.boyaca.gov.co/wp-json/wp/v2/media/' + idJsonImagen).read())
-imagen2 = leerImagen['media_details']['sizes']['full']['source_url']
+imagen2 = leerImagen['media_details']['sizes']['medium']['source_url']
 
 print (" ")
 print ("Título del atractivo:    " + leer[0]['title']['rendered'])
