@@ -73,7 +73,7 @@ def makeWebhookResult(req):
                         "template_type" : "generic",
                        "elements" : [ 
                             {
-                                "title" : tituloAtractivo,
+                                "title" : tituloAtractivo + " SOY UN TÍTULO ",
                                 "image_url" : imagenAtractivo,
                                 "subtitle": descripcionAtractivo,
                             }
