@@ -65,9 +65,9 @@ def makeWebhookResult(req):
     leerImagenAtr = json.loads(urlopen(baseUrlImgAtract + idImagenAtractivo).read())
     imagenAtractivo = leerImagenAtr['media_details']['sizes']['medium']['source_url']
 
-    pollo = ("hola soy la función")
+    pollo = listadoBusqueda(leerAtractivo)
 
-    speech = "Encontré " + cantidadResultados + " Resultados. " + listadoBusqueda(leerAtractivo) + "  El atractivo que solicitaste es: " + tituloAtractivo + "  y la url de la imagen es: " + imagenAtractivo
+    speech = "Encontré " + cantidadResultados + " Resultados.   El atractivo que solicitaste es: " + tituloAtractivo + "  y la url de la imagen es: " + imagenAtractivo
     fbMsg = {
             "facebook" : {
                 "attachment" : {
