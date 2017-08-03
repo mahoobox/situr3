@@ -127,8 +127,8 @@ def makeWebhookResult(req):
                             }
                        ]
                    }
-                }
-                "text":"hello, world!",
+                },
+                "text":"hello, world!"
             }
         }
 
