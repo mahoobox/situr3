@@ -70,7 +70,7 @@ def makeWebhookResult(req):
     speech = "Encontré " + cantidadResultados + " Resultados.   El atractivo que solicitaste es: " + tituloAtractivo + "  y la url de la imagen es: " + imagenAtractivo
     fbMsg = {
             "facebook" : {
-                "text":"hello, world!",
+#                "text":"hello, world!",
                 "attachment" : {
                     "type" : "template",
                     "payload" : {
@@ -84,17 +84,17 @@ def makeWebhookResult(req):
                                     {
                                         "type":"web_url",
                                         "url": "http://situr.boyaca.gov.co",
-                                        "title": "Ver"
+                                        "title": "boton1"
                                     },
                                     {
                                          "type":"web_url",
                                         "url": "http://situr.boyaca.gov.co",
-                                        "title": "Ver2"
+                                        "title": "boton2"
                                     },
                                     {
                                           "type":"web_url",
                                         "url": "http://situr.boyaca.gov.co",
-                                        "title": "Ver3"
+                                        "title": "boton3"
                                     }
                                 ]
                             },
@@ -109,7 +109,7 @@ def makeWebhookResult(req):
                                 },
                                 "buttons": [
                                     {
-                                        "title": "more info",
+                                        "title": "más info",
                                         "type": "web_url",
                                         "url": "https://www.moovrika.com/m/4082",
                                         "webview_height_ratio": "tall"
@@ -117,12 +117,12 @@ def makeWebhookResult(req):
                                     {
                                          "type":"web_url",
                                         "url": "http://situr.boyaca.gov.co",
-                                        "title": "Ver2"
+                                        "title": "boton2"
                                     },
                                     {
                                           "type":"web_url",
                                         "url": "http://situr.boyaca.gov.co",
-                                        "title": "Ver3"
+                                        "title": "boton3"
                                     }
                                 ]
                             }
