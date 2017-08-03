@@ -200,7 +200,7 @@ def makeWebhookResult(req):
                     }
                 }
             },"""
-        "contextOut": [{"name":"desdepython", "lifespan":2, "parameters":{"slug":urlAtractivo}}],
+        "contextOut": [{"name":"desdepython", "lifespan":2}],
  #       "contextOut": [],
         "source": "apiai-situr3"
     }
