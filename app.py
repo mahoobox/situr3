@@ -71,7 +71,7 @@ def makeWebhookResult(req):
                         "type" : "template",
                         "payload" : {
                             "template_type" : "generic",
-                           "elements" : [
+                            "elements" : [
                                 {
                                     "title" : tituloAtractivo,
                                     "image_url" : imagenAtractivo,
@@ -97,7 +97,7 @@ def makeWebhookResult(req):
                                 {
                                     "title": tituloAtractivo,
                                     "image_url": imagenAtractivo,
-                                    "subtitle": "Resident Evil: The Final Chapter is an upcoming science fiction action horror film written and directed by Paul W. S. Anderson. It is the sequel to Resident Evil: Retribution (2012), and will be the sixth and final installment in the Resident Evil film series, which is very loosely based on the Capcom survival horror video game series Resident Evil.",
+                                    "subtitle": descripcionAtractivo,
                                     "default_action": {
                                         "type": "web_url",
                                         "url": "https://www.moovrika.com/m/4167",
