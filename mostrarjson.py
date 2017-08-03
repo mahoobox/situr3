@@ -29,9 +29,10 @@ def mi_funcion():
 	print ("Cantidad de resultados:  " + cantidadResultados)
 	print ("Encontré estos resultados:")
 	for x in range(0,len(leer)):
-		print (leer[x]['title']['rendered'])
+		return (leer[x]['title']['rendered'])
 
-mi_funcion()
+aquitoy = mi_funcion()
+print (aquitoy)
 
 print (" ")
 print ("Título del atractivo:    " + leer[0]['title']['rendered'])
