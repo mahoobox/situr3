@@ -137,8 +137,8 @@ def makeWebhookResult(req):
     return {
         "speech": speech,
         "displayText": speech,
- #       "data" : fbMsg,
-         "data" : {
+        "data" : fbMsg,
+"""        "data" : {
                 "facebook" : {
                     "attachment" : {
                         "type" : "template",
@@ -199,8 +199,8 @@ def makeWebhookResult(req):
                        }
                     }
                 }
-            },
-        "contextOut": [{"name":"desdepython", "lifespan":2}],
+            },"""
+        "contextOut": [{"name":"desdepython", "lifespan":1}],
  #       "contextOut": [],
         "source": "apiai-situr3"
     }
