@@ -59,6 +59,76 @@ def makeWebhookResult(req):
 
     speech = "El atractivo que TU solicitaste es: " + tituloAtractivo + "     y su descripción es   " + descripcionAtractivo + "    y la url de la imagen es: " + imagenAtractivo
     fbMsg = {
+            "facebook" : {
+                "attachment" : {
+                    "type" : "template",
+                    "payload" : {
+                        "template_type" : "generic",
+                        "elements" : [
+                            {
+                                "title" : tituloAtractivo,
+                                "image_url" : imagenAtractivo,
+                                "subtitle": descripcionAtractivo,
+                                "buttons":  [
+                                    {
+                                        "type":"web_url",
+                                        "url": "http://situr.boyaca.gov.co",
+                                        "title": "Ver"
+                                    },
+                                    {
+                                         "type":"web_url",
+                                        "url": "http://situr.boyaca.gov.co",
+                                        "title": "Ver2"
+                                    },
+                                    {
+                                          "type":"web_url",
+                                        "url": "http://situr.boyaca.gov.co",
+                                        "title": "Ver3"
+                                    }
+                                ]
+                            },
+                            {
+                                "title": tituloAtractivo,
+                                "image_url": imagenAtractivo,
+                                "subtitle": descripcionAtractivo,
+                                "default_action": {
+                                    "type": "web_url",
+                                    "url": "https://www.moovrika.com/m/4167",
+                                    "webview_height_ratio": "tall"
+                                },
+                                "buttons": [
+                                    {
+                                        "title": "more info",
+                                        "type": "web_url",
+                                        "url": "https://www.moovrika.com/m/4082",
+                                        "webview_height_ratio": "tall"
+                                    },
+                                    {
+                                         "type":"web_url",
+                                        "url": "http://situr.boyaca.gov.co",
+                                        "title": "Ver2"
+                                    },
+                                    {
+                                          "type":"web_url",
+                                        "url": "http://situr.boyaca.gov.co",
+                                        "title": "Ver3"
+                                    }
+                                ]
+                            }
+                       ]
+                   }
+                }
+            }
+        },
+
+    print("Response:")
+    print(speech)
+
+    return {
+        "speech": speech,
+        "displayText": speech,
+        "data" = fbMsg,
+    """    "data" : {
                 "facebook" : {
                     "attachment" : {
                         "type" : "template",
@@ -119,15 +189,7 @@ def makeWebhookResult(req):
                        }
                     }
                 }
-            },
-
-    print("Response:")
-    print(speech)
-
-    return {
-        "speech": speech,
-        "displayText": speech,
-        "data" : fbMsg,
+            },"""
  #       "contextOut": [{"name":"desdepython", "lifespan":2, "parameters":{"slug":urlAtractivo}}],
         "source": "apiai-situr3"
     }
