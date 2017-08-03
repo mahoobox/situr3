@@ -12,7 +12,7 @@ buscasitur_sin_espacio = buscasitur.replace(" ", "%20")
 print (buscasitur_sin_espacio)
 
 leer = json.loads(urlopen('http://situr.boyaca.gov.co/wp-json/wp/v2/atractivo_turistico?search=' + buscasitur_sin_espacio).read())
-cantidadResultados = str(len(leer))
+cantidadResultados = str(len(leer))#Contar Cantidad de Resultados Encontrados
 range(0,len(leer))#Rango que recorre la cantidad de resultados mostrados
 
 test = leer[0].get('link')
@@ -24,13 +24,14 @@ idJsonImagen = str(leer[0]['featured_media'])
 leerImagen = json.loads(urlopen('http://www.situr.boyaca.gov.co/wp-json/wp/v2/media/' + idJsonImagen).read())
 imagen2 = leerImagen['media_details']['sizes']['medium']['source_url']
 
+def mi_funcion():
+	print (" ")
+	print ("Cantidad de resultados:  " + cantidadResultados)
+	print ("Encontré estos resultados:")
+	for x in range(0,len(leer)):
+		print (leer[x]['title']['rendered'])
 
-
-print (" ")
-print ("Cantidad de resultados:  " + cantidadResultados)
-print ("Encontré estos resultados:")
-for x in range(0,len(leer)):
-    print (leer[x]['title']['rendered'])
+mi_funcion()
 
 print (" ")
 print ("Título del atractivo:    " + leer[0]['title']['rendered'])
