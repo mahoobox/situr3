@@ -199,7 +199,7 @@ def makeWebhookResult(req):
                        }
                     }
                 }
-            },"""
+            }""",
 #        "contextOut": [],
         "contextOut": [{"name":"desdepython", "lifespan":1}],
         "source": "soy-un-dato-irrelevante"
