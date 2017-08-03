@@ -65,7 +65,7 @@ def makeWebhookResult(req):
     imagenAtractivo = leerImagenAtr['media_details']['sizes']['medium']['source_url']
     vaca = mi_funcion()
 
-    speech = "Encontré " + cantidadResultados + " Resultados. Y son: "+ vaca + " El atractivo que solicitaste es: " + titletuloAtractivo + "     y su descripción es   " + descripcionAtractivo + "    y la url de la imagen es: " + imagenAtractivo
+    speech = "Encontré " + cantidadResultados + " Resultados. Y son: El atractivo que solicitaste es: " + titletuloAtractivo + "     y su descripción es   " + descripcionAtractivo + "    y la url de la imagen es: " + imagenAtractivo
     fbMsg = {
             "facebook" : {
                 "attachment" : {
