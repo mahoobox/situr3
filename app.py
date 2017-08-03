@@ -36,11 +36,10 @@ def webhook():
     r.headers['Content-Type'] = 'application/json'
     return r
 
-def mi_funcion():
-    global x
-    for x in range(0,len(leerAtractivo)):
-        print (leerAtractivo[x]['title']['rendered'], end=", ")
-        return
+def listadoBusqueda(dato_recuperado):
+    for x in range(0,len(dato_recuperado)):
+        print (dato_recuperado[x]['title']['rendered'], end=", ")
+    return
 
 def makeWebhookResult(req):
     if req.get("result").get("action") != "buscarAtractivos":
@@ -68,7 +67,7 @@ def makeWebhookResult(req):
 
     pollo = ("hola soy la función")
 
-    speech = "Encontré " + cantidadResultados + " Resultados.  El atractivo que solicitaste es: " + tituloAtractivo + "  y la url de la imagen es: " + imagenAtractivo
+    speech = "Encontré " + cantidadResultados + " Resultados. " + listadoBusqueda(leerAtractivo) + "  El atractivo que solicitaste es: " + tituloAtractivo + "  y la url de la imagen es: " + imagenAtractivo
     fbMsg = {
             "facebook" : {
                 "attachment" : {
