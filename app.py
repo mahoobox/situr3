@@ -67,8 +67,7 @@ def makeWebhookResult(req):
 
   #  pollo = listadoBusqueda(leerAtractivo)
 
-#    speech = "Encontré " + cantidadResultados + " Resultados.   El atractivo que solicitaste es: " + tituloAtractivo + "  y la url de la imagen es: " + imagenAtractivo
-    speech = listadoBusqueda(leerAtractivo)
+    speech = "Encontré " + cantidadResultados + " Resultados.   El atractivo que solicitaste es: " + tituloAtractivo + "  y la url de la imagen es: " + imagenAtractivo
     fbMsg = {
             "facebook" : {
                 "attachment" : {
@@ -201,8 +200,8 @@ def makeWebhookResult(req):
                     }
                 }
             },"""
-        "contextOut": [{"name":"desdepython", "lifespan":1}],
 #        "contextOut": [],
+        "contextOut": [{"name":"desdepython", "lifespan":1}],
         "source": "soy-un-dato-irrelevante"
 #        "source": listadoBusqueda(leerAtractivo)
     }
