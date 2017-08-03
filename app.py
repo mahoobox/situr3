@@ -66,29 +66,67 @@ def makeWebhookResult(req):
         "speech": speech,
         "displayText": speech,
         "data" : {
-            "facebook" : {
-                "attachment" : {
-                    "type" : "template",
-                    "payload" : {
-                        "template_type" : "generic",
-                        "elements" : [ 
-                            {
-                                "title" : tituloAtractivo + " SOY UN TÍTULO ",
-                                "image_url" : imagenAtractivo,
-                                "subtitle": descripcionAtractivo,
-                                "default_action": {
-                                    "type": "web_url",
-                                    "url": "https://peterssendreceiveapp.ngrok.io/view?item=103",
-                                    "messenger_extensions": true,
-                                    "webview_height_ratio": "tall",
-                                    "fallback_url": "https://peterssendreceiveapp.ngrok.io/"
+                "facebook" : {
+                    "attachment" : {
+                        "type" : "template",
+                        "payload" : {
+                            "template_type" : "generic",
+                           "elements" : [
+                                {
+                                    "title" : tituloAtractivo,
+                                    "image_url" : imagenAtractivo,
+                                    "subtitle": descripcionAtractivo,
+                                    "buttons":  [
+                                        {
+                                            "type":"web_url",
+                                            "url": "http://situr.boyaca.gov.co",
+                                            "title": "Ver"
+                                        },
+                                        {
+                                             "type":"web_url",
+                                            "url": "http://situr.boyaca.gov.co",
+                                            "title": "Ver2"
+                                        },
+                                        {
+                                              "type":"web_url",
+                                            "url": "http://situr.boyaca.gov.co",
+                                            "title": "Ver3"
+                                        }
+                                    ]
                                 },
-                            }
-                       ]
-                   }
+                                {
+                                    "title": tituloAtractivo,
+                                    "image_url": imagenAtractivo,
+                                    "subtitle": "Resident Evil: The Final Chapter is an upcoming science fiction action horror film written and directed by Paul W. S. Anderson. It is the sequel to Resident Evil: Retribution (2012), and will be the sixth and final installment in the Resident Evil film series, which is very loosely based on the Capcom survival horror video game series Resident Evil.",
+                                    "default_action": {
+                                        "type": "web_url",
+                                        "url": "https://www.moovrika.com/m/4167",
+                                        "webview_height_ratio": "tall"
+                                    },
+                                    "buttons": [
+                                        {
+                                            "title": "more info",
+                                            "type": "web_url",
+                                            "url": "https://www.moovrika.com/m/4082",
+                                            "webview_height_ratio": "tall"
+                                        },
+                                        {
+                                             "type":"web_url",
+                                            "url": "http://situr.boyaca.gov.co",
+                                            "title": "Ver2"
+                                        },
+                                        {
+                                              "type":"web_url",
+                                            "url": "http://situr.boyaca.gov.co",
+                                            "title": "Ver3"
+                                        }
+                                    ]
+                                }
+                           ]
+                       }
+                    }
                 }
-            }
-        },
+            },
  #       "contextOut": [{"name":"desdepython", "lifespan":2, "parameters":{"slug":urlAtractivo}}],
         "source": "apiai-situr3"
     }
