@@ -34,6 +34,8 @@ imagen2 = leerImagen['media_details']['sizes']['medium']['source_url']
 
 
 mi_funcion()
+vaca = mi_funcion()
+print (vaca)
 
 print (" ")
 print ("Título del atractivo:    " + leer[0]['title']['rendered'])

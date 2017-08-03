@@ -56,13 +56,15 @@ def makeWebhookResult(req):
     cantidadResultados = str(len(leerAtractivo))#Contar Cantidad de Resultados Encontrados
     range(0,len(leerAtractivo))#Rango que recorre la cantidad de resultados mostrados
 
-    tituloAtractivo = leerAtractivo[1]['title']['rendered']
+    tituloAtractivo = leerAtractivo[0]['title']['rendered']
     descripcionAtractivo = re.sub("<.*?>", "", leerAtractivo[0]['excerpt']['rendered'])
     urlAtractivo = leerAtractivo[0].get('link')
     idImagenAtractivo = str(leerAtractivo[0]['featured_media'])
 
     leerImagenAtr = json.loads(urlopen(baseUrlImgAtract + idImagenAtractivo).read())
     imagenAtractivo = leerImagenAtr['media_details']['sizes']['medium']['source_url']
+
+    pollo = mi_funcion()
 
     speech = "Encontré " + cantidadResultados + " Resultados.  El atractivo que solicitaste es: " + tituloAtractivo + "  y la url de la imagen es: " + imagenAtractivo
     fbMsg = {
