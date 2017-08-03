@@ -73,20 +73,6 @@ def makeWebhookResult(req):
                 "attachment" : {
                     "type" : "template",
                     "payload" : {
-                        "template_type":"button",
-                        "text":"What do you want to do next?",
-                                "buttons":  [
-                                    {
-                                        "type":"web_url",
-                                        "url": "http://situr.boyaca.gov.co",
-                                        "title": "boton1"
-                                    },
-                                    {
-                                          "type":"web_url",
-                                        "url": "http://situr.boyaca.gov.co",
-                                        "title": "boton2"
-                                    }
-                                ]
                         "template_type" : "generic",
                         "elements" : [
                             {
