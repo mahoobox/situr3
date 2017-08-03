@@ -119,7 +119,7 @@ def makeWebhookResult(req):
                    }
                 }
             }
-        },
+        }
 
     print("Response:")
     print(speech)
