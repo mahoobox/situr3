@@ -18,7 +18,7 @@ buscasitur = str(input("Ingrese el atractivo que desea buscar:   "))
 buscasitur_sin_espacio = buscasitur.replace(" ", "%20")
 print (buscasitur_sin_espacio)
 
-leer = json.loads(urlopen('http://situr.boyaca.gov.co/wp-json/wp/v2/atractivo_turistico?search=' + buscasitur_sin_espacio).read())
+leer = json.loads(urlopen('http://situr.boyaca.gov.co/wp-json/wp/v2/atractivo_turistico?orderby=relevance&search=' + buscasitur_sin_espacio).read())
 cantidadResultados = str(len(leer))#Contar Cantidad de Resultados Encontrados
 range(0,len(leer))#Rango que recorre la cantidad de resultados mostrados
 
