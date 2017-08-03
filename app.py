@@ -67,7 +67,7 @@ def makeWebhookResult(req):
 
   #  pollo = listadoBusqueda(leerAtractivo)
 
-    speech = "Encontré " + cantidadResultados + " Resultados. " + pollo + "  El atractivo que solicitaste es: " + tituloAtractivo + "  y la url de la imagen es: " + imagenAtractivo
+    speech = "Encontré " + cantidadResultados + " Resultados.  El atractivo que solicitaste es: " + tituloAtractivo + "  y la url de la imagen es: " + imagenAtractivo
     fbMsg = {
             "facebook" : {
                 "attachment" : {
