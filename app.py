@@ -202,7 +202,7 @@ def makeWebhookResult(req):
             },"""
         "contextOut": [{"name":"desdepython", "lifespan":1}],
  #       "contextOut": [],
-        "source": '"'listadoBusqueda(leerAtractivo)'"'
+        "source": listadoBusqueda(leerAtractivo)
     }
     
 if __name__ == '__main__':
