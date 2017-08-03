@@ -58,6 +58,7 @@ def makeWebhookResult(req):
     imagenAtractivo = leerImagenAtr['media_details']['sizes']['medium']['source_url']
 
     speech = "El atractivo que TU solicitaste es: " + tituloAtractivo + "     y su descripción es   " + descripcionAtractivo + "    y la url de la imagen es: " + imagenAtractivo
+    fbMsg = "hola mundo"
 
     print("Response:")
     print(speech)
@@ -65,7 +66,8 @@ def makeWebhookResult(req):
     return {
         "speech": speech,
         "displayText": speech,
-        "data" : {
+        "data" : fbMsg,
+     """   "data" : {
                 "facebook" : {
                     "attachment" : {
                         "type" : "template",
@@ -126,7 +128,7 @@ def makeWebhookResult(req):
                        }
                     }
                 }
-            },
+            },"""
  #       "contextOut": [{"name":"desdepython", "lifespan":2, "parameters":{"slug":urlAtractivo}}],
         "source": "apiai-situr3"
     }
