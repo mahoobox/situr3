@@ -36,7 +36,7 @@ def webhook():
     r.headers['Content-Type'] = 'application/json'
     return r
 
-def mi_funcion():
+def mi_funcion(req):
     for x in range(0,len(leerAtractivo)):
         print (leerAtractivo[x]['title']['rendered'], end=", ")
 
@@ -64,7 +64,7 @@ def makeWebhookResult(req):
     leerImagenAtr = json.loads(urlopen(baseUrlImgAtract + idImagenAtractivo).read())
     imagenAtractivo = leerImagenAtr['media_details']['sizes']['medium']['source_url']
 
-   # pollo = mi_funcion()
+    pollo = mi_funcion(req)
 
     speech = "Encontré " + cantidadResultados + " Resultados.  El atractivo que solicitaste es: " + tituloAtractivo + "  y la url de la imagen es: " + imagenAtractivo
     fbMsg = {
