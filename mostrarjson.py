@@ -13,9 +13,9 @@ import json
 	for x in range(0,len(leer)):
 		print (leer[x]['title']['rendered'], end=", ")"""
 
-def mi_funcion(mb):
-    for x in range(0,len(mb)):
-        print (mb[x]['title']['rendered'], end=", ")
+def listadoBusqueda(dato_recuperado):
+    for x in range(0,len(dato_recuperado)):
+        print (dato_recuperado[x]['title']['rendered'], end=", ")
     return
 
 buscasitur = str(input("Ingrese el atractivo que desea buscar:   "))
@@ -36,9 +36,12 @@ idJsonImagen = str(leer[0]['featured_media'])
 leerImagen = json.loads(urlopen('http://www.situr.boyaca.gov.co/wp-json/wp/v2/media/' + idJsonImagen).read())
 imagen2 = leerImagen['media_details']['sizes']['medium']['source_url']
 
-mi_funcion(leer)
+listadoBusqueda(leer)
 
+speech = "Encontré " + cantidadResultados + " Resultados.   "
 
+print (" ")
+print (speech)
 print (" ")
 print ("Título del atractivo:    " + leer[0]['title']['rendered'])
 print ("Url del atractivo:       " + leer[0]['link'])
