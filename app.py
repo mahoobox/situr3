@@ -71,7 +71,7 @@ def makeWebhookResult(req):
     fbMsg = {
             "facebook" : {
                 "message":{
-                    "text":"hello, world!",
+                    "text":"hello, world!"
                 }
                 "attachment" : {
                     "type" : "template",
