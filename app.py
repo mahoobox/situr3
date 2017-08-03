@@ -201,7 +201,7 @@ def makeWebhookResult(req):
                 }
             },"""
 #        "contextOut": [],
-        "contextOut": [{"name":"desdepython", "lifespan":1}],
+        "contextOut": [{"name":"desdepython", "lifespan":2}],
         "source": "soy-un-dato-irrelevante"
 #        "source": listadoBusqueda(leerAtractivo)
     }
