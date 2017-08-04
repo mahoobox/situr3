@@ -70,7 +70,9 @@ def makeWebhookResult(req):
     speech = "Encontré " + cantidadResultados + " Resultados.   El atractivo que solicitaste es: " + tituloAtractivo + "  y la url de la imagen es: " + imagenAtractivo
     fbMsg = {
             "facebook" : {
-#                "text":"hello, world!",
+                "text":"hello, world!",
+            },
+            "facebook" : {
                 "attachment" : {
                     "type" : "template",
                     "payload" : {
