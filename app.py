@@ -140,7 +140,13 @@ def makeWebhookResult(req):
     return {
         "speech": speech,
         "displayText": speech,
-        "data" : fbMsg,
+#        "data" : fbMsg,
+        "data" : {  
+            "facebook":{  
+                "text":{ 
+                    "soy un texto, y si funciono"
+                }
+            }
 """        "data" : {
                 "facebook" : {
                     "attachment" : {
