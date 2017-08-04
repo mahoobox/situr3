@@ -43,16 +43,13 @@ def listadoBusqueda(dato_recuperado):
 
 fbMsg2 = {
             "facebook" : {
-#                "text":{
-#                    "Hola Mundo, si funciono"
-#                },
                 "attachment" : {
                     "type" : "template",
                     "payload" : {
                         "template_type" : "generic",
                         "elements" : [
                             {   
-                                "title" : "soy el titulo",
+                                "title" : "soy el titulo tst2",
                                 "image_url" : "https://www.anipedia.net/imagenes/taxonomia-conejos.jpg",
                                 "subtitle": "soy la descripcion",
                                 "buttons":  [
