@@ -144,7 +144,7 @@ def makeWebhookResult(req):
         "data" : {  
                 "facebook":{  
                     "text":"soy un texto, y si funciono"
-                }
+                },
                 "facebook" : {
                     "attachment" : {
                         "type" : "template",
