@@ -36,10 +36,50 @@ def webhook():
     r.headers['Content-Type'] = 'application/json'
     return r
 
+inicioFBCard = """{
+            "facebook" : {
+                "attachment" : {
+                    "type" : "template",
+                    "payload" : {
+                        "template_type" : "generic",
+                        "elements" : ["""
+
+finFBCard = """]
+                   }
+                }
+            }
+        }"""
+
+
 def listadoBusqueda(dato_recuperado):
+    print (inicioFBCard)
+    for x in range(0,len(dato_recuperado)):
+        descFichaAtrFB = re.sub("<.*?>", "", dato_recuperado[x]['excerpt']['rendered'])
+        idImgFichaAtrFB = str(dato_recuperado[x]['featured_media'])
+        print ("""                            {   
+                                "title" : """ + dato_recuperado[x]['title']['rendered'] + """,
+                                "image_url" : "https://www.anipedia.net/imagenes/taxonomia-conejos.jpg",
+                                "subtitle": " Soy la descripción, colocar variable descFichaAtrFB ",
+                                "buttons":  [
+                                    {
+                                        "type":"web_url",
+                                        "url": """+dato_recuperado[x]['link']+""",
+                                        "title": "Ver en SITUR"
+                                    },
+                                    {
+                                        "type":"web_url",
+                                        "url": """+dato_recuperado[x]['link']+""",
+                                        "title": "boton2"
+                                    }
+                                ]
+                            },""")
+    print (finFBCard)
+    return
+
+"""def listadoBusqueda(dato_recuperado):
     for x in range(0,len(dato_recuperado)):
         print (dato_recuperado[x]['title']['rendered'], end=", ")
-    return
+    return"""
 
 def makeWebhookResult(req):
     if req.get("result").get("action") != "buscarAtractivos":
@@ -140,7 +180,7 @@ def makeWebhookResult(req):
     return {
         "speech": speech,
         "displayText": speech,
-        "data" : fbMsg,
+        "data" : listadoBusqueda(baseUrlAtractivos),
 """        "data" : {  
                 "facebook":{  
                     "text":"soy un texto, y si funciono"
