@@ -147,6 +147,7 @@ def makeWebhookResult(req):
                     "soy un texto, y si funciono"
                 }
             }
+        },
 """        "data" : {
                 "facebook" : {
                     "attachment" : {
