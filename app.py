@@ -41,7 +41,7 @@ def listadoBusqueda(dato_recuperado):
         print (dato_recuperado[x]['title']['rendered'], end=", ")
     return
 
-    fbMsg2 = {
+fbMsg2 = {
             "facebook" : {
 #                "text":{
 #                    "Hola Mundo, si funciono"
@@ -52,9 +52,9 @@ def listadoBusqueda(dato_recuperado):
                         "template_type" : "generic",
                         "elements" : [
                             {   
-                                "title" : tituloAtractivo,
-                                "image_url" : imagenAtractivo,
-                                "subtitle": descripcionAtractivo,
+                                "title" : "soy el titulo",
+                                "image_url" : "https://www.anipedia.net/imagenes/taxonomia-conejos.jpg",
+                                "subtitle": "soy la descripcion",
                                 "buttons":  [
                                     {
                                         "type":"web_url",
@@ -74,9 +74,9 @@ def listadoBusqueda(dato_recuperado):
                                 ]
                             },
                             {
-                                "title": tituloAtractivo,
-                                "image_url": imagenAtractivo,
-                                "subtitle": descripcionAtractivo,
+                                "title": "soy el otro titulo",
+                                "image_url": "https://www.dondevive.org/wp-content/uploads/2015/08/donde-viven-los-conejos.jpg",
+                                "subtitle": "soy la descripción",
                                 "default_action": {
                                     "type": "web_url",
                                     "url": "https://www.moovrika.com/m/4167",
@@ -207,7 +207,7 @@ def makeWebhookResult(req):
     return {
         "speech": speech,
         "displayText": speech,
-        "data" :fbMsg,
+        "data" :fbMsg2,
 #        "contextOut": [],
         "contextOut": [{"name":"desdepython", "lifespan":2}],
         "source": "soy-un-dato-irrelevante"
