@@ -92,3 +92,71 @@ print ("Imagen del atractivo 2:  " + imagen2)
 print ("Excerpt del atractivo:   " + descripcion)
 print (" ")
 
+
+
+
+"""        "data" : {  
+                "facebook":{  
+                    "text":"soy un texto, y si funciono"
+                },
+                "facebook" : {
+                    "attachment" : {
+                        "type" : "template",
+                        "payload" : {
+                            "template_type" : "generic",
+                            "elements" : [
+                                {
+                                    "title" : tituloAtractivo,
+                                    "image_url" : imagenAtractivo,
+                                    "subtitle": descripcionAtractivo,
+                                    "buttons":  [
+                                        {
+                                            "type":"web_url",
+                                            "url": "http://situr.boyaca.gov.co",
+                                            "title": "Ver"
+                                        },
+                                        {
+                                             "type":"web_url",
+                                            "url": "http://situr.boyaca.gov.co",
+                                            "title": "Ver2"
+                                        },
+                                        {
+                                              "type":"web_url",
+                                            "url": "http://situr.boyaca.gov.co",
+                                            "title": "Ver3"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "title": tituloAtractivo,
+                                    "image_url": imagenAtractivo,
+                                    "subtitle": descripcionAtractivo,
+                                    "default_action": {
+                                        "type": "web_url",
+                                        "url": "https://www.moovrika.com/m/4167",
+                                        "webview_height_ratio": "tall"
+                                    },
+                                    "buttons": [
+                                        {
+                                            "title": "more info",
+                                            "type": "web_url",
+                                            "url": "https://www.moovrika.com/m/4082",
+                                            "webview_height_ratio": "tall"
+                                        },
+                                        {
+                                             "type":"web_url",
+                                            "url": "http://situr.boyaca.gov.co",
+                                            "title": "Ver2"
+                                        },
+                                        {
+                                              "type":"web_url",
+                                            "url": "http://situr.boyaca.gov.co",
+                                            "title": "Ver3"
+                                        }
+                                    ]
+                                }
+                           ]
+                       }
+                    }
+                }
+            },"""
