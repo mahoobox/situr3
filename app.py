@@ -43,7 +43,6 @@ def listadoBusqueda(dato_recuperado):
 
 def mostrarFB():
     print (fbMsg)
-    return
 
 def makeWebhookResult(req):
     if req.get("result").get("action") != "buscarAtractivos":
