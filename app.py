@@ -41,12 +41,8 @@ def listadoBusqueda(dato_recuperado):
         print (dato_recuperado[x]['title']['rendered'], end=", ")
     return
 
-def mostrarFB():
-    fbMsg2 = {
+fbMsg2 = {
             "facebook" : {
-#                "text":{
-#                    "Hola Mundo, si funciono"
-#                },
                 "attachment" : {
                     "type" : "template",
                     "payload" : {
@@ -107,6 +103,8 @@ def mostrarFB():
                 }
             }
         }
+
+def mostrarFB():
     print (fbMsg2)
     return
 
