@@ -108,6 +108,7 @@ def mostrarFB():
             }
         }
     print (fbMsg2)
+    return
 
 def makeWebhookResult(req):
     if req.get("result").get("action") != "buscarAtractivos":
