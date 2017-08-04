@@ -209,7 +209,7 @@ def makeWebhookResult(req):
                 }
             },
         "data" : {  
-                "facebook":{  
+                "facebooks":{  
                     "text":"soy un texto 2, y si funciono 2 "
                 }
         },
