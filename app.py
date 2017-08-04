@@ -52,13 +52,16 @@ finFBCard = """]
 
 
 def listadoBusqueda(dato_recuperado):
+#   print (" ")
+#   print ("Cantidad de resultados:  " + cantidadResultados)
     print (inicioFBCard)
+#   print ("Encontré estos resultados:")
     for x in range(0,len(dato_recuperado)):
         descFichaAtrFB = re.sub("<.*?>", "", dato_recuperado[x]['excerpt']['rendered'])
         idImgFichaAtrFB = str(dato_recuperado[x]['featured_media'])
         print ("""                            {   
                                 "title" : """ + dato_recuperado[x]['title']['rendered'] + """,
-                                "image_url" : "https://www.anipedia.net/imagenes/taxonomia-conejos.jpg",
+                                "image_url" : """ + idImgFichaAtrFB + """,
                                 "subtitle": " Soy la descripción, colocar variable descFichaAtrFB ",
                                 "buttons":  [
                                     {
@@ -73,6 +76,10 @@ def listadoBusqueda(dato_recuperado):
                                     }
                                 ]
                             },""")
+
+
+
+#       print (dato_recuperado[x]['title']['rendered'], end="")
     print (finFBCard)
     return
 
@@ -180,7 +187,7 @@ def makeWebhookResult(req):
     return {
         "speech": speech,
         "displayText": speech,
-        "data" : listadoBusqueda(baseUrlAtractivos),
+        "data" : fbMsg,
 """        "data" : {  
                 "facebook":{  
                     "text":"soy un texto, y si funciono"
