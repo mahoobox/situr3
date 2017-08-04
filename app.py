@@ -72,7 +72,7 @@ def makeWebhookResult(req):
             "facebook" : {
                 "text":"hello, world!"
             }
-            "facebook" : {
+"""            "facebook" : {
                 "attachment" : {
                     "type" : "template",
                     "payload" : {
@@ -131,7 +131,7 @@ def makeWebhookResult(req):
                        ]
                    }
                 }
-            }
+            }"""
         }
 
     print("Response:")
