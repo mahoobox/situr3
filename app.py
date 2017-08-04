@@ -42,7 +42,72 @@ def listadoBusqueda(dato_recuperado):
     return
 
 def mostrarFB():
-    print (fbMsg)
+    fbMsg2 = {
+            "facebook" : {
+#                "text":{
+#                    "Hola Mundo, si funciono"
+#                },
+                "attachment" : {
+                    "type" : "template",
+                    "payload" : {
+                        "template_type" : "generic",
+                        "elements" : [
+                            {   
+                                "title" : tituloAtractivo,
+                                "image_url" : imagenAtractivo,
+                                "subtitle": descripcionAtractivo,
+                                "buttons":  [
+                                    {
+                                        "type":"web_url",
+                                        "url": "http://situr.boyaca.gov.co",
+                                        "title": "boton1"
+                                    },
+                                    {
+                                         "type":"web_url",
+                                        "url": "http://situr.boyaca.gov.co",
+                                        "title": "boton2"
+                                    },
+                                    {
+                                          "type":"web_url",
+                                        "url": "http://situr.boyaca.gov.co",
+                                        "title": "boton3"
+                                    }
+                                ]
+                            },
+                            {
+                                "title": tituloAtractivo,
+                                "image_url": imagenAtractivo,
+                                "subtitle": descripcionAtractivo,
+                                "default_action": {
+                                    "type": "web_url",
+                                    "url": "https://www.moovrika.com/m/4167",
+                                    "webview_height_ratio": "tall"
+                                },
+                                "buttons": [
+                                    {
+                                        "title": "más info",
+                                        "type": "web_url",
+                                        "url": "https://www.moovrika.com/m/4082",
+                                        "webview_height_ratio": "tall"
+                                    },
+                                    {
+                                         "type":"web_url",
+                                        "url": "http://situr.boyaca.gov.co",
+                                        "title": "boton2"
+                                    },
+                                    {
+                                          "type":"web_url",
+                                        "url": "http://situr.boyaca.gov.co",
+                                        "title": "boton3"
+                                    }
+                                ]
+                            }
+                       ]
+                   }
+                }
+            }
+        }
+    print (fbMsg2)
 
 def makeWebhookResult(req):
     if req.get("result").get("action") != "buscarAtractivos":
@@ -141,7 +206,7 @@ def makeWebhookResult(req):
     return {
         "speech": speech,
         "displayText": speech,
-        "data" :fbMsg,
+        "data" :mostrarFB(),
 #        "contextOut": [],
         "contextOut": [{"name":"desdepython", "lifespan":2}],
         "source": "soy-un-dato-irrelevante"
