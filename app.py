@@ -108,7 +108,7 @@ fbMsg2 = {
         }
 
 def mostrarFB():
-    print (fbMsg)
+    print (fbMsg2)
 
 def makeWebhookResult(req):
     if req.get("result").get("action") != "buscarAtractivos":
