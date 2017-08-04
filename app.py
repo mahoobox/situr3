@@ -141,12 +141,12 @@ def makeWebhookResult(req):
         "speech": speech,
         "displayText": speech,
 #        "data" : fbMsg,
-        "data" : {  
-            "facebook":{  
-                "text":"soy un texto, y si funciono"
-            }
-        },
-"""        "data" : {
+#        "data" : {  
+#            "facebook":{  
+#                "text":"soy un texto, y si funciono"
+#            }
+#        },
+        "data" : {
                 "facebook" : {
                     "attachment" : {
                         "type" : "template",
@@ -207,7 +207,7 @@ def makeWebhookResult(req):
                        }
                     }
                 }
-            },"""
+            },
 #        "contextOut": [],
         "contextOut": [{"name":"desdepython", "lifespan":2}],
         "source": "soy-un-dato-irrelevante"
