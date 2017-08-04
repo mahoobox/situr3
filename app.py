@@ -42,71 +42,70 @@ def listadoBusqueda(dato_recuperado):
     return
 
 fbMsg2 = {
-            "facebook" : {
-                "attachment" : {
-                    "type" : "template",
-                    "payload" : {
-                        "template_type" : "generic",
-                        "elements" : [
-                            {   
-                                "title" : "soy el titulo tst2",
-                                "image_url" : "https://www.anipedia.net/imagenes/taxonomia-conejos.jpg",
-                                "subtitle": "soy la descripcion",
-                                "buttons":  [
-                                    {
-                                        "type":"web_url",
-                                        "url": "http://situr.boyaca.gov.co",
-                                        "title": "boton1"
-                                    },
-                                    {
-                                         "type":"web_url",
-                                        "url": "http://situr.boyaca.gov.co",
-                                        "title": "boton2"
-                                    },
-                                    {
-                                          "type":"web_url",
-                                        "url": "http://situr.boyaca.gov.co",
-                                        "title": "boton3"
-                                    }
-                                ]
+        "facebook" : {
+            "attachment" : {
+                "type" : "template",
+                "payload" : {
+                    "template_type" : "generic",
+                    "elements" : [
+                        {   
+                            "title" : "soy el titulo tst2 conj",
+                            "image_url" : "https://www.anipedia.net/imagenes/taxonomia-conejos.jpg",
+                            "subtitle": "soy la descripcion",
+                            "buttons":  [
+                                {
+                                    "type":"web_url",
+                                    "url": "http://situr.boyaca.gov.co",
+                                    "title": "boton1"
+                                },
+                                {
+                                    "type":"web_url",
+                                    "url": "http://situr.boyaca.gov.co",
+                                    "title": "boton2"
+                                },
+                                {
+                                    "type":"web_url",
+                                    "url": "http://situr.boyaca.gov.co",
+                                    "title": "boton3"
+                                }
+                            ]
+                        },
+                        {
+                            "title": "soy el otro titulo",
+                            "image_url": "https://www.dondevive.org/wp-content/uploads/2015/08/donde-viven-los-conejos.jpg",
+                            "subtitle": "soy la descripción",
+                            "default_action": {
+                                "type": "web_url",
+                                "url": "https://www.moovrika.com/m/4167",
+                                "webview_height_ratio": "tall"
                             },
-                            {
-                                "title": "soy el otro titulo",
-                                "image_url": "https://www.dondevive.org/wp-content/uploads/2015/08/donde-viven-los-conejos.jpg",
-                                "subtitle": "soy la descripción",
-                                "default_action": {
+                            "buttons": [
+                                {
+                                    "title": "más info",
                                     "type": "web_url",
-                                    "url": "https://www.moovrika.com/m/4167",
+                                    "url": "https://www.moovrika.com/m/4082",
                                     "webview_height_ratio": "tall"
                                 },
-                                "buttons": [
-                                    {
-                                        "title": "más info",
-                                        "type": "web_url",
-                                        "url": "https://www.moovrika.com/m/4082",
-                                        "webview_height_ratio": "tall"
-                                    },
-                                    {
-                                         "type":"web_url",
-                                        "url": "http://situr.boyaca.gov.co",
-                                        "title": "boton2"
-                                    },
-                                    {
-                                          "type":"web_url",
-                                        "url": "http://situr.boyaca.gov.co",
-                                        "title": "boton3"
-                                    }
-                                ]
-                            }
-                       ]
-                   }
-                }
+                                {
+                                    "type":"web_url",
+                                    "url": "http://situr.boyaca.gov.co",
+                                    "title": "boton2"
+                                },
+                                {
+                                    "type":"web_url",
+                                    "url": "http://situr.boyaca.gov.co",
+                                    "title": "boton3"
+                                }
+                            ]
+                        }
+                   ]
+               }
             }
         }
+    }
 
 def mostrarFB():
     print (fbMsg2)
-    return
 
 def makeWebhookResult(req):
     if req.get("result").get("action") != "buscarAtractivos":
