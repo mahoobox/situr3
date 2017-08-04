@@ -109,6 +109,7 @@ fbMsg2 = {
 
 def mostrarFB():
     print (fbMsg2)
+    return
 
 def makeWebhookResult(req):
     if req.get("result").get("action") != "buscarAtractivos":
@@ -207,7 +208,7 @@ def makeWebhookResult(req):
     return {
         "speech": speech,
         "displayText": speech,
-        "data" :fbMsg2,
+        "data" :mostrarFB(),
 #        "contextOut": [],
         "contextOut": [{"name":"desdepython", "lifespan":2}],
         "source": "soy-un-dato-irrelevante"
