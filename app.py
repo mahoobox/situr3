@@ -41,6 +41,10 @@ def listadoBusqueda(dato_recuperado):
         print (dato_recuperado[x]['title']['rendered'], end=", ")
     return
 
+def mostrarFB():
+    print (fbMsg)
+    return
+
 def makeWebhookResult(req):
     if req.get("result").get("action") != "buscarAtractivos":
         return {}
@@ -140,7 +144,7 @@ def makeWebhookResult(req):
     return {
         "speech": speech,
         "displayText": speech,
-        "data" : fbMsg,
+        "data" : mostrarFB(),
 """        "data" : {  
                 "facebook":{  
                     "text":"soy un texto, y si funciono"
