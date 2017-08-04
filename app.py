@@ -208,6 +208,11 @@ def makeWebhookResult(req):
                     }
                 }
             },
+        "data" : {  
+                "facebook":{  
+                    "text":"soy un texto 2, y si funciono 2 "
+                }
+        },
 #        "contextOut": [],
         "contextOut": [{"name":"desdepython", "lifespan":2}],
         "source": "soy-un-dato-irrelevante"
