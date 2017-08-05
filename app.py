@@ -141,7 +141,7 @@ fbMsg2 = {
     }
 
 def mostrarFB():
-    return fbMsg2
+    print (fbMsg2)
 
 def makeWebhookResult(req):
     if req.get("result").get("action") != "buscarAtractivos":
@@ -167,7 +167,7 @@ def makeWebhookResult(req):
     leerImagenAtr = json.loads(urlopen(baseUrlImgAtract + idImagenAtractivo).read())
     imagenAtractivo = leerImagenAtr['media_details']['sizes']['medium']['source_url']
 
-    speech = "Ie encontrado " + cantidadResultados + " Resultados .   El atractivo que solicitaste es: " + tituloAtractivo + "  y la url de la imagen es: " + imagenAtractivo
+    speech = "We encontrado " + cantidadResultados + " Resultados .   El atractivo que solicitaste es: " + tituloAtractivo + "  y la url de la imagen es: " + imagenAtractivo
     fbMsg = {
             "facebook" : {
 #                "text":{
