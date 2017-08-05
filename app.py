@@ -36,14 +36,18 @@ def webhook():
     r.headers['Content-Type'] = 'application/json'
     return r
 
+def inicioJsonBusqueda():
+    return inicioFBCard
+
+def finJsonBusqueda():
+    return finFBCard
+
 def listadoBusqueda(urlBaseJson, urlBaseImagen):
-    print (inicioFBCard)
     for x in range(0,len(urlBaseJson)):
 #        descripcionItem = re.sub("<.*?>", "", urlBaseJson[x]['excerpt']['rendered'])#Descripción del atractivo eliminando etiquetas
 #        idImgFichaAtrFB = str(urlBaseJson[x]['featured_media'])#ID de la imagen del atractivo
 #        leerImagenAtractivos = json.loads(urlopen(urlBaseImagen + idImgFichaAtrFB).read())#Une la URL base de las imágenes con el ID de imagen y lo lee como JSON
 #        imagenDefAtractivos = leerImagenAtractivos['media_details']['sizes']['medium']['source_url']#Interpreta el JSON de la imagen y extrae la URL de la imagen
-
         return ("""                            {
                                 "title" : "hola soy tu puto titulo",
                                 "image_url" : "https://www.dondevive.org/wp-content/uploads/2015/08/donde-viven-los-conejos.jpg",
@@ -61,7 +65,6 @@ def listadoBusqueda(urlBaseJson, urlBaseImagen):
                                     }
                                 ]
                             },""")
-    return finFBCard
 
 inicioFBCard = """{
             "facebook" : {
@@ -167,7 +170,7 @@ def makeWebhookResult(req):
     leerImagenAtr = json.loads(urlopen(baseUrlImgAtract + idImagenAtractivo).read())
     imagenAtractivo = leerImagenAtr['media_details']['sizes']['medium']['source_url']
 
-    speech = "Re encontrado " + cantidadResultados + " Resultados .   El atractivo que solicitaste es: " + tituloAtractivo + "  y la url de la imagen es: " + imagenAtractivo
+    speech = "Ke encontrado " + cantidadResultados + " Resultados .   El atractivo que solicitaste es: " + tituloAtractivo + "  y la url de la imagen es: " + imagenAtractivo
     fbMsg = {
             "facebook" : {
 #                "text":{
@@ -241,7 +244,8 @@ def makeWebhookResult(req):
         "speech": speech,
         "displayText": speech,
 #        "data" :listadoBusqueda(leerAtractivo, baseUrlImgAtract),
-        "data" :mostrarFB(),
+        "data" :inicioFBCard()
+        finFBCard(),
 #        "contextOut": [],
         "contextOut": [{"name":"desdepython", "lifespan":2}],
         "source": "soy-un-dato-irrelevante"
