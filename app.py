@@ -171,6 +171,7 @@ def makeWebhookResult(req):
     imagenAtractivo = leerImagenAtr['media_details']['sizes']['medium']['source_url']
 
     speech = "Ce encontrado " + cantidadResultados + " Resultados .   El atractivo que solicitaste es: " + tituloAtractivo + "  y la url de la imagen es: " + imagenAtractivo
+    global fbMsg
     fbMsg = {
             "facebook" : {
 #                "text":{
