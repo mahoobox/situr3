@@ -44,22 +44,22 @@ def listadoBusqueda(urlBaseJson, urlBaseImagen):
 #        leerImagenAtractivos = json.loads(urlopen(urlBaseImagen + idImgFichaAtrFB).read())#Une la URL base de las imágenes con el ID de imagen y lo lee como JSON
 #        imagenDefAtractivos = leerImagenAtractivos['media_details']['sizes']['medium']['source_url']#Interpreta el JSON de la imagen y extrae la URL de la imagen
 
-        return ("""                            {   
-                                "title" : "hola soy tu puto titulo",
-                                "image_url" : "https://www.dondevive.org/wp-content/uploads/2015/08/donde-viven-los-conejos.jpg",
-                                "subtitle": "Soy la descripción, colocar variable descripcionItem",
-                                "buttons":  [
-                                    {
-                                        "type":"web_url",
-                                        "url": "http://www.situr.boyaca.gov.co",
-                                        "title": "Ver en SITUR"
-                                    },
-                                    {
-                                        "type":"web_url",
-                                        "url": "http://www.situr.boyaca.gov.co",
-                                        "title": "boton2"
-                                    }
-                                ]
+        return ("""                            {\n
+                                "title" : "hola soy tu puto titulo",\n
+                                "image_url" : "https://www.dondevive.org/wp-content/uploads/2015/08/donde-viven-los-conejos.jpg",\n
+                                "subtitle": "Soy la descripción, colocar variable descripcionItem",\n
+                                "buttons":  [\n
+                                    {\n
+                                        "type":"web_url",\n
+                                        "url": "http://www.situr.boyaca.gov.co",\n
+                                        "title": "Ver en SITUR"\n
+                                    },\n
+                                    {\n
+                                        "type":"web_url",\n
+                                        "url": "http://www.situr.boyaca.gov.co",\n
+                                        "title": "boton2"\n
+                                    }\n
+                                ]\n
                             },""")
     return finFBCard
 
