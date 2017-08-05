@@ -33,7 +33,7 @@ def listadoBusqueda(dato_recuperado):
                                 ]
                             },""")
 	return finFBCard
-	
+
 
 """def listadoBusqueda(dato_recuperado):
     for x in range(0,len(dato_recuperado)):
