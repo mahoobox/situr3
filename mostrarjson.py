@@ -11,6 +11,7 @@ def listadoBusqueda(dato_recuperado):
 #	print ("Cantidad de resultados:  " + cantidadResultados)
 	print (inicioFBCard)
 #	print ("Encontré estos resultados:")
+	nada = []
 	for x in range(0,len(dato_recuperado)):
 		descFichaAtrFB = re.sub("<.*?>", "", dato_recuperado[x]['excerpt']['rendered'])
 		idImgFichaAtrFB = str(dato_recuperado[x]['featured_media'])
@@ -31,12 +32,8 @@ def listadoBusqueda(dato_recuperado):
                                     }
                                 ]
                             },""")
-
-
-
-#		print (dato_recuperado[x]['title']['rendered'], end="")
-	print (finFBCard)
-	return
+	return finFBCard
+	
 
 """def listadoBusqueda(dato_recuperado):
     for x in range(0,len(dato_recuperado)):
@@ -52,8 +49,8 @@ inicioFBCard = """{
                         "template_type" : "generic",
                         "elements" : ["""
 
-finFBCard = """]
-                   }
+finFBCard = """                        ]
+                    }
                 }
             }
         }"""
@@ -80,7 +77,7 @@ imagen2 = leerImagen['media_details']['sizes']['medium']['source_url']
 imagenAtractivo = imagen2
 
 print (" ")
-print  (listadoBusqueda(leer), "HOLA MUNDO")
+print  (listadoBusqueda(leer))
 print (" ")
 print (" ")
 print ("Título del atractivo:    " + leer[0]['title']['rendered'])
