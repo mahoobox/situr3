@@ -6,41 +6,37 @@ import re
 
 import json
 
-def listadoBusqueda(dato_recuperado):
-#	print (" ")
+def listadoBusqueda(urlBaseJson, urlBaseImagen):
+	print (urlBaseImagen)
 #	print ("Cantidad de resultados:  " + cantidadResultados)
 	print (inicioFBCard)
 #	print ("Encontré estos resultados:")
 	nada = []
-	for x in range(0,len(dato_recuperado)):
-		descFichaAtrFB = re.sub("<.*?>", "", dato_recuperado[x]['excerpt']['rendered'])
-		idImgFichaAtrFB = str(dato_recuperado[x]['featured_media'])
+	for x in range(0,len(urlBaseJson)):
+		descripcionItem = re.sub("<.*?>", "", urlBaseJson[x]['excerpt']['rendered'])#Descripción del atractivo eliminando etiquetas
+		idImgFichaAtrFB = str(urlBaseJson[x]['featured_media'])#ID de la imagen del atractivo
+		leerImagenAtractivos = json.loads(urlopen(urlBaseImagen + idImgFichaAtrFB).read())#Une la URL base de las imágenes con el ID de imagen y lo lee como JSON
+		imagenDefAtractivos = leerImagenAtractivos['media_details']['sizes']['medium']['source_url']#Interpreta el JSON de la imagen y extrae la URL de la imagen
+
 		print ("""                            {   
-                                "title" : """ + dato_recuperado[x]['title']['rendered'] + """,
-                                "image_url" : """ + idImgFichaAtrFB + """,
-                                "subtitle": " Soy la descripción, colocar variable descFichaAtrFB ",
+                                "title" : \"""" + urlBaseJson[x]['title']['rendered'] + """\",
+                                "image_url" : \""""+ imagenDefAtractivos +"""\",
+                                "subtitle": "Soy la descripción, colocar variable descripcionItem",
                                 "buttons":  [
                                     {
                                         "type":"web_url",
-                                        "url": """+dato_recuperado[x]['link']+""",
+                                        "url": \""""+urlBaseJson[x]['link']+"""\",
                                         "title": "Ver en SITUR"
                                     },
                                     {
                                         "type":"web_url",
-                                        "url": """+dato_recuperado[x]['link']+""",
+                                        "url": \""""+urlBaseJson[x]['link']+"""\",
                                         "title": "boton2"
                                     }
                                 ]
                             },""")
 	return finFBCard
 
-
-"""def listadoBusqueda(dato_recuperado):
-    for x in range(0,len(dato_recuperado)):
-        print (dato_recuperado[x]['title']['rendered'], end=", ")
-    return
-
-"""
 inicioFBCard = """{
             "facebook" : {
                 "attachment" : {
@@ -73,11 +69,12 @@ descripcionAtractivo = descripcion
 #idJsonImagen = str(2739)
 idJsonImagen = str(leer[0]['featured_media'])
 leerImagen = json.loads(urlopen('http://www.situr.boyaca.gov.co/wp-json/wp/v2/media/' + idJsonImagen).read())
+baseUrlImgAtract = "http://www.situr.boyaca.gov.co/wp-json/wp/v2/media/"#URL Base Imagenes Atractivos
 imagen2 = leerImagen['media_details']['sizes']['medium']['source_url']
 imagenAtractivo = imagen2
 
 print (" ")
-print  (listadoBusqueda(leer))
+print  (listadoBusqueda(leer, baseUrlImgAtract))
 print (" ")
 print (" ")
 print ("Título del atractivo:    " + leer[0]['title']['rendered'])
