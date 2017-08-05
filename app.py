@@ -45,18 +45,18 @@ def listadoBusqueda(urlBaseJson, urlBaseImagen):
 #        imagenDefAtractivos = leerImagenAtractivos['media_details']['sizes']['medium']['source_url']#Interpreta el JSON de la imagen y extrae la URL de la imagen
 
         print ("""                            {   
-                                "title" : \"""" + urlBaseJson[x]['title']['rendered'] + """\",
+                                "title" : "hola soy tu puto titulo",
                                 "image_url" : "https://www.dondevive.org/wp-content/uploads/2015/08/donde-viven-los-conejos.jpg",
                                 "subtitle": "Soy la descripción, colocar variable descripcionItem",
                                 "buttons":  [
                                     {
                                         "type":"web_url",
-                                        "url": \""""+urlBaseJson[x]['link']+"""\",
+                                        "url": "http://www.situr.boyaca.gov.co",
                                         "title": "Ver en SITUR"
                                     },
                                     {
                                         "type":"web_url",
-                                        "url": \""""+urlBaseJson[x]['link']+"""\",
+                                        "url": "http://www.situr.boyaca.gov.co",
                                         "title": "boton2"
                                     }
                                 ]
@@ -167,7 +167,7 @@ def makeWebhookResult(req):
     leerImagenAtr = json.loads(urlopen(baseUrlImgAtract + idImagenAtractivo).read())
     imagenAtractivo = leerImagenAtr['media_details']['sizes']['medium']['source_url']
 
-    speech = "Je encontrado " + cantidadResultados + " Resultados .   El atractivo que solicitaste es: " + tituloAtractivo + "  y la url de la imagen es: " + imagenAtractivo
+    speech = "Me encontrado " + cantidadResultados + " Resultados .   El atractivo que solicitaste es: " + tituloAtractivo + "  y la url de la imagen es: " + imagenAtractivo
     fbMsg = {
             "facebook" : {
 #                "text":{
