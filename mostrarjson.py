@@ -18,7 +18,7 @@ def listadoBusqueda(urlBaseJson, urlBaseImagen):
 		leerImagenAtractivos = json.loads(urlopen(urlBaseImagen + idImgFichaAtrFB).read())#Une la URL base de las imágenes con el ID de imagen y lo lee como JSON
 		imagenDefAtractivos = leerImagenAtractivos['media_details']['sizes']['medium']['source_url']#Interpreta el JSON de la imagen y extrae la URL de la imagen
 
-		print ("""                            {   
+		return ("""                            {   
                                 "title" : \"""" + urlBaseJson[x]['title']['rendered'] + """\",
                                 "image_url" : \""""+ imagenDefAtractivos +"""\",
                                 "subtitle": "Soy la descripción, colocar variable descripcionItem",
