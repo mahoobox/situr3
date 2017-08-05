@@ -36,10 +36,46 @@ def webhook():
     r.headers['Content-Type'] = 'application/json'
     return r
 
-def listadoBusqueda(dato_recuperado):
-    for x in range(0,len(dato_recuperado)):
-        print (dato_recuperado[x]['title']['rendered'], end=", ")
-    return
+def listadoBusqueda(urlBaseJson, urlBaseImagen):
+    print (inicioFBCard)
+    for x in range(0,len(urlBaseJson)):
+        descripcionItem = re.sub("<.*?>", "", urlBaseJson[x]['excerpt']['rendered'])#Descripción del atractivo eliminando etiquetas
+        idImgFichaAtrFB = str(urlBaseJson[x]['featured_media'])#ID de la imagen del atractivo
+        leerImagenAtractivos = json.loads(urlopen(urlBaseImagen + idImgFichaAtrFB).read())#Une la URL base de las imágenes con el ID de imagen y lo lee como JSON
+        imagenDefAtractivos = leerImagenAtractivos['media_details']['sizes']['medium']['source_url']#Interpreta el JSON de la imagen y extrae la URL de la imagen
+
+        print ("""                            {   
+                                "title" : \"""" + urlBaseJson[x]['title']['rendered'] + """\",
+                                "image_url" : \""""+ imagenDefAtractivos +"""\",
+                                "subtitle": "Soy la descripción, colocar variable descripcionItem",
+                                "buttons":  [
+                                    {
+                                        "type":"web_url",
+                                        "url": \""""+urlBaseJson[x]['link']+"""\",
+                                        "title": "Ver en SITUR"
+                                    },
+                                    {
+                                        "type":"web_url",
+                                        "url": \""""+urlBaseJson[x]['link']+"""\",
+                                        "title": "boton2"
+                                    }
+                                ]
+                            },""")
+    return finFBCard
+
+inicioFBCard = """{
+            "facebook" : {
+                "attachment" : {
+                    "type" : "template",
+                    "payload" : {
+                        "template_type" : "generic",
+                        "elements" : ["""
+
+finFBCard = """                        ]
+                    }
+                }
+            }
+        }"""
 
 fbMsg2 = {
         "facebook" : {
@@ -131,7 +167,7 @@ def makeWebhookResult(req):
     leerImagenAtr = json.loads(urlopen(baseUrlImgAtract + idImagenAtractivo).read())
     imagenAtractivo = leerImagenAtr['media_details']['sizes']['medium']['source_url']
 
-    speech = "Encontrado " + cantidadResultados + " Resultados .   El atractivo que solicitaste es: " + tituloAtractivo + "  y la url de la imagen es: " + imagenAtractivo
+    speech = "He encontrado " + cantidadResultados + " Resultados .   El atractivo que solicitaste es: " + tituloAtractivo + "  y la url de la imagen es: " + imagenAtractivo
     fbMsg = {
             "facebook" : {
 #                "text":{
@@ -204,7 +240,7 @@ def makeWebhookResult(req):
     return {
         "speech": speech,
         "displayText": speech,
-        "data" :mostrarFB(),
+        "data" :listadoBusqueda(leerAtractivo, baseUrlImgAtract),
 #        "contextOut": [],
         "contextOut": [{"name":"desdepython", "lifespan":2}],
         "source": "soy-un-dato-irrelevante"
