@@ -41,6 +41,7 @@ def listadoBusqueda(urlBaseJson, urlBaseImagen):
 #	print (pruebatitulos2)
 	resultadoMauricio = inicioFBCard+pruebatitulos2+finFBCard
 	resultadoMauricio = json.dumps(resultadoMauricio)
+	resultadoMauricio = json.loads(resultadoMauricio)
 	return resultadoMauricio
 
 inicioFBCard = """{
