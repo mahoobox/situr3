@@ -44,7 +44,7 @@ def listadoBusqueda(urlBaseJson, urlBaseImagen):
 #        idImgFichaAtrFB = str(urlBaseJson[x]['featured_media'])#ID de la imagen del atractivo
 #        leerImagenAtractivos = json.loads(urlopen(urlBaseImagen + idImgFichaAtrFB).read())#Une la URL base de las imágenes con el ID de imagen y lo lee como JSON
 #        imagenDefAtractivos = leerImagenAtractivos['media_details']['sizes']['medium']['source_url']#Interpreta el JSON de la imagen y extrae la URL de la imagen
-        pruebatitulos = pruebatitulos + ("""                            {
+        pruebatitulos = pruebatitulos + str("""                            {
                                 "title" : \"""" + tituloItem + """\",
                                 "image_url" : "https://www.dondevive.org/wp-content/uploads/2015/08/donde-viven-los-conejos.jpg",
                                 "subtitle": "Soy la descripción, colocar variable descripcionItem",
@@ -61,10 +61,10 @@ def listadoBusqueda(urlBaseJson, urlBaseImagen):
                                     }
                                 ]
                             },""")
-    resultadoMauricio = inicioFBCard2+pruebatitulos+finFBCard2
+    resultadoMauricio = inicioFBCard+pruebatitulos+finFBCard
     return str(resultadoMauricio)
 
-inicioFBCard = """{
+inicioFBCard = """\"\"\"{
             "facebook" : {
                 "attachment" : {
                     "type" : "template",
@@ -78,7 +78,7 @@ finFBCard = """                        ]
                     }
                 }
             }
-        }"""
+        }\"\"\""""
 
 finFBCard2 = ']}}}}'
 
@@ -109,7 +109,7 @@ def makeWebhookResult(req):
     leerImagenAtr = json.loads(urlopen(baseUrlImgAtract + idImagenAtractivo).read())
     imagenAtractivo = leerImagenAtr['media_details']['sizes']['medium']['source_url']
 
-    speech = "Jge encontrado " + cantidadResultados + " Resultados .   El atractivo que solicitaste es: " + tituloAtractivo + "  y la url de la imagen es: " + imagenAtractivo
+    speech = "Jcgqe encontrado " + cantidadResultados + " Resultados .   El atractivo que solicitaste es: " + tituloAtractivo + "  y la url de la imagen es: " + imagenAtractivo
 
     print("Response:")
     print(speech)

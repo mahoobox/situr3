@@ -39,10 +39,10 @@ def listadoBusqueda(urlBaseJson, urlBaseImagen):
 
 #	print (pruebatitulos)
 #	print (pruebatitulos2)
-	resultadoMauricio = inicioFBCard2+pruebatitulos2+finFBCard2
-	return str(resultadoMauricio)
+	resultadoMauricio = inicioFBCard+pruebatitulos2+finFBCard
+	return resultadoMauricio
 
-inicioFBCard = """{
+inicioFBCard = """\"\"\"{
             "facebook" : {
                 "attachment" : {
                     "type" : "template",
@@ -56,7 +56,7 @@ finFBCard = """                        ]
                     }
                 }
             }
-        }"""
+        }\"\"\""""
 
 finFBCard2 = """]}}}}"""
 
@@ -295,5 +295,5 @@ fbMsg2 = {
         }
 
 
-    
+
     """
