@@ -61,8 +61,27 @@ def listadoBusqueda(urlBaseJson, urlBaseImagen):
                                     }
                                 ]
                             },""")
+        jsonAsiSolito = {
+                                "title" : "soy el titulo",
+                                "image_url" : "https://www.dondevive.org/wp-content/uploads/2015/08/donde-viven-los-conejos.jpg",
+                                "subtitle": "Soy la descripción, colocar variable descripcionItem",
+                                "buttons":  [
+                                    {
+                                        "type":"web_url",
+                                        "url": "http://www.situr.boyaca.gov.co",
+                                        "title": "Ver en SITUR"
+                                    },
+                                    {
+                                        "type":"web_url",
+                                        "url": "http://www.situr.boyaca.gov.co",
+                                        "title": "boton2"
+                                    }
+                                ]
+                            },
+
+
     resultadoMauricio = inicioFBCard+pruebatitulos+finFBCard
-    return pruebatitulos
+    return jsonAsiSolito
 
 inicioFBCard = """{
             "facebook" : {
