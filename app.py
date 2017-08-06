@@ -54,7 +54,7 @@ def listadoBusqueda(urlBaseJson, urlBaseImagen):
         pruebatitulos = pruebatitulos + ("""                            {
                                 "title" : \""""+tituloItem+"""\",
                                 "image_url" : "http://www.situr.boyaca.gov.co/wp-content/uploads/2017/05/BOYAC%C3%81-ES-PARA-VIVIRLA.png",
-                                "subtitle": \""""+descripcionItem+"""\",
+                                "subtitle": "soy la descripción del atractivossss",
                                 "buttons":  [
                                     {
                                         "type":"web_url",
