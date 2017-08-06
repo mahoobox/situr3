@@ -6,23 +6,31 @@ import re
 
 import json
 
+archivo = open("jsontest.json","w")
 def listadoBusqueda(urlBaseJson, urlBaseImagen):
-	print (urlBaseImagen)
+
 #	print ("Cantidad de resultados:  " + cantidadResultados)
 #	print (inicioFBCard)
-#	print ("Encontré estos resultados:")
-	pruebatitulos2 = ""
-	for x in range(0,len(urlBaseJson)):
-		tituloItem = urlBaseJson[x]['title']['rendered']
-		descripcionItem = re.sub("<.*?>", "", urlBaseJson[x]['excerpt']['rendered'])#Descripción del atractivo eliminando etiquetas
-		idImgFichaAtrFB = str(urlBaseJson[x]['featured_media'])#ID de la imagen del atractivo
-		leerImagenAtractivos = json.loads(urlopen(urlBaseImagen + idImgFichaAtrFB).read())#Une la URL base de las imágenes con el ID de imagen y lo lee como JSON
-		imagenDefAtractivos = leerImagenAtractivos['media_details']['sizes']['medium']['source_url']#Interpreta el JSON de la imagen y extrae l-a URL de la imagen
-		
-		pruebatitulos2 = pruebatitulos2 + ("""                            {   
+    varComa = 0
+    pruebatitulos2 = ""
+
+    for x in range(0,len(urlBaseJson)):
+        tituloItem = urlBaseJson[x]['title']['rendered']
+        descripcionItem = re.sub("<.*?>", "", urlBaseJson[x]['excerpt']['rendered'])#Descripción del atractivo eliminando etiquetas
+        idImgFichaAtrFB = str(urlBaseJson[x]['featured_media'])#ID de la imagen del atractivo
+        leerImagenAtractivos = json.loads(urlopen(urlBaseImagen + idImgFichaAtrFB).read())#Une la URL base de las imágenes con el ID de imagen y lo lee como JSON
+        imagenDefAtractivos = leerImagenAtractivos['media_details']['sizes']['medium']['source_url']#Interpreta el JSON de la imagen y extrae l-a URL de la imagen
+
+        if varComa < len(urlBaseJson)-1:
+            varComa = varComa +1
+            print (varComa)
+            comaJson = ","
+        else:
+            comaJson = ""
+        pruebatitulos2 = pruebatitulos2 + ("""                            {   
                                 "title" : \"""" + tituloItem + """\",
                                 "image_url" : \""""+ imagenDefAtractivos +"""\",
-                                "subtitle": "Soy la descripción, colocar variable descripcionItem",
+                                "subtitle": "cambiar por la variable descripcionItem",
                                 "buttons":  [
                                     {
                                         "type":"web_url",
@@ -35,27 +43,24 @@ def listadoBusqueda(urlBaseJson, urlBaseImagen):
                                         "title": "boton2"
                                     }
                                 ]
-                            },""")
+                            }""" + str(comaJson) + """""")
 
 #	print (pruebatitulos)
 #	print (pruebatitulos2)
-	resultadoMauricio = inicioFBCard+pruebatitulos2+finFBCard
-	resultadoMauricio = json.dumps(resultadoMauricio)
-	resultadoMauricio = json.loads(resultadoMauricio)
-	return resultadoMauricio
+    resultadoMauricio = inicioFBCard+pruebatitulos2+finFBCard
+    resultadoMauricio = (str((resultadoMauricio)))
+#	resultadoMauricio = json.dumps(resultadoMauricio)
+#	resultadoMauricio = json.loads(resultadoMauricio)
+#	print (" ")
+#	print (resultadoMauricio)
+#	print ("-------------------------- ")
+#	print (repr(resultadoMauricio))
+    archivo.write(str((resultadoMauricio)))
+    archivo.close
+    return resultadoMauricio
 
 
-	str_json = """
-    {
-        "nombre": "Juan Perez",
-        "edad": 18,
-        "pais": "Panama"
-    }
-"""
-
-json_dat = json.loads(str_json);
-
-inicioFBCard = """\"\"\"{
+inicioFBCard = """{
             "facebook" : {
                 "attachment" : {
                     "type" : "template",
@@ -69,7 +74,7 @@ finFBCard = """                        ]
                     }
                 }
             }
-        }\"\"\""""
+        }"""
 
 finFBCard2 = """]}}}}"""
 
@@ -95,30 +100,20 @@ baseUrlImgAtract = "http://www.situr.boyaca.gov.co/wp-json/wp/v2/media/"#URL Bas
 imagen2 = leerImagen['media_details']['sizes']['medium']['source_url']
 imagenAtractivo = imagen2
 
-print (" ")
+#print (" ")
 print  (listadoBusqueda(leer, baseUrlImgAtract))
-print (" ")
-print (" ")
-print ("Título del atractivo:    " + leer[0]['title']['rendered'])
-print ("Url del atractivo:       " + leer[0]['link'])
-print ("Ciudad del atractivo:    " + leer[0]['ciudad'])
-print ("Slug   del atractivo:    " + leer[0]['slug'])
-print ("Id Imagen:               " + idJsonImagen)
-print ("Imagen del atractivo 2:  " + imagen2)
-print ("Excerpt del atractivo:   " + descripcion)
-print (" ")
+#print (" ")
+#print (" ")
+#print ("Título del atractivo:    " + leer[0]['title']['rendered'])
+#print ("Url del atractivo:       " + leer[0]['link'])
+#print ("Ciudad del atractivo:    " + leer[0]['ciudad'])
+#print ("Slug   del atractivo:    " + leer[0]['slug'])
+#print ("Id Imagen:               " + idJsonImagen)
+#print ("Imagen del atractivo 2:  " + imagen2)
+#print ("Excerpt del atractivo:   " + descripcion)
+#print (" ")
 
-str_json = """
-    {
-        "nombre": "Juan Perez",
-        "edad": 18,
-        "pais": "Panama"
-    }
-"""
 
-json_dat = json.loads(str_json);
-
-print("Objeto tipo diccionario:", json_dat)
 
 
 """        "data" : {  
