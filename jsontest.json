@@ -5,133 +5,18 @@
                     "payload" : {
                         "template_type" : "generic",
                         "elements" : [                            {   
-                                "title" : "Puente de Boyacá",
-                                "image_url" : "http://www.situr.boyaca.gov.co/wp-content/uploads/2017/04/Puente-de-Boyacá-Tunja-02-300x59.jpg",
-                                "subtitle": "Se encuentra en un pequeño valle alrededor del río Teatinos; en este escenari",
+                                "title" : "Casa Betania",
+                                "image_url" : "http://www.situr.boyaca.gov.co/wp-content/uploads/2017/04/CasaBetaniaDuitama01-300x224.jpg",
+                                "subtitle": "Ubicada en la salida hacia el municipio de Santa Rosa de Viterbo, esta casa c",
                                 "buttons":  [
                                     {
                                         "type":"web_url",
-                                        "url": "http://www.situr.boyaca.gov.co/atractivo-turistico/puente-de-boyaca-2/",
+                                        "url": "http://www.situr.boyaca.gov.co/atractivo-turistico/casa-betania/",
                                         "title": "Ver en SITUR"
                                     },
                                     {
                                         "type":"web_url",
-                                        "url": "http://www.situr.boyaca.gov.co/atractivo-turistico/puente-de-boyaca-2/",
-                                        "title": "boton2"
-                                    }
-                                ]
-                            },                            {   
-                                "title" : "El Puente De Calicanto",
-                                "image_url" : "http://www.situr.boyaca.gov.co/wp-content/uploads/2017/05/puente-de-calicanto-300x139.jpg",
-                                "subtitle": "El calicanto, un pegamento mezcla de cal, arena, sangre de res y melaza, le d",
-                                "buttons":  [
-                                    {
-                                        "type":"web_url",
-                                        "url": "http://www.situr.boyaca.gov.co/atractivo-turistico/el-puente-de-calicanto/",
-                                        "title": "Ver en SITUR"
-                                    },
-                                    {
-                                        "type":"web_url",
-                                        "url": "http://www.situr.boyaca.gov.co/atractivo-turistico/el-puente-de-calicanto/",
-                                        "title": "boton2"
-                                    }
-                                ]
-                            },                            {   
-                                "title" : "Parque Nacional Natural Pisba",
-                                "image_url" : "http://www.situr.boyaca.gov.co/wp-content/uploads/2017/06/pisba-300x130.jpg",
-                                "subtitle": "Estado del Parque: Cerrado para el público
-Descripción del área:
-",
-                                "buttons":  [
-                                    {
-                                        "type":"web_url",
-                                        "url": "http://www.situr.boyaca.gov.co/atractivo-turistico/parque-nacional-natural-pisba/",
-                                        "title": "Ver en SITUR"
-                                    },
-                                    {
-                                        "type":"web_url",
-                                        "url": "http://www.situr.boyaca.gov.co/atractivo-turistico/parque-nacional-natural-pisba/",
-                                        "title": "boton2"
-                                    }
-                                ]
-                            },                            {   
-                                "title" : "Páramo de Pisba",
-                                "image_url" : "http://www.situr.boyaca.gov.co/wp-content/uploads/2017/05/Páramo-de-PisbaSocota03-min-300x225.jpg",
-                                "subtitle": "Parque Nacional Natural Pisba (jurisdicción de Socotá 80%) El municipio de So",
-                                "buttons":  [
-                                    {
-                                        "type":"web_url",
-                                        "url": "http://www.situr.boyaca.gov.co/atractivo-turistico/paramo-de-pisba/",
-                                        "title": "Ver en SITUR"
-                                    },
-                                    {
-                                        "type":"web_url",
-                                        "url": "http://www.situr.boyaca.gov.co/atractivo-turistico/paramo-de-pisba/",
-                                        "title": "boton2"
-                                    }
-                                ]
-                            },                            {   
-                                "title" : "Parque Pedro Pascasio Martínez",
-                                "image_url" : "http://www.situr.boyaca.gov.co/wp-content/uploads/2017/05/Parque-Principal02Belén-300x140.jpg",
-                                "subtitle": "En el parque se puede apreciar el busto en homenaje al niño héroe Belemita Pe",
-                                "buttons":  [
-                                    {
-                                        "type":"web_url",
-                                        "url": "http://www.situr.boyaca.gov.co/atractivo-turistico/parque-pedro-pascasio-martinez/",
-                                        "title": "Ver en SITUR"
-                                    },
-                                    {
-                                        "type":"web_url",
-                                        "url": "http://www.situr.boyaca.gov.co/atractivo-turistico/parque-pedro-pascasio-martinez/",
-                                        "title": "boton2"
-                                    }
-                                ]
-                            },                            {   
-                                "title" : "Pedrones",
-                                "image_url" : "http://www.situr.boyaca.gov.co/wp-content/uploads/2017/07/PIEDORNESPANORAMICA-300x80.jpg",
-                                "subtitle": "[vc_row][vc_column][/vc_column][/vc_row]
-",
-                                "buttons":  [
-                                    {
-                                        "type":"web_url",
-                                        "url": "http://www.situr.boyaca.gov.co/atractivo-turistico/pedrones/",
-                                        "title": "Ver en SITUR"
-                                    },
-                                    {
-                                        "type":"web_url",
-                                        "url": "http://www.situr.boyaca.gov.co/atractivo-turistico/pedrones/",
-                                        "title": "boton2"
-                                    }
-                                ]
-                            },                            {   
-                                "title" : "Páramo De Ocetá",
-                                "image_url" : "http://www.situr.boyaca.gov.co/wp-content/uploads/2017/05/paramo-de-ocetá-300x199.jpg",
-                                "subtitle": "Frailejones, musgos y líquenes, entre otras plantas, adornan el paisaje del p",
-                                "buttons":  [
-                                    {
-                                        "type":"web_url",
-                                        "url": "http://www.situr.boyaca.gov.co/atractivo-turistico/paramo-de-oceta/",
-                                        "title": "Ver en SITUR"
-                                    },
-                                    {
-                                        "type":"web_url",
-                                        "url": "http://www.situr.boyaca.gov.co/atractivo-turistico/paramo-de-oceta/",
-                                        "title": "boton2"
-                                    }
-                                ]
-                            },                            {   
-                                "title" : "El Arco de Calicanto",
-                                "image_url" : "http://www.situr.boyaca.gov.co/wp-content/uploads/2017/05/arco-de-calicantoloresta.como1_-300x228.jpg",
-                                "subtitle": "El Arco de Calicanto, es un puente construido a finales del siglo XVIII, util",
-                                "buttons":  [
-                                    {
-                                        "type":"web_url",
-                                        "url": "http://www.situr.boyaca.gov.co/atractivo-turistico/el-arco-de-calicanto/",
-                                        "title": "Ver en SITUR"
-                                    },
-                                    {
-                                        "type":"web_url",
-                                        "url": "http://www.situr.boyaca.gov.co/atractivo-turistico/el-arco-de-calicanto/",
+                                        "url": "http://www.situr.boyaca.gov.co/atractivo-turistico/casa-betania/",
                                         "title": "boton2"
                                     }
                                 ]
