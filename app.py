@@ -54,7 +54,7 @@ def listadoBusqueda(urlBaseJson, urlBaseImagen):
         pruebatitulos = pruebatitulos + ("""                            {
                                 "title" : \"""" + tituloItem + """\",
                                 "image_url" : "https://www.dondevive.org/wp-content/uploads/2015/08/donde-viven-los-conejos.jpg",
-                                "subtitle": "El esquí náutico se realiza en lago de enfriamiento de Termopaipa, en el lago Sochagota, en el lago de Tota y en algunas ocasiones se organizan prácticas en la represa de Teatinos, en Samacá y la Copa en Toca. Se utilizan tablas de un metro con 80 centímetros o dos metros. Estos lugares son de clíma frio por lo que se aconseja trajes de neopreno y chaleco salvavidas.",
+                                "subtitle": "Solo muestro 80 caracteres y 2 punticos... Este tiene 90 El esquí náutico se realiza en la",
                                 "buttons":  [
                                     {
                                         "type":"web_url",
