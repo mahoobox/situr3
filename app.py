@@ -54,7 +54,7 @@ def listadoBusqueda(urlBaseJson, urlBaseImagen):
         pruebatitulos = pruebatitulos + ("""                            {
                                 "title" : \"""" + tituloItem + """\",
                                 "image_url" : "https://www.dondevive.org/wp-content/uploads/2015/08/donde-viven-los-conejos.jpg",
-                                "subtitle": "Solo muestro 80 caracteres y 2 punticos... Este tiene 90 El esquí náutico se realiza en la",
+                                "subtitle": \""""+descripcionItem+"""\",
                                 "buttons":  [
                                     {
                                         "type":"web_url",
@@ -119,7 +119,7 @@ def makeWebhookResult(req):
     leerImagenAtr = json.loads(urlopen(baseUrlImgAtract + idImagenAtractivo).read())
     imagenAtractivo = leerImagenAtr['media_details']['sizes']['medium']['source_url']
 
-    speech = "Yme encontrado " + cantidadResultados + " Resultados .   El atractivo que solicitaste es: " + tituloAtractivo + "  y la url de la imagen es: " + imagenAtractivo
+    speech = "Ymae encontrado " + cantidadResultados + " Resultados .   El atractivo que solicitaste es: " + tituloAtractivo + "  y la url de la imagen es: " + imagenAtractivo
 
     print("Response:")
     print(speech)
