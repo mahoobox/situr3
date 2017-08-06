@@ -40,7 +40,7 @@ def listadoBusqueda(urlBaseJson, urlBaseImagen):
 #	print (pruebatitulos)
 #	print (pruebatitulos2)
 	resultadoMauricio = inicioFBCard+pruebatitulos2+finFBCard
-	return resultadoMauricio
+	return str(resultadoMauricio)
 
 inicioFBCard = """{
             "facebook" : {
