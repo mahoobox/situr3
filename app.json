@@ -1,7 +1,7 @@
 {
-  "name": "API.AI webhook demonstration",
+  "name": "TestingWebHook",
   "description": "API.AI webhook demonstration",
-  "repository": "https://github.com/api-ai/apiai-weather-webhook-sample",
+  "repository": "https://github.com/mahoobox/situr3",
   "logo": "http://xvir.github.io/img/apiai.png",
   "keywords": ["api.ai", "natural language"]
 }
