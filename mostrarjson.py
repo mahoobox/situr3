@@ -49,8 +49,8 @@ def listadoBusqueda(urlBaseJson, urlBaseImagen):
 #	print (pruebatitulos2)
     resultadoMauricio = inicioFBCard+pruebatitulos2+finFBCard
     resultadoMauricio = (str((resultadoMauricio)))
-#	resultadoMauricio = json.dumps(resultadoMauricio)
-#	resultadoMauricio = json.loads(resultadoMauricio)
+#    resultadoMauricio = json.dumps(resultadoMauricio)
+    resultadoMauricio = json.loads(resultadoMauricio)
 #	print (" ")
 #	print (resultadoMauricio)
 #	print ("-------------------------- ")
