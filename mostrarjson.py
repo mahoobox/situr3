@@ -44,7 +44,18 @@ def listadoBusqueda(urlBaseJson, urlBaseImagen):
 	resultadoMauricio = json.loads(resultadoMauricio)
 	return resultadoMauricio
 
-inicioFBCard = """{
+
+	str_json = """
+    {
+        "nombre": "Juan Perez",
+        "edad": 18,
+        "pais": "Panama"
+    }
+"""
+
+json_dat = json.loads(str_json);
+
+inicioFBCard = """\"\"\"{
             "facebook" : {
                 "attachment" : {
                     "type" : "template",
@@ -58,7 +69,7 @@ finFBCard = """                        ]
                     }
                 }
             }
-        }"""
+        }\"\"\""""
 
 finFBCard2 = """]}}}}"""
 
@@ -97,7 +108,17 @@ print ("Imagen del atractivo 2:  " + imagen2)
 print ("Excerpt del atractivo:   " + descripcion)
 print (" ")
 
+str_json = """
+    {
+        "nombre": "Juan Perez",
+        "edad": 18,
+        "pais": "Panama"
+    }
+"""
 
+json_dat = json.loads(str_json);
+
+print("Objeto tipo diccionario:", json_dat)
 
 
 """        "data" : {  
