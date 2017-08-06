@@ -72,7 +72,7 @@ inicioFBCard = """{
                         "template_type" : "generic",
                         "elements" : ["""
 
-inicioFBCard2 = """{"facebook" : {"attachment" : {"type" : "template","payload" : {"template_type" : "generic","elements" : ["""
+inicioFBCard2 = '{"facebook" : {"attachment" : {"type" : "template","payload" : {"template_type" : "generic","elements" : ['
 
 finFBCard = """                        ]
                     }
@@ -109,72 +109,7 @@ def makeWebhookResult(req):
     leerImagenAtr = json.loads(urlopen(baseUrlImgAtract + idImagenAtractivo).read())
     imagenAtractivo = leerImagenAtr['media_details']['sizes']['medium']['source_url']
 
-    speech = "Je encontrado " + cantidadResultados + " Resultados .   El atractivo que solicitaste es: " + tituloAtractivo + "  y la url de la imagen es: " + imagenAtractivo
-    fbMsg = {
-            "facebook" : {
-#                "text":{
-#                    "Hola Mundo, si funciono"
-#                },
-                "attachment" : {
-                    "type" : "template",
-                    "payload" : {
-                        "template_type" : "generic",
-                        "elements" : [
-                            {   
-                                "title" : tituloAtractivo,
-                                "image_url" : imagenAtractivo,
-                                "subtitle": descripcionAtractivo,
-                                "buttons":  [
-                                    {
-                                        "type":"web_url",
-                                        "url": "http://situr.boyaca.gov.co",
-                                        "title": "boton1"
-                                    },
-                                    {
-                                         "type":"web_url",
-                                        "url": "http://situr.boyaca.gov.co",
-                                        "title": "boton2"
-                                    },
-                                    {
-                                          "type":"web_url",
-                                        "url": "http://situr.boyaca.gov.co",
-                                        "title": "boton3"
-                                    }
-                                ]
-                            },
-                            {
-                                "title": tituloAtractivo,
-                                "image_url": imagenAtractivo,
-                                "subtitle": descripcionAtractivo,
-                                "default_action": {
-                                    "type": "web_url",
-                                    "url": "https://www.moovrika.com/m/4167",
-                                    "webview_height_ratio": "tall"
-                                },
-                                "buttons": [
-                                    {
-                                        "title": "más info",
-                                        "type": "web_url",
-                                        "url": "https://www.moovrika.com/m/4082",
-                                        "webview_height_ratio": "tall"
-                                    },
-                                    {
-                                         "type":"web_url",
-                                        "url": "http://situr.boyaca.gov.co",
-                                        "title": "boton2"
-                                    },
-                                    {
-                                          "type":"web_url",
-                                        "url": "http://situr.boyaca.gov.co",
-                                        "title": "boton3"
-                                    }
-                                ]
-                            }
-                       ]
-                   }
-                }
-            }
-        }
+    speech = "Jge encontrado " + cantidadResultados + " Resultados .   El atractivo que solicitaste es: " + tituloAtractivo + "  y la url de la imagen es: " + imagenAtractivo
 
     print("Response:")
     print(speech)
