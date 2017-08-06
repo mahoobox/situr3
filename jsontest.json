@@ -1,1 +1,79 @@
-{'facebook': {'attachment': {'type': 'template', 'payload': {'template_type': 'generic', 'elements': [{'title': 'Lago de Tota', 'image_url': 'http://www.situr.boyaca.gov.co/wp-content/uploads/2017/05/Lago-de-Tota-Tota-02-1-300x81.jpg', 'subtitle': 'cambiar por la variable descripcionItem', 'buttons': [{'type': 'web_url', 'url': 'http://www.situr.boyaca.gov.co/atractivo-turistico/lago-de-tota/', 'title': 'Ver en SITUR'}, {'type': 'web_url', 'url': 'http://www.situr.boyaca.gov.co/atractivo-turistico/lago-de-tota/', 'title': 'boton2'}]}, {'title': 'Capilla Doctrinera de Cuítiva', 'image_url': 'http://www.situr.boyaca.gov.co/wp-content/uploads/2017/05/panorama-cuitiva-300x75.png', 'subtitle': 'cambiar por la variable descripcionItem', 'buttons': [{'type': 'web_url', 'url': 'http://www.situr.boyaca.gov.co/atractivo-turistico/capilla-doctrinera-de-cuitiva/', 'title': 'Ver en SITUR'}, {'type': 'web_url', 'url': 'http://www.situr.boyaca.gov.co/atractivo-turistico/capilla-doctrinera-de-cuitiva/', 'title': 'boton2'}]}, {'title': 'Esquí Náutico en Paipa', 'image_url': 'http://www.situr.boyaca.gov.co/wp-content/uploads/2017/05/Esquí-Náutico-en-Paipa-Paipa-1-300x90.jpg', 'subtitle': 'cambiar por la variable descripcionItem', 'buttons': [{'type': 'web_url', 'url': 'http://www.situr.boyaca.gov.co/atractivo-turistico/esqui-nautico-en-paipa/', 'title': 'Ver en SITUR'}, {'type': 'web_url', 'url': 'http://www.situr.boyaca.gov.co/atractivo-turistico/esqui-nautico-en-paipa/', 'title': 'boton2'}]}, {'title': 'Playa Blanca', 'image_url': 'http://www.situr.boyaca.gov.co/wp-content/uploads/2017/05/casa-varguitas-2-7-300x103.jpg', 'subtitle': 'cambiar por la variable descripcionItem', 'buttons': [{'type': 'web_url', 'url': 'http://www.situr.boyaca.gov.co/atractivo-turistico/playa-blanca/', 'title': 'Ver en SITUR'}, {'type': 'web_url', 'url': 'http://www.situr.boyaca.gov.co/atractivo-turistico/playa-blanca/', 'title': 'boton2'}]}]}}}}
+{
+            "facebook" : {
+                "attachment" : {
+                    "type" : "template",
+                    "payload" : {
+                        "template_type" : "generic",
+                        "elements" : [                            {   
+                                "title" : "Lago de Tota",
+                                "image_url" : "http://www.situr.boyaca.gov.co/wp-content/uploads/2017/05/Lago-de-Tota-Tota-02-1-300x81.jpg",
+                                "subtitle": "Ubicado al oriente del Departamento de Boyacá. Con una temperatura promedio de 12°C y localizado a solo 15 km al sur de la ciudad de Sogamoso. El Lago de Tota es el más grande e importante de Colombia. Playas de arena blanca que rememora al Caribe. Tota es un lugar ideal para deportes como ciclo montañismo, kayak, navegación a vela y buceo.
+",
+                                "buttons":  [
+                                    {
+                                        "type":"web_url",
+                                        "url": "http://www.situr.boyaca.gov.co/atractivo-turistico/lago-de-tota/",
+                                        "title": "Ver en SITUR"
+                                    },
+                                    {
+                                        "type":"web_url",
+                                        "url": "http://www.situr.boyaca.gov.co/atractivo-turistico/lago-de-tota/",
+                                        "title": "boton2"
+                                    }
+                                ]
+                            },                            {   
+                                "title" : "Capilla Doctrinera de Cuítiva",
+                                "image_url" : "http://www.situr.boyaca.gov.co/wp-content/uploads/2017/05/panorama-cuitiva-300x75.png",
+                                "subtitle": "Ubicado en el centro urbano del municipio. Epicentro religioso de gran reconocimiento dentro de la población, su construcción se realizó en 1537 por los misioneros Franciscanos y Don Juan de San Martín. Es un Centro Doctrinero que persuade al turista vía al Lago de Tota.
+",
+                                "buttons":  [
+                                    {
+                                        "type":"web_url",
+                                        "url": "http://www.situr.boyaca.gov.co/atractivo-turistico/capilla-doctrinera-de-cuitiva/",
+                                        "title": "Ver en SITUR"
+                                    },
+                                    {
+                                        "type":"web_url",
+                                        "url": "http://www.situr.boyaca.gov.co/atractivo-turistico/capilla-doctrinera-de-cuitiva/",
+                                        "title": "boton2"
+                                    }
+                                ]
+                            },                            {   
+                                "title" : "Esquí Náutico en Paipa",
+                                "image_url" : "http://www.situr.boyaca.gov.co/wp-content/uploads/2017/05/Esquí-Náutico-en-Paipa-Paipa-1-300x90.jpg",
+                                "subtitle": "El esquí náutico se realiza en lago de enfriamiento de Termopaipa, en el lago Sochagota, en el lago de Tota y en algunas ocasiones se organizan prácticas en la represa de Teatinos, en Samacá y la Copa en Toca. Se utilizan tablas de un metro con 80 centímetros o dos metros. Estos lugares son de clíma frio por lo que se aconseja trajes de neopreno y chaleco salvavidas.
+",
+                                "buttons":  [
+                                    {
+                                        "type":"web_url",
+                                        "url": "http://www.situr.boyaca.gov.co/atractivo-turistico/esqui-nautico-en-paipa/",
+                                        "title": "Ver en SITUR"
+                                    },
+                                    {
+                                        "type":"web_url",
+                                        "url": "http://www.situr.boyaca.gov.co/atractivo-turistico/esqui-nautico-en-paipa/",
+                                        "title": "boton2"
+                                    }
+                                ]
+                            },                            {   
+                                "title" : "Playa Blanca",
+                                "image_url" : "http://www.situr.boyaca.gov.co/wp-content/uploads/2017/05/casa-varguitas-2-7-300x103.jpg",
+                                "subtitle": "Son 55 kilómetros cuadrados de un gran cuerpo de agua cargado de trucha arco iris y catalogado como el segundo más alto de Suramérica. Está rodeado de los paisajes más atractivos de la región central del país, donde domina el departamento de Boyacá y se dice que el color de su agua cambia de acuerdo con el reflejo de los rayos del sol, de manera que se encuentran fragmentos de agua azul o verde.
+",
+                                "buttons":  [
+                                    {
+                                        "type":"web_url",
+                                        "url": "http://www.situr.boyaca.gov.co/atractivo-turistico/playa-blanca/",
+                                        "title": "Ver en SITUR"
+                                    },
+                                    {
+                                        "type":"web_url",
+                                        "url": "http://www.situr.boyaca.gov.co/atractivo-turistico/playa-blanca/",
+                                        "title": "boton2"
+                                    }
+                                ]
+                            }                        ]
+                    }
+                }
+            }
+        }

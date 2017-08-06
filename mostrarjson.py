@@ -30,7 +30,7 @@ def listadoBusqueda(urlBaseJson, urlBaseImagen):
         pruebatitulos2 = pruebatitulos2 + ("""                            {   
                                 "title" : \"""" + tituloItem + """\",
                                 "image_url" : \""""+ imagenDefAtractivos +"""\",
-                                "subtitle": "cambiar por la variable descripcionItem",
+                                "subtitle": \"""" + descripcionItem + """\",
                                 "buttons":  [
                                     {
                                         "type":"web_url",
@@ -50,7 +50,7 @@ def listadoBusqueda(urlBaseJson, urlBaseImagen):
     resultadoMauricio = inicioFBCard+pruebatitulos2+finFBCard
     resultadoMauricio = (str((resultadoMauricio)))
 #    resultadoMauricio = json.dumps(resultadoMauricio)
-    resultadoMauricio = json.loads(resultadoMauricio)
+#    resultadoMauricio = json.loads(resultadoMauricio)#este es el que codifica
 #	print (" ")
 #	print (resultadoMauricio)
 #	print ("-------------------------- ")
