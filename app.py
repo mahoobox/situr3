@@ -63,7 +63,7 @@ def listadoBusqueda(urlBaseJson, urlBaseImagen):
                                     },
                                     {
                                         "type":"web_url",
-                                        "url": "http://www.situr.boyaca.gov.co",
+                                        "url": \""""+urlBaseJson[x]['link']+"""\",
                                         "title": "boton2"
                                     }
                                 ]
@@ -119,7 +119,7 @@ def makeWebhookResult(req):
     leerImagenAtr = json.loads(urlopen(baseUrlImgAtract + idImagenAtractivo).read())
     imagenAtractivo = leerImagenAtr['media_details']['sizes']['medium']['source_url']
 
-    speech = "Ve encontrado " + cantidadResultados + " Resultados .   El atractivo que solicitaste es: " + tituloAtractivo + "  y la url de la imagen es: " + imagenAtractivo
+    speech = "Ye encontrado " + cantidadResultados + " Resultados .   El atractivo que solicitaste es: " + tituloAtractivo + "  y la url de la imagen es: " + imagenAtractivo
 
     print("Response:")
     print(speech)
