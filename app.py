@@ -60,11 +60,6 @@ def listadoBusqueda(urlBaseJson, urlBaseImagen):
                                         "type":"web_url",
                                         "url": \""""+urlBaseJson[x]['link']+"""\",
                                         "title": "Ver en SITUR"
-                                    },
-                                    {
-                                        "type":"web_url",
-                                        "url": \""""+urlBaseJson[x]['link']+"""\",
-                                        "title": "boton2"
                                     }
                                 ]
                             }""" + str(comaJson) + """""")
