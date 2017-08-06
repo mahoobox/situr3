@@ -41,7 +41,7 @@ def listadoBusqueda(urlBaseJson, urlBaseImagen):
     varComa = 0
     for x in range(0,len(urlBaseJson)):
         tituloItem = urlBaseJson[x]['title']['rendered']
-        descripcionItem = re.sub("<.*?>", "", urlBaseJson[x]['excerpt']['rendered'])#Descripción del atractivo eliminando etiquetas
+#        descripcionItem = re.sub("<.*?>", "", urlBaseJson[x]['excerpt']['rendered'])#Descripción del atractivo eliminando etiquetas
 #        idImgFichaAtrFB = str(urlBaseJson[x]['featured_media'])#ID de la imagen del atractivo
 #        leerImagenAtractivos = json.loads(urlopen(urlBaseImagen + idImgFichaAtrFB).read())#Une la URL base de las imágenes con el ID de imagen y lo lee como JSON
 #        imagenDefAtractivos = leerImagenAtractivos['media_details']['sizes']['medium']['source_url']#Interpreta el JSON de la imagen y extrae la URL de la imagen
@@ -54,7 +54,7 @@ def listadoBusqueda(urlBaseJson, urlBaseImagen):
         pruebatitulos = pruebatitulos + ("""                            {
                                 "title" : \"""" + tituloItem + """\",
                                 "image_url" : "https://www.dondevive.org/wp-content/uploads/2015/08/donde-viven-los-conejos.jpg",
-                                "subtitle": \"""" + descripcionItem + """\",
+                                "subtitle": "Soy la descripción, colocar variable descripcionItem",
                                 "buttons":  [
                                     {
                                         "type":"web_url",
@@ -63,7 +63,7 @@ def listadoBusqueda(urlBaseJson, urlBaseImagen):
                                     },
                                     {
                                         "type":"web_url",
-                                        "url": \""""+urlBaseJson[x]['link']+"""\",
+                                        "url": "http://www.situr.boyaca.gov.co",
                                         "title": "boton2"
                                     }
                                 ]
