@@ -9,17 +9,18 @@ import json
 def listadoBusqueda(urlBaseJson, urlBaseImagen):
 	print (urlBaseImagen)
 #	print ("Cantidad de resultados:  " + cantidadResultados)
-	print (inicioFBCard)
+#	print (inicioFBCard)
 #	print ("Encontré estos resultados:")
-	nada = []
+	pruebatitulos2 = ""
 	for x in range(0,len(urlBaseJson)):
+		tituloItem = urlBaseJson[x]['title']['rendered']
 		descripcionItem = re.sub("<.*?>", "", urlBaseJson[x]['excerpt']['rendered'])#Descripción del atractivo eliminando etiquetas
 		idImgFichaAtrFB = str(urlBaseJson[x]['featured_media'])#ID de la imagen del atractivo
 		leerImagenAtractivos = json.loads(urlopen(urlBaseImagen + idImgFichaAtrFB).read())#Une la URL base de las imágenes con el ID de imagen y lo lee como JSON
-		imagenDefAtractivos = leerImagenAtractivos['media_details']['sizes']['medium']['source_url']#Interpreta el JSON de la imagen y extrae la URL de la imagen
-
-		return ("""                            {   
-                                "title" : \"""" + urlBaseJson[x]['title']['rendered'] + """\",
+		imagenDefAtractivos = leerImagenAtractivos['media_details']['sizes']['medium']['source_url']#Interpreta el JSON de la imagen y extrae l-a URL de la imagen
+		
+		pruebatitulos2 = pruebatitulos2 + ("""                            {   
+                                "title" : \"""" + tituloItem + """\",
                                 "image_url" : \""""+ imagenDefAtractivos +"""\",
                                 "subtitle": "Soy la descripción, colocar variable descripcionItem",
                                 "buttons":  [
@@ -35,7 +36,11 @@ def listadoBusqueda(urlBaseJson, urlBaseImagen):
                                     }
                                 ]
                             },""")
-	return finFBCard
+
+#	print (pruebatitulos)
+#	print (pruebatitulos2)
+	resultadoMauricio = inicioFBCard+pruebatitulos2+finFBCard
+	return resultadoMauricio
 
 inicioFBCard = """{
             "facebook" : {
