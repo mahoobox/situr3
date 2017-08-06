@@ -50,7 +50,7 @@ inicioFBCard = """{
                         "template_type" : "generic",
                         "elements" : ["""
 
-inicioFBCard2 = '{"facebook" : {"attachment" : {"type" : "template","payload" : {"template_type" : "generic","elements" : ['
+inicioFBCard2 = """{"facebook" : {"attachment" : {"type" : "template","payload" : {"template_type" : "generic","elements" : ["""
 
 finFBCard = """                        ]
                     }
@@ -58,7 +58,7 @@ finFBCard = """                        ]
             }
         }"""
 
-finFBCard2 = ']}}}}'
+finFBCard2 = """]}}}}"""
 
 buscasitur = str(input("Ingrese el atractivo que desea buscar:   "))
 #buscasitur = "laguna de tota"
