@@ -80,7 +80,7 @@ def listadoBusqueda(urlBaseJson, urlBaseImagen):
                             },
 
 
-    resultadoMauricio = inicioFBCard+pruebatitulos+finFBCard
+    resultadoMauricio = inicioFBCard2+pruebatitulos+finFBCard2
     return resultadoMauricio
 
 inicioFBCard = """{
@@ -128,7 +128,7 @@ def makeWebhookResult(req):
     leerImagenAtr = json.loads(urlopen(baseUrlImgAtract + idImagenAtractivo).read())
     imagenAtractivo = leerImagenAtr['media_details']['sizes']['medium']['source_url']
 
-    speech = "Re encontrado " + cantidadResultados + " Resultados .   El atractivo que solicitaste es: " + tituloAtractivo + "  y la url de la imagen es: " + imagenAtractivo
+    speech = "Le encontrado " + cantidadResultados + " Resultados .   El atractivo que solicitaste es: " + tituloAtractivo + "  y la url de la imagen es: " + imagenAtractivo
 
     print("Response:")
     print(speech)
