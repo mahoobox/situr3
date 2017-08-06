@@ -45,6 +45,12 @@ def listadoBusqueda(urlBaseJson, urlBaseImagen):
 #        idImgFichaAtrFB = str(urlBaseJson[x]['featured_media'])#ID de la imagen del atractivo
 #        leerImagenAtractivos = json.loads(urlopen(urlBaseImagen + idImgFichaAtrFB).read())#Une la URL base de las imágenes con el ID de imagen y lo lee como JSON
 #        imagenDefAtractivos = leerImagenAtractivos['media_details']['sizes']['medium']['source_url']#Interpreta el JSON de la imagen y extrae la URL de la imagen
+        if varComa < len(urlBaseJson)-1:
+            varComa = varComa +1
+            print (varComa)
+            comaJson = ","
+        else:
+            comaJson = ""
         pruebatitulos = pruebatitulos + ("""                            {
                                 "title" : \"""" + tituloItem + """\",
                                 "image_url" : "https://www.dondevive.org/wp-content/uploads/2015/08/donde-viven-los-conejos.jpg",
@@ -61,25 +67,7 @@ def listadoBusqueda(urlBaseJson, urlBaseImagen):
                                         "title": "boton2"
                                     }
                                 ]
-                            },""")
-        jsonAsiSolito = {
-                                "title" : "soy el titulo",
-                                "image_url" : "https://www.dondevive.org/wp-content/uploads/2015/08/donde-viven-los-conejos.jpg",
-                                "subtitle": "Soy la descripción, colocar variable descripcionItem",
-                                "buttons":  [
-                                    {
-                                        "type":"web_url",
-                                        "url": "http://www.situr.boyaca.gov.co",
-                                        "title": "Ver en SITUR"
-                                    },
-                                    {
-                                        "type":"web_url",
-                                        "url": "http://www.situr.boyaca.gov.co",
-                                        "title": "boton2"
-                                    }
-                                ]
-                            },
-
+                            }""" + str(comaJson) + """""")
 
     resultadoMauricio = inicioFBCard2+pruebatitulos+finFBCard2
 #    resultadoMauricio = json.dumps(resultadoMauricio)
@@ -131,7 +119,7 @@ def makeWebhookResult(req):
     leerImagenAtr = json.loads(urlopen(baseUrlImgAtract + idImagenAtractivo).read())
     imagenAtractivo = leerImagenAtr['media_details']['sizes']['medium']['source_url']
 
-    speech = "MbColoe encontrado " + cantidadResultados + " Resultados .   El atractivo que solicitaste es: " + tituloAtractivo + "  y la url de la imagen es: " + imagenAtractivo
+    speech = "MbColome encontrado " + cantidadResultados + " Resultados .   El atractivo que solicitaste es: " + tituloAtractivo + "  y la url de la imagen es: " + imagenAtractivo
 
     print("Response:")
     print(speech)
