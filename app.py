@@ -61,7 +61,7 @@ def listadoBusqueda(urlBaseJson, urlBaseImagen):
                                     }
                                 ]
                             },""")
-    resultadoMauricio = inicioFBCard+pruebatitulos+finFBCard
+    resultadoMauricio = inicioFBCard2+pruebatitulos+finFBCard2
     return str(resultadoMauricio)
 
 inicioFBCard = """{
@@ -72,11 +72,15 @@ inicioFBCard = """{
                         "template_type" : "generic",
                         "elements" : ["""
 
+inicioFBCard2 = '{"facebook" : {"attachment" : {"type" : "template","payload" : {"template_type" : "generic","elements" : ['
+
 finFBCard = """                        ]
                     }
                 }
             }
         }"""
+
+finFBCard2 = ']}}}}'
 
 fbMsg2 = {
         "facebook" : {
@@ -168,7 +172,7 @@ def makeWebhookResult(req):
     leerImagenAtr = json.loads(urlopen(baseUrlImgAtract + idImagenAtractivo).read())
     imagenAtractivo = leerImagenAtr['media_details']['sizes']['medium']['source_url']
 
-    speech = "Ne encontrado " + cantidadResultados + " Resultados .   El atractivo que solicitaste es: " + tituloAtractivo + "  y la url de la imagen es: " + imagenAtractivo
+    speech = "De encontrado " + cantidadResultados + " Resultados .   El atractivo que solicitaste es: " + tituloAtractivo + "  y la url de la imagen es: " + imagenAtractivo
     fbMsg = {
             "facebook" : {
 #                "text":{

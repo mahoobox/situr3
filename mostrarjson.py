@@ -39,7 +39,7 @@ def listadoBusqueda(urlBaseJson, urlBaseImagen):
 
 #	print (pruebatitulos)
 #	print (pruebatitulos2)
-	resultadoMauricio = inicioFBCard+pruebatitulos2+finFBCard
+	resultadoMauricio = inicioFBCard2+pruebatitulos2+finFBCard2
 	return str(resultadoMauricio)
 
 inicioFBCard = """{
@@ -50,11 +50,15 @@ inicioFBCard = """{
                         "template_type" : "generic",
                         "elements" : ["""
 
+inicioFBCard2 = '{"facebook" : {"attachment" : {"type" : "template","payload" : {"template_type" : "generic","elements" : ['
+
 finFBCard = """                        ]
                     }
                 }
             }
         }"""
+
+finFBCard2 = ']}}}}'
 
 buscasitur = str(input("Ingrese el atractivo que desea buscar:   "))
 #buscasitur = "laguna de tota"
