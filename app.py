@@ -38,7 +38,6 @@ def webhook():
 
 def listadoBusqueda(urlBaseJson, urlBaseImagen):
     pruebatitulos = ""
-    jsonAsiSolito = ""
     for x in range(0,len(urlBaseJson)):
         tituloItem = urlBaseJson[x]['title']['rendered']
 #        descripcionItem = re.sub("<.*?>", "", urlBaseJson[x]['excerpt']['rendered'])#Descripción del atractivo eliminando etiquetas
@@ -62,7 +61,7 @@ def listadoBusqueda(urlBaseJson, urlBaseImagen):
                                     }
                                 ]
                             },""")
-        jsonAsiSolito = jsonAsiSolito + {
+        jsonAsiSolito = {
                                 "title" : "soy el titulo",
                                 "image_url" : "https://www.dondevive.org/wp-content/uploads/2015/08/donde-viven-los-conejos.jpg",
                                 "subtitle": "Soy la descripción, colocar variable descripcionItem",
@@ -82,7 +81,7 @@ def listadoBusqueda(urlBaseJson, urlBaseImagen):
 
 
     resultadoMauricio = inicioFBCard+pruebatitulos+finFBCard
-    return jsonAsiSolito
+    return resultadoMauricio
 
 inicioFBCard = """{
             "facebook" : {
@@ -129,7 +128,7 @@ def makeWebhookResult(req):
     leerImagenAtr = json.loads(urlopen(baseUrlImgAtract + idImagenAtractivo).read())
     imagenAtractivo = leerImagenAtr['media_details']['sizes']['medium']['source_url']
 
-    speech = "Xe encontrado " + cantidadResultados + " Resultados .   El atractivo que solicitaste es: " + tituloAtractivo + "  y la url de la imagen es: " + imagenAtractivo
+    speech = "Re encontrado " + cantidadResultados + " Resultados .   El atractivo que solicitaste es: " + tituloAtractivo + "  y la url de la imagen es: " + imagenAtractivo
 
     print("Response:")
     print(speech)
