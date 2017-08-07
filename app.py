@@ -36,7 +36,7 @@ def webhook():
     r.headers['Content-Type'] = 'application/json'
     return r
 
-def listadoBusqueda(urlBaseJson, urlBaseImagen):
+def listadoBusqueda(urlBaseJson):
     pruebatitulos = ""
     varComa = 0
     for x in range(0,len(urlBaseJson)):
@@ -54,7 +54,7 @@ def listadoBusqueda(urlBaseJson, urlBaseImagen):
             comaJson = ""
         pruebatitulos = pruebatitulos + ("""                            {
                                 "title" : \""""+tituloItem+"""\",
-                                "image_url" : \""""+tituloItem+"""\",
+                                "image_url" : \""""+imagenDefAtractivos+"""\",
                                 "subtitle": \""""+descripcionItem+"""\",
                                 "buttons":  [
                                     {
@@ -115,7 +115,7 @@ def makeWebhookResult(req):
     leerImagenAtr = json.loads(urlopen(baseUrlImgAtract + idImagenAtractivo).read())
     imagenAtractivo = leerImagenAtr['media_details']['sizes']['medium']['source_url']
 
-    speech = "Me encontrado " + cantidadResultados + " Resultados .   El atractivo que solicitaste es: " + tituloAtractivo + "  y la url de la imagen es: " + imagenAtractivo
+    speech = "Xe encontrado " + cantidadResultados + " Resultados .   El atractivo que solicitaste es: " + tituloAtractivo + "  y la url de la imagen es: " + imagenAtractivo
 
     print("Response:")
     print(speech)
@@ -123,7 +123,7 @@ def makeWebhookResult(req):
     return {
         "speech": speech,
         "displayText": speech,
-        "data" :listadoBusqueda(leerAtractivo, baseUrlImgAtract),
+        "data" :listadoBusqueda(leerAtractivo),
 #        "data" :finJsonBusqueda(),
 #        "contextOut": [],
         "contextOut": [{"name":"desdepython", "lifespan":2}],
