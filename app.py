@@ -100,7 +100,6 @@ def makeWebhookResult(req):
     
     #URL BASE CONSULTA ATRACTIVOS JSON
     baseUrlAtractivos = "http://situr.boyaca.gov.co/wp-json/wp/v2/atractivo_turistico?orderby=relevance&search="#URL Base Atractivos
-    baseUrlImgAtract = "http://www.situr.boyaca.gov.co/wp-json/wp/v2/media/"#URL Base Imagenes Atractivos
     retirarEspacios = atractivos.replace(" ",  "%20")#Retirar Espacios Atractivos
 
     leerAtractivo = json.loads(urlopen(baseUrlAtractivos + retirarEspacios).read())
@@ -110,12 +109,9 @@ def makeWebhookResult(req):
     tituloAtractivo = leerAtractivo[0]['title']['rendered']
     descripcionAtractivo = re.sub("<.*?>", "", leerAtractivo[0]['excerpt']['rendered'])
     urlAtractivo = leerAtractivo[0].get('link')
-    idImagenAtractivo = str(leerAtractivo[0]['featured_media'])
+    imagenAtractivo = leerAtractivo['better_featured_image']['media_details']['sizes']['medium']['source_url']
 
-    leerImagenAtr = json.loads(urlopen(baseUrlImgAtract + idImagenAtractivo).read())
-    imagenAtractivo = leerImagenAtr['media_details']['sizes']['medium']['source_url']
-
-    speech = "Xe encontrado " + cantidadResultados + " Resultados .   El atractivo que solicitaste es: " + tituloAtractivo + "  y la url de la imagen es: " + imagenAtractivo
+    speech = "Pe encontrado " + cantidadResultados + " Resultados .   El atractivo que solicitaste es: " + tituloAtractivo + "  y la url de la imagen es: " + cantidadResultados
 
     print("Response:")
     print(speech)
