@@ -98,9 +98,8 @@ def makeWebhookResult(req):
 
     leerAtractivo = json.loads(urlopen(baseUrlAtractivos + retirarEspacios).read())
     cantidadResultados = str(len(leerAtractivo))#Contar Cantidad de Resultados Encontrados
-    range(0,len(leerAtractivo))#Rango que recorre la cantidad de resultados mostrados
 
-    speech = "Hola a todos, encontre estos resultdos: " + cantidadResultados
+    speech = "Hola, encontre estos resultdos: " + cantidadResultados
 
     print("Response:")
     print(speech)
