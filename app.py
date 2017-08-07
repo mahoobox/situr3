@@ -54,7 +54,7 @@ def listadoBusqueda(urlBaseJson, urlBaseImagen):
         pruebatitulos = pruebatitulos + ("""                            {
                                 "title" : \""""+tituloItem+"""\",
                                 "image_url" : "http://www.situr.boyaca.gov.co/wp-content/uploads/2017/05/BOYAC%C3%81-ES-PARA-VIVIRLA.png",
-                                "subtitle": "Soy la descripción de este atractivo... muestro hasta 80 caracteres ",
+                                "subtitle": \""""+descripcionItem+"""\",
                                 "buttons":  [
                                     {
                                         "type":"web_url",
@@ -114,7 +114,7 @@ def makeWebhookResult(req):
     leerImagenAtr = json.loads(urlopen(baseUrlImgAtract + idImagenAtractivo).read())
     imagenAtractivo = leerImagenAtr['media_details']['sizes']['medium']['source_url']
 
-    speech = "YQtrre encontrado " + cantidadResultados + " Resultados .   El atractivo que solicitaste es: " + tituloAtractivo + "  y la url de la imagen es: " + imagenAtractivo
+    speech = "YQtrrre encontrado " + cantidadResultados + " Resultados .   El atractivo que solicitaste es: " + tituloAtractivo + "  y la url de la imagen es: " + imagenAtractivo
 
     print("Response:")
     print(speech)
