@@ -43,9 +43,6 @@ def listadoBusqueda(urlBaseJson):
         tituloItem = urlBaseJson[x]['title']['rendered']
         imagenDefAtractivos = urlBaseJson[x]['better_featured_image']['media_details']['sizes']['medium']['source_url']
 #        descripcionItem = re.sub("<.*?>", "", (urlBaseJson[x]['excerpt']['rendered'])[0:85])#Descripción del atractivo eliminando etiquetas
-#        idImgFichaAtrFB = str(urlBaseJson[x]['featured_media'])#ID de la imagen del atractivo
-#        leerImagenAtractivos = json.loads(urlopen(urlBaseImagen + idImgFichaAtrFB).read())#Une la URL base de las imágenes con el ID de imagen y lo lee como JSON
-#        imagenDefAtractivos = leerImagenAtractivos['media_details']['sizes']['medium']['source_url']#Interpreta el JSON de la imagen y extrae la URL de la imagen
         if varComa < len(urlBaseJson)-1:
             varComa = varComa +1
             print (varComa)
@@ -55,7 +52,7 @@ def listadoBusqueda(urlBaseJson):
         pruebatitulos = pruebatitulos + ("""                            {
                                 "title" : \""""+tituloItem+"""\",
                                 "image_url" : \""""+imagenDefAtractivos+"""\",
-                                "subtitle": "Soy la descripción.",
+                                "subtitle": \""""+tituloItem+"""\",
                                 "buttons":  [
                                     {
                                         "type":"web_url",
