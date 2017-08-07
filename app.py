@@ -42,9 +42,9 @@ def listadoBusqueda(urlBaseJson, urlBaseImagen):
     for x in range(0,len(urlBaseJson)):
         tituloItem = urlBaseJson[x]['title']['rendered']
         descripcionItem = re.sub("<.*?>", "", (urlBaseJson[x]['excerpt']['rendered'])[0:85])#Descripción del atractivo eliminando etiquetas
-        idImgFichaAtrFB = str(urlBaseJson[x]['featured_media'])#ID de la imagen del atractivo
-        leerImagenAtractivos = json.loads(urlopen(urlBaseImagen + idImgFichaAtrFB).read())#Une la URL base de las imágenes con el ID de imagen y lo lee como JSON
-        imagenDefAtractivos = leerImagenAtractivos['media_details']['sizes']['medium']['source_url']#Interpreta el JSON de la imagen y extrae la URL de la imagen
+#        idImgFichaAtrFB = str(urlBaseJson[x]['featured_media'])#ID de la imagen del atractivo
+#        leerImagenAtractivos = json.loads(urlopen(urlBaseImagen + idImgFichaAtrFB).read())#Une la URL base de las imágenes con el ID de imagen y lo lee como JSON
+#        imagenDefAtractivos = leerImagenAtractivos['media_details']['sizes']['medium']['source_url']#Interpreta el JSON de la imagen y extrae la URL de la imagen
         if varComa < len(urlBaseJson)-1:
             varComa = varComa +1
             print (varComa)
@@ -53,7 +53,7 @@ def listadoBusqueda(urlBaseJson, urlBaseImagen):
             comaJson = ""
         pruebatitulos = pruebatitulos + ("""                            {
                                 "title" : \""""+tituloItem+"""\",
-                                "image_url" : \""""+imagenDefAtractivos+"""\",
+                                "image_url" : "http://www.situr.boyaca.gov.co/wp-content/uploads/2017/05/BOYAC%C3%81-ES-PARA-VIVIRLA.png",
                                 "subtitle": \""""+descripcionItem+"""\",
                                 "buttons":  [
                                     {
@@ -114,7 +114,7 @@ def makeWebhookResult(req):
     leerImagenAtr = json.loads(urlopen(baseUrlImgAtract + idImagenAtractivo).read())
     imagenAtractivo = leerImagenAtr['media_details']['sizes']['medium']['source_url']
 
-    speech = "Me encontrado " + cantidadResultados + " Resultados .   El atractivo que solicitaste es: " + tituloAtractivo + "  y la url de la imagen es: " + imagenAtractivo
+    speech = "YQtrrre encontrado " + cantidadResultados + " Resultados .   El atractivo que solicitaste es: " + tituloAtractivo + "  y la url de la imagen es: " + imagenAtractivo
 
     print("Response:")
     print(speech)
