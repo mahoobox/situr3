@@ -16,6 +16,7 @@ def listadoBusqueda(urlBaseJson, urlBaseImagen):
 
     for x in range(0,len(urlBaseJson)):
         tituloItem = urlBaseJson[x]['title']['rendered']
+        imagenDefAtractivos2 = urlBaseJson[x]['better_featured_image']['media_details']['sizes']['medium']['source_url']
         descripcionItem = re.sub("<.*?>", "", (urlBaseJson[x]['excerpt']['rendered'])[0:80])#Descripción del atractivo eliminando etiquetas
         descripcionItem2 = (descripcionItem[0:80])
         idImgFichaAtrFB = str(urlBaseJson[x]['featured_media'])#ID de la imagen del atractivo
@@ -30,7 +31,7 @@ def listadoBusqueda(urlBaseJson, urlBaseImagen):
             comaJson = ""
         pruebatitulos2 = pruebatitulos2 + ("""                            {   
                                 "title" : \"""" + tituloItem + """\",
-                                "image_url" : \""""+ imagenDefAtractivos +"""\",
+                                "image_url" : \""""+ imagenDefAtractivos2 +"""\",
                                 "subtitle": \"""" + descripcionItem + """\",
                                 "buttons":  [
                                     {

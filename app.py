@@ -41,6 +41,7 @@ def listadoBusqueda(urlBaseJson, urlBaseImagen):
     varComa = 0
     for x in range(0,len(urlBaseJson)):
         tituloItem = urlBaseJson[x]['title']['rendered']
+        imagenDefAtractivos = urlBaseJson[x]['better_featured_image']['media_details']['sizes']['medium']['source_url']
         descripcionItem = re.sub("<.*?>", "", (urlBaseJson[x]['excerpt']['rendered'])[0:85])#Descripción del atractivo eliminando etiquetas
 #        idImgFichaAtrFB = str(urlBaseJson[x]['featured_media'])#ID de la imagen del atractivo
 #        leerImagenAtractivos = json.loads(urlopen(urlBaseImagen + idImgFichaAtrFB).read())#Une la URL base de las imágenes con el ID de imagen y lo lee como JSON
@@ -53,7 +54,7 @@ def listadoBusqueda(urlBaseJson, urlBaseImagen):
             comaJson = ""
         pruebatitulos = pruebatitulos + ("""                            {
                                 "title" : \""""+tituloItem+"""\",
-                                "image_url" : "http://www.situr.boyaca.gov.co/wp-content/uploads/2017/05/BOYAC%C3%81-ES-PARA-VIVIRLA.png",
+                                "image_url" : \""""+imagenDefAtractivos+"""\",
                                 "subtitle": \""""+descripcionItem+"""\",
                                 "buttons":  [
                                     {
@@ -114,7 +115,7 @@ def makeWebhookResult(req):
     leerImagenAtr = json.loads(urlopen(baseUrlImgAtract + idImagenAtractivo).read())
     imagenAtractivo = leerImagenAtr['media_details']['sizes']['medium']['source_url']
 
-    speech = "YQtrrre encontrado " + cantidadResultados + " Resultados .   El atractivo que solicitaste es: " + tituloAtractivo + "  y la url de la imagen es: " + imagenAtractivo
+    speech = "YQtrrsre encontrado " + cantidadResultados + " Resultados .   El atractivo que solicitaste es: " + tituloAtractivo + "  y la url de la imagen es: " + imagenAtractivo
 
     print("Response:")
     print(speech)

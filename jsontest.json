@@ -5,18 +5,66 @@
                     "payload" : {
                         "template_type" : "generic",
                         "elements" : [                            {   
-                                "title" : "Casa Betania",
-                                "image_url" : "http://www.situr.boyaca.gov.co/wp-content/uploads/2017/04/CasaBetaniaDuitama01-300x224.jpg",
-                                "subtitle": "Ubicada en la salida hacia el municipio de Santa Rosa de Viterbo, esta casa c",
+                                "title" : "Lago de Tota",
+                                "image_url" : "http://www.situr.boyaca.gov.co/wp-content/uploads/2017/05/Lago-de-Tota-Tota-02-1-300x81.jpg",
+                                "subtitle": "Ubicado al oriente del Departamento de Boyacá. Con una temperatura promedio d",
                                 "buttons":  [
                                     {
                                         "type":"web_url",
-                                        "url": "http://www.situr.boyaca.gov.co/atractivo-turistico/casa-betania/",
+                                        "url": "http://www.situr.boyaca.gov.co/atractivo-turistico/lago-de-tota/",
                                         "title": "Ver en SITUR"
                                     },
                                     {
                                         "type":"web_url",
-                                        "url": "http://www.situr.boyaca.gov.co/atractivo-turistico/casa-betania/",
+                                        "url": "http://www.situr.boyaca.gov.co/atractivo-turistico/lago-de-tota/",
+                                        "title": "boton2"
+                                    }
+                                ]
+                            },                            {   
+                                "title" : "Capilla Doctrinera de Cuítiva",
+                                "image_url" : "http://www.situr.boyaca.gov.co/wp-content/uploads/2017/05/panorama-cuitiva-300x75.png",
+                                "subtitle": "Ubicado en el centro urbano del municipio. Epicentro religioso de gran recono",
+                                "buttons":  [
+                                    {
+                                        "type":"web_url",
+                                        "url": "http://www.situr.boyaca.gov.co/atractivo-turistico/capilla-doctrinera-de-cuitiva/",
+                                        "title": "Ver en SITUR"
+                                    },
+                                    {
+                                        "type":"web_url",
+                                        "url": "http://www.situr.boyaca.gov.co/atractivo-turistico/capilla-doctrinera-de-cuitiva/",
+                                        "title": "boton2"
+                                    }
+                                ]
+                            },                            {   
+                                "title" : "Esquí Náutico en Paipa",
+                                "image_url" : "http://www.situr.boyaca.gov.co/wp-content/uploads/2017/05/Esquí-Náutico-en-Paipa-Paipa-1-300x90.jpg",
+                                "subtitle": "El esquí náutico se realiza en lago de enfriamiento de Termopaipa, en el lago",
+                                "buttons":  [
+                                    {
+                                        "type":"web_url",
+                                        "url": "http://www.situr.boyaca.gov.co/atractivo-turistico/esqui-nautico-en-paipa/",
+                                        "title": "Ver en SITUR"
+                                    },
+                                    {
+                                        "type":"web_url",
+                                        "url": "http://www.situr.boyaca.gov.co/atractivo-turistico/esqui-nautico-en-paipa/",
+                                        "title": "boton2"
+                                    }
+                                ]
+                            },                            {   
+                                "title" : "Playa Blanca",
+                                "image_url" : "http://www.situr.boyaca.gov.co/wp-content/uploads/2017/05/casa-varguitas-2-7-300x103.jpg",
+                                "subtitle": "Son 55 kilómetros cuadrados de un gran cuerpo de agua cargado de trucha arco ",
+                                "buttons":  [
+                                    {
+                                        "type":"web_url",
+                                        "url": "http://www.situr.boyaca.gov.co/atractivo-turistico/playa-blanca/",
+                                        "title": "Ver en SITUR"
+                                    },
+                                    {
+                                        "type":"web_url",
+                                        "url": "http://www.situr.boyaca.gov.co/atractivo-turistico/playa-blanca/",
                                         "title": "boton2"
                                     }
                                 ]
