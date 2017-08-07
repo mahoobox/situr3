@@ -36,7 +36,7 @@ def webhook():
     r.headers['Content-Type'] = 'application/json'
     return r
 
-def listadoBusqueda(urlBaseJson):
+def listadoBusqueda(urlBaseJson, urlBaseImagen):
     pruebatitulos = ""
     varComa = 0
     for x in range(0,len(urlBaseJson)):
@@ -54,7 +54,7 @@ def listadoBusqueda(urlBaseJson):
             comaJson = ""
         pruebatitulos = pruebatitulos + ("""                            {
                                 "title" : \""""+tituloItem+"""\",
-                                "image_url" : \""""+imagenDefAtractivos+"""\",
+                                "image_url" : \""""+tituloItem+"""\",
                                 "subtitle": \""""+descripcionItem+"""\",
                                 "buttons":  [
                                     {
@@ -100,7 +100,7 @@ def makeWebhookResult(req):
     
     #URL BASE CONSULTA ATRACTIVOS JSON
     baseUrlAtractivos = "http://situr.boyaca.gov.co/wp-json/wp/v2/atractivo_turistico?orderby=relevance&search="#URL Base Atractivos
-#    baseUrlImgAtract = "http://www.situr.boyaca.gov.co/wp-json/wp/v2/media/"#URL Base Imagenes Atractivos
+    baseUrlImgAtract = "http://www.situr.boyaca.gov.co/wp-json/wp/v2/media/"#URL Base Imagenes Atractivos
     retirarEspacios = atractivos.replace(" ",  "%20")#Retirar Espacios Atractivos
 
     leerAtractivo = json.loads(urlopen(baseUrlAtractivos + retirarEspacios).read())
@@ -108,14 +108,14 @@ def makeWebhookResult(req):
     range(0,len(leerAtractivo))#Rango que recorre la cantidad de resultados mostrados
 
     tituloAtractivo = leerAtractivo[0]['title']['rendered']
-#    descripcionAtractivo = re.sub("<.*?>", "", leerAtractivo[0]['excerpt']['rendered'])
+    descripcionAtractivo = re.sub("<.*?>", "", leerAtractivo[0]['excerpt']['rendered'])
     urlAtractivo = leerAtractivo[0].get('link')
-#    idImagenAtractivo = str(leerAtractivo[0]['featured_media'])
+    idImagenAtractivo = str(leerAtractivo[0]['featured_media'])
 
-#    leerImagenAtr = json.loads(urlopen(baseUrlImgAtract + idImagenAtractivo).read())
-    imagenAtractivo = leerImagenAtr['better_featured_image']['media_details']['sizes']['medium']['source_url']
+    leerImagenAtr = json.loads(urlopen(baseUrlImgAtract + idImagenAtractivo).read())
+    imagenAtractivo = leerImagenAtr['media_details']['sizes']['medium']['source_url']
 
-    speech = "Mb He encontrado " + cantidadResultados + " Resultados .   El atractivo que solicitaste es: " + tituloAtractivo + "  y la url de la imagen es: " + imagenAtractivo
+    speech = "YQtrrre encontrado " + cantidadResultados + " Resultados .   El atractivo que solicitaste es: " + tituloAtractivo + "  y la url de la imagen es: " + imagenAtractivo
 
     print("Response:")
     print(speech)
@@ -123,7 +123,7 @@ def makeWebhookResult(req):
     return {
         "speech": speech,
         "displayText": speech,
-        "data" :listadoBusqueda(leerAtractivo),
+        "data" :listadoBusqueda(leerAtractivo, baseUrlImgAtract),
 #        "data" :finJsonBusqueda(),
 #        "contextOut": [],
         "contextOut": [{"name":"desdepython", "lifespan":2}],
