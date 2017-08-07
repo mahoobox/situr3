@@ -88,9 +88,6 @@ finFBCard = """                        ]
 
 finFBCard2 = ']}}}}'
 
-def mostrarFB():
-    return fbMsg2
-
 def makeWebhookResult(req):
     if req.get("result").get("action") != "buscarAtractivos":
         return {}
@@ -106,12 +103,7 @@ def makeWebhookResult(req):
     cantidadResultados = str(len(leerAtractivo))#Contar Cantidad de Resultados Encontrados
     range(0,len(leerAtractivo))#Rango que recorre la cantidad de resultados mostrados
 
-    tituloAtractivo = leerAtractivo[0]['title']['rendered']
-    descripcionAtractivo = re.sub("<.*?>", "", leerAtractivo[0]['excerpt']['rendered'])
-    urlAtractivo = leerAtractivo[0].get('link')
-    imagenAtractivo = leerAtractivo['better_featured_image']['media_details']['sizes']['medium']['source_url']
-
-    speech = "Pe encontrado " + cantidadResultados + " Resultados .   El atractivo que solicitaste es: " + tituloAtractivo + "  y la url de la imagen es: " + cantidadResultados
+    speech = "Hola a todos, encontre estos resultdos: " + cantidadResultados
 
     print("Response:")
     print(speech)
