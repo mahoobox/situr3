@@ -36,7 +36,7 @@ def webhook():
     r.headers['Content-Type'] = 'application/json'
     return r
 
-def listadoBusqueda(urlBaseJson):
+def listadoBusqueda(urlBaseJson, urlBaseImagen):
     pruebatitulos = ""
     varComa = 0
     for x in range(0,len(urlBaseJson)):
@@ -123,7 +123,7 @@ def makeWebhookResult(req):
     return {
         "speech": speech,
         "displayText": speech,
-        "data" :listadoBusqueda(leerAtractivo),
+        "data" :listadoBusqueda(leerAtractivo, baseUrlImgAtract),
 #        "data" :finJsonBusqueda(),
 #        "contextOut": [],
         "contextOut": [{"name":"desdepython", "lifespan":2}],
