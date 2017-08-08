@@ -135,6 +135,8 @@ fbMsg2 = """{
         }
     }"""
 
+fbMsg2 = json.loads(fbMsg2)
+
 def makeWebhookResult(req):
     if req.get("result").get("action") != "buscarAtractivos":
         return {}
