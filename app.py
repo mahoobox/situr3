@@ -62,7 +62,7 @@ def listadoBusqueda(urlBaseJson):
                                 ]
                             }""" + str(comaJson) + """""")
 
-    resultadoMauricio = inicioFBCard2+pruebatitulos+finFBCard2
+    resultadoMauricio = inicioFBCard+pruebatitulos+finFBCard
 #    resultadoMauricio = json.dumps(resultadoMauricio)
     resultadoMauricio = json.loads(resultadoMauricio)
     return resultadoMauricio
@@ -154,7 +154,7 @@ def makeWebhookResult(req):
         {
           "type": 4,
           "platform": "facebook",
-          "payload": putafuncion
+          "payload": listadoBusqueda(leerAtractivo)
         },
         {
           "type": 2,
