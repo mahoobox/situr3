@@ -165,12 +165,12 @@ def makeWebhookResult(req):
         },
         {
 #        "type": 3,
-        "data": listadoBusqueda(leerAtractivo)
+#        "data": listadoBusqueda(leerAtractivo)
         }
         ],
 #        "speech": speech,
 #        "displayText": speech,
-#        "data" :listadoBusqueda(leerAtractivo),
+        "data" :listadoBusqueda(leerAtractivo),
 #        "data" :fbMsg2,
 #        "contextOut": [],
         "contextOut": [{"name":"desdepython", "lifespan":2}],
