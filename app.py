@@ -49,7 +49,7 @@ def listadoBusqueda(urlBaseJson):
             comaJson = ","
         else:
             comaJson = ""
-        pruebatitulos = pruebatitulos + ("""                            {
+        pruebatitulos = pruebatitulos + ("""                            [{
                                 "title" : \""""+tituloItem+"""\",
                                 "image_url" : \""""+imagenDefAtractivos+"""\",
                                 "subtitle": \""""+tituloItem+"""\",
@@ -60,7 +60,7 @@ def listadoBusqueda(urlBaseJson):
                                         "title": "Ver en SITUR"
                                     }
                                 ]
-                            }""" + str(comaJson) + """""")
+                            }""" + str(comaJson) + """]""")
 
     resultadoMauricio = pruebatitulos
 #    resultadoMauricio = json.dumps(resultadoMauricio)
@@ -182,8 +182,7 @@ def makeWebhookResult(req):
                 "type": "template",
                 "payload": {
                   "template_type": "generic",
-                  "elements": [listadoBusqueda(leerAtractivo)
-                  ]
+                  "elements": listadoBusqueda(leerAtractivo)
                 }
               }
             }
