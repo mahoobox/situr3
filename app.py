@@ -98,7 +98,7 @@ def makeWebhookResult(req):
         "speech": "Dame un momento, estoy buscando entre mis archivos..."
         },
         {
-        "type": ,
+        "type": 1,
         "speech": "Bien, ¡encontré una foto!"
         },
         {
