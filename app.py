@@ -117,6 +117,8 @@ putafuncion = """{
             }
           }"""
 
+putafuncion = json.loads(putafuncion)
+
 def makeWebhookResult(req):
     if req.get("result").get("action") != "buscarAtractivos":
         return {}
