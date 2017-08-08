@@ -62,28 +62,14 @@ def listadoBusqueda(urlBaseJson):
                                 ]
                             }""" + str(comaJson) + """""")
 
-    resultadoMauricio = inicioFBCard2+pruebatitulos+finFBCard2
+    resultadoMauricio = inicioFBCard+pruebatitulos+finFBCard
 #    resultadoMauricio = json.dumps(resultadoMauricio)
     resultadoMauricio = json.loads(resultadoMauricio)
     return resultadoMauricio
 
-inicioFBCard = """{
-            "facebook" : {
-                "attachment" : {
-                    "type" : "template",
-                    "payload" : {
-                        "template_type" : "generic",
-                        "elements" : ["""
+inicioFBCard = '{"facebook" : {"attachment" : {"type" : "template","payload" : {"template_type" : "generic","elements" : ['
 
-inicioFBCard2 = '{"facebook" : {"attachment" : {"type" : "template","payload" : {"template_type" : "generic","elements" : ['
-
-finFBCard = """                        ]
-                    }
-                }
-            }
-        }"""
-
-finFBCard2 = ']}}}}'
+finFBCard = ']}}}}'
 
 def makeWebhookResult(req):
     if req.get("result").get("action") != "buscarAtractivos":
@@ -93,7 +79,7 @@ def makeWebhookResult(req):
     atractivos = parameters.get("atractivos")#DATO TRAÍDO DE API.AI - ATRACTIVOS
     
     #URL BASE CONSULTA ATRACTIVOS JSON
-    baseUrlAtractivos = "http://situr.boyaca.gov.co/wp-json/wp/v2/atractivo_turistico?orderby=relevance&search="#URL Base Atractivos
+    baseUrlAtractivos = "http://situr.boyaca.gov.co/wp-json/wp/v2/atractivo_turistico?per_page=10&orderby=relevance&search="#URL Base Atractivos
     retirarEspacios = atractivos.replace(" ",  "%20")#Retirar Espacios Atractivos
 
     leerAtractivo = json.loads(urlopen(baseUrlAtractivos + retirarEspacios).read())
