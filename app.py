@@ -163,6 +163,16 @@ def makeWebhookResult(req):
           "replies": [
             "Ver más"
           ]
+        },
+        {
+          "type": 2,
+          "platform": "facebook",
+          "title": "Por favor escoge un elemento",
+          "replies": [
+            "content_type":"text",
+            "title":"Red",
+            "payload":"DEVELOPER_DEFINED_PAYLOAD_FOR_PICKING_RED"
+          ]
         }
         ],
 #        "speech": speech,
