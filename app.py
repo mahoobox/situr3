@@ -68,12 +68,10 @@ def listadoBusqueda(urlBaseJson):
     return resultadoMauricio
 
 
-
 inicioFBCard = '{"facebook" : {"attachment" : {"type" : "template","payload" : {"template_type" : "generic","elements" : ['
-inicioFBCard2 = '"facebook" : {"attachment" : {"type" : "template","payload" : {"template_type" : "generic","elements" : ['
 
 finFBCard = ']}}}}'
-finFBCard2 = ']}}}'
+
 
 putafuncion = """{
             "facebook": {
