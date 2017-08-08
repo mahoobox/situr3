@@ -72,7 +72,7 @@ inicioFBCard = '{"facebook" : {"attachment" : {"type" : "template","payload" : {
 finFBCard = ']}}}}'
 
 
-fbMsg2 = """
+fbMsg2 = """{
         "facebook" : {
             "attachment" : {
                 "type" : "template",
@@ -132,7 +132,8 @@ fbMsg2 = """
                     ]
                 }
             }
-        }"""
+        }
+    }"""
 
 fbMsg2 = json.loads(fbMsg2)
 
@@ -164,7 +165,7 @@ def makeWebhookResult(req):
         },
         {
         "type": 3,
-        "facebook": listadoBusqueda(leerAtractivo)
+        "data": listadoBusqueda(leerAtractivo)
         }
         ],
 #        "speech": speech,
