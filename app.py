@@ -241,6 +241,7 @@ def makeWebhookResult(req):
           "title": "Por favor escoge un elemento",
           "replies": [
             "blanco",
+            "gris",
             "negro"
           ]
         }
