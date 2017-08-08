@@ -115,6 +115,13 @@ print  (listadoBusqueda(leer, baseUrlImgAtract))
 #print ("Excerpt del atractivo:   " + descripcion)
 #print (" ")
 
+#leerheader = json.loads(urlopen('http://situr.boyaca.gov.co/wp-json/wp/v2/atractivo_turistico?orderby=relevance&search=capilla').read())
+leerheader = "http://situr.boyaca.gov.co/wp-json/wp/v2/atractivo_turistico?orderby=relevance&search=capilla"
+
+
+header = urllib2.urlopen(leerheader).info()
+json_header = json.dumps(header)
+print (json_header)
 
 
 

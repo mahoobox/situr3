@@ -93,8 +93,36 @@ def makeWebhookResult(req):
     return {
         "speech": speech,
         "displayText": speech,
-        "data" :listadoBusqueda(leerAtractivo),
-#        "data" :finJsonBusqueda(),
+#        "data" :listadoBusqueda(leerAtractivo),
+        "data": {
+        "facebook": [
+        {
+            "text": "blabla"
+        },
+        {
+            "attachment": {
+                "type": "template",
+                "payload": {
+                    "template_type": "generic",
+                    "elements": [
+                        {
+                            "title": "Some title",
+                            "subtitle": "Some subtitle",
+                            "image_url": "http://www.situr.boyaca.gov.co/wp-content/uploads/2017/05/Plaza-de-Toros-Cesar-Rincón-Andres-Socadagüi-300x238.jpg",
+                            "buttons": [
+                                {
+                                    "title": "More info",
+                                    "type": "web_url",
+                                    "url": "http://www.situr.boyaca.gov.co/atractivo-turistico/plaza-de-toros-cesar-rincon/"
+                                }
+                            ]
+                            }
+                        ]
+                        }
+                    }
+                }
+            ]
+        }
 #        "contextOut": [],
         "contextOut": [{"name":"desdepython", "lifespan":2}],
         "source": "soy-un-dato-irrelevante"
