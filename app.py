@@ -202,7 +202,7 @@ fbMsg3 = """"type": 4,
             }
           }"""
 
-fbMsg3 = json.loads(fbMsg3)
+#fbMsg3 = json.loads(fbMsg3)
 
 def makeWebhookResult(req):
     if req.get("result").get("action") != "buscarAtractivos":
