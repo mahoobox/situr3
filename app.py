@@ -234,6 +234,15 @@ def makeWebhookResult(req):
               }
             }
           }
+        },
+        {
+          "type": 2,
+          "platform": "facebook",
+          "title": "Por favor escoge un elemento",
+          "replies": [
+            "blanco",
+            "negro"
+          ]
         }
         ],
 #        "speech": speech,
