@@ -95,7 +95,7 @@ def makeWebhookResult(req):
         "messages": [
         {
         "type": 0,
-        "speech": "look at that image"
+        "speech": "Dame un momento, estoy buscando entre mis archivos..."
         },
         {
         "type": 3,
