@@ -157,21 +157,21 @@ def makeWebhookResult(req):
     print(speech)
 
     return {
-#        "speech": "",
-#        "messages": [
-#        {
-#        "type": 0,
-#        "speech": "Dame un momento, estoy buscando entre mis archivos..."
-#        },
-#        {
-#        "type": 3,
-#        "imageUrl": "http://www.situr.boyaca.gov.co/wp-content/uploads/2017/05/Plaza-de-Toros-Cesar-Rincón-Andres-Socadagüi-300x238.jpg"
-#        }
-#        ],
-        "speech": speech,
-        "displayText": speech,
+        "speech": "",
+        "messages": [
+        {
+        "type": 0,
+        "speech": "Dame un momento, estoy buscando entre mis archivos..."
+        },
+        {
+        "type": 3,
+        "imageUrl": "http://www.situr.boyaca.gov.co/wp-content/uploads/2017/05/Plaza-de-Toros-Cesar-Rincón-Andres-Socadagüi-300x238.jpg"
+        }
+        ],
+#        "speech": speech,
+#        "displayText": speech,
 #        "data" :listadoBusqueda(leerAtractivo),
-        "data" :fbMsg2,
+#        "data" :fbMsg2,
 #        "contextOut": [],
         "contextOut": [{"name":"desdepython", "lifespan":2}],
         "source": "soy-un-dato-irrelevante"
