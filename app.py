@@ -157,7 +157,7 @@ def makeWebhookResult(req):
           "payload": listadoBusqueda(leerAtractivo)
         },
         {
-          "type": 3,
+          "type": 2,
           "platform": "facebook",
           "title": "Por favor escoge un elemento",
           "replies": [
