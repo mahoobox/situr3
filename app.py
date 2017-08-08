@@ -164,7 +164,7 @@ def makeWebhookResult(req):
         "speech": "Dame un momento, estoy buscando entre mis archivos..."
         },
         {
-        "type": 3,
+#        "type": 3,
         "data": listadoBusqueda(leerAtractivo)
         }
         ],
