@@ -169,72 +169,7 @@ def makeWebhookResult(req):
         "platform": "facebook",
         "speech": "Mira, encontré esta imagen"
         },
-        {
-          "type": 4,
-          "platform": "facebook",
-          "payload": {
-            "facebook": {
-              "attachment": {
-                "type": "template",
-                "payload": {
-                  "template_type": "generic",
-                  "elements": [
-                    {
-                      "title": "HE VUELTO y con más",
-                      "image_url": "http://www.boyaca.gov.co/SecCultura/images/MARCA%20REGION%20BOYACA%20ES%20PARA%20VIVIRLA-1.jpg",
-                      "subtitle": "soy la descripcion",
-                      "buttons": [
-                        {
-                          "type": "web_url",
-                          "url": "http://situr.boyaca.gov.co",
-                          "title": "boton1"
-                        },
-                        {
-                          "type": "web_url",
-                          "url": "http://situr.boyaca.gov.co",
-                          "title": "boton2"
-                        },
-                        {
-                          "type": "web_url",
-                          "url": "http://situr.boyaca.gov.co",
-                          "title": "boton3"
-                        }
-                      ]
-                    },
-                    {
-                      "title": "soy el otro titulo",
-                      "image_url": "https://www.dondevive.org/wp-content/uploads/2015/08/donde-viven-los-conejos.jpg",
-                      "subtitle": "soy la descripción",
-                      "default_action": {
-                        "type": "web_url",
-                        "url": "https://www.moovrika.com/m/4167",
-                        "webview_height_ratio": "tall"
-                      },
-                      "buttons": [
-                        {
-                          "title": "más info",
-                          "type": "web_url",
-                          "url": "https://www.moovrika.com/m/4082",
-                          "webview_height_ratio": "tall"
-                        },
-                        {
-                          "type": "web_url",
-                          "url": "http://situr.boyaca.gov.co",
-                          "title": "boton2"
-                        },
-                        {
-                          "type": "web_url",
-                          "url": "http://situr.boyaca.gov.co",
-                          "title": "boton3"
-                        }
-                      ]
-                    }
-                  ]
-                }
-              }
-            }
-          }
-        },
+        {"type":4,"platform":"facebook","payload":{"facebook":{"attachment":{"type":"template","payload":{"template_type":"generic","elements":[{"title":"HE VUELTO y con más","image_url":"http://www.boyaca.gov.co/SecCultura/images/MARCA%20REGION%20BOYACA%20ES%20PARA%20VIVIRLA-1.jpg","subtitle":"soy la descripcion","buttons":[{"type":"web_url","url":"http://situr.boyaca.gov.co","title":"boton1"},{"type":"web_url","url":"http://situr.boyaca.gov.co","title":"boton2"},{"type":"web_url","url":"http://situr.boyaca.gov.co","title":"boton3"}]},{"title":"soy el otro titulo","image_url":"https://www.dondevive.org/wp-content/uploads/2015/08/donde-viven-los-conejos.jpg","subtitle":"soy la descripción","default_action":{"type":"web_url","url":"https://www.moovrika.com/m/4167","webview_height_ratio":"tall"},"buttons":[{"title":"más info","type":"web_url","url":"https://www.moovrika.com/m/4082","webview_height_ratio":"tall"},{"type":"web_url","url":"http://situr.boyaca.gov.co","title":"boton2"},{"type":"web_url","url":"http://situr.boyaca.gov.co","title":"boton3"}]}]}}}}},
         {
           "type": 2,
           "platform": "facebook",
