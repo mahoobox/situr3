@@ -98,6 +98,10 @@ def makeWebhookResult(req):
         "speech": "Dame un momento, estoy buscando entre mis archivos..."
         },
         {
+        "type": ,
+        "speech": "Bien, ¡encontré una foto!"
+        },
+        {
         "type": 3,
         "imageUrl": "http://www.situr.boyaca.gov.co/wp-content/uploads/2017/05/Plaza-de-Toros-Cesar-Rincón-Andres-Socadagüi-300x238.jpg"
         }
