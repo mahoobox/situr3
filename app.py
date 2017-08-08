@@ -144,7 +144,7 @@ def makeWebhookResult(req):
         {
         "type": 0,
         "platform": "facebook",
-        "speech": "Dame un momento, estoy buscando entre mis archivos..."
+        "speech": "Dame un momento, estoy buscando entre mis archivos...🔍"
         },
         {
         "type": 0,
