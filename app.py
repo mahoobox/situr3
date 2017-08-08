@@ -49,7 +49,7 @@ def listadoBusqueda(urlBaseJson):
             comaJson = ","
         else:
             comaJson = ""
-        pruebatitulos = pruebatitulos + ("""                            [{
+        pruebatitulos = pruebatitulos + ("""                            {
                                 "title" : \""""+tituloItem+"""\",
                                 "image_url" : \""""+imagenDefAtractivos+"""\",
                                 "subtitle": \""""+tituloItem+"""\",
@@ -60,9 +60,9 @@ def listadoBusqueda(urlBaseJson):
                                         "title": "Ver en SITUR"
                                     }
                                 ]
-                            }""" + str(comaJson) + """]""")
+                            }""" + str(comaJson) + """""")
 
-    resultadoMauricio = pruebatitulos
+    resultadoMauricio = inicioFBCard+pruebatitulos+finFBCard
 #    resultadoMauricio = json.dumps(resultadoMauricio)
     resultadoMauricio = json.loads(resultadoMauricio)
     return resultadoMauricio
@@ -182,7 +182,37 @@ def makeWebhookResult(req):
                 "type": "template",
                 "payload": {
                   "template_type": "generic",
-                  "elements": listadoBusqueda(leerAtractivo)
+                  "elements": [
+                    {
+                      "title": "HE VUELTO y con más",
+                      "image_url": "http://www.boyaca.gov.co/SecCultura/images/MARCA%20REGION%20BOYACA%20ES%20PARA%20VIVIRLA-1.jpg",
+                      "subtitle": "soy la descripcion",
+                      "buttons": [
+                        {
+                          "type": "web_url",
+                          "url": "http://situr.boyaca.gov.co",
+                          "title": "boton3"
+                        }
+                      ]
+                    },
+                    {
+                      "title": "soy el otro titulo",
+                      "image_url": "https://www.dondevive.org/wp-content/uploads/2015/08/donde-viven-los-conejos.jpg",
+                      "subtitle": "soy la descripción",
+                      "default_action": {
+                        "type": "web_url",
+                        "url": "https://www.moovrika.com/m/4167",
+                        "webview_height_ratio": "tall"
+                      },
+                      "buttons": [
+                        {
+                          "type": "web_url",
+                          "url": "http://situr.boyaca.gov.co",
+                          "title": "boton3"
+                        }
+                      ]
+                    }
+                  ]
                 }
               }
             }
