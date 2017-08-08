@@ -161,7 +161,13 @@ def makeWebhookResult(req):
         "messages": [
         {
         "type": 0,
+        "platform": "facebook",
         "speech": "Dame un momento, estoy buscando entre mis archivos..."
+        },
+        {
+        "type": 0,
+        "platform": "facebook",
+        "speech": "Mira, encontré esta imagen"
         },
         {
 #        "type": 3,
@@ -171,7 +177,7 @@ def makeWebhookResult(req):
 #        "speech": speech,
 #        "displayText": speech,
 #        "data" :listadoBusqueda(leerAtractivo),
-        "data" :fbMsg2s,
+        "data" :fbMsg2,
 #        "contextOut": [],
         "contextOut": [{"name":"desdepython", "lifespan":2}],
         "source": "soy-un-dato-irrelevante"
