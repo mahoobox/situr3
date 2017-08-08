@@ -165,7 +165,7 @@ def makeWebhookResult(req):
         },
         {
         "type": 3,
-        "imageUrl": "http://www.situr.boyaca.gov.co/wp-content/uploads/2017/05/Plaza-de-Toros-Cesar-Rincón-Andres-Socadagüi-300x238.jpg"
+        "imageUrl": listadoBusqueda(leerAtractivo)
         }
         ],
 #        "speech": speech,
