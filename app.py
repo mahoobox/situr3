@@ -91,9 +91,20 @@ def makeWebhookResult(req):
     print(speech)
 
     return {
-        "speech": speech,
-        "displayText": speech,
-        "data" :listadoBusqueda(leerAtractivo),
+        "speech": "",
+        "messages": [
+        {
+        "type": 0,
+        "speech": "look at that image"
+        },
+        {
+        "type": 3,
+        "imageUrl": "http://www.situr.boyaca.gov.co/wp-content/uploads/2017/05/Plaza-de-Toros-Cesar-Rincón-Andres-Socadagüi-300x238.jpg"
+        }
+        ],
+#        "speech": speech,
+#        "displayText": speech,
+#        "data" :listadoBusqueda(leerAtractivo),
 #        "data" :finJsonBusqueda(),
 #        "contextOut": [],
         "contextOut": [{"name":"desdepython", "lifespan":2}],
