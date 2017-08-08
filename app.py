@@ -151,7 +151,7 @@ def makeWebhookResult(req):
     leerAtractivo = json.loads(urlopen(baseUrlAtractivos + retirarEspacios).read())
     cantidadResultados = str(len(leerAtractivo))#Contar Cantidad de Resultados Encontrados
 
-    speech = "Hola, encontre estos resultdos: " + cantidadResultados
+    speech = "Mira, encontre " + cantidadResultados+ " resultdos "
 
     print("Response:")
     print(speech)
@@ -167,7 +167,7 @@ def makeWebhookResult(req):
         {
         "type": 0,
         "platform": "facebook",
-        "speech": "mirame" cantidadResultados
+        "speech": speech
         },
         {
           "type": 4,
