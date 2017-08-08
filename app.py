@@ -161,9 +161,7 @@ def makeWebhookResult(req):
           "platform": "facebook",
           "title": "Por favor escoge un elemento",
           "replies": [
-            "blanco",
-            "gris",
-            "negro"
+            "Ver más"
           ]
         }
         ],
