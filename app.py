@@ -171,7 +171,7 @@ def makeWebhookResult(req):
 #        "speech": speech,
 #        "displayText": speech,
 #        "data" :listadoBusqueda(leerAtractivo),
-        "data" :fbMsg2,
+        "data" :fbMsg2s,
 #        "contextOut": [],
         "contextOut": [{"name":"desdepython", "lifespan":2}],
         "source": "soy-un-dato-irrelevante"
