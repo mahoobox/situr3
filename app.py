@@ -133,7 +133,7 @@ def makeWebhookResult(req):
     leerAtractivo = json.loads(urlopen(baseUrlAtractivos + retirarEspacios).read())
     cantidadResultados = str(len(leerAtractivo))#Contar Cantidad de Resultados Encontrados
 
-    speech = "Mira 😃, encontre " + cantidadResultados+ " resultados 💡 "
+    speech = "Mira 😃, encontre " + cantidadResultados+ " resultados"
 
     print("Response:")
     print(speech)
