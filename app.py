@@ -167,7 +167,7 @@ def makeWebhookResult(req):
         {
         "type": 0,
         "platform": "facebook",
-        "speech": cantidadResultados
+        "speech": "mirame" cantidadResultados
         },
         {
           "type": 4,
