@@ -81,28 +81,13 @@ def makeWebhookResult(req):
         print(speech)
 
         return {
-            "speech": "",
-            "messages": [
-            {
-            "type": 0,
-            "platform": "facebook",
-            "speech": "Dame un momento, estoy buscando entre mis archivos...🔍"
-            },
-            {
-            "type": 0,
-            "platform": "facebook",
-            "speech": speech2
-            }
-        ],
-#        "speech": speech,
-#        "displayText": speech,
-#        "data" :listadoBusqueda(leerAtractivo),
-#        "data" :fbMsg2,
-#        "contextOut": [],
-        "contextOut": [{"name":"desdepython", "lifespan":2}],
-        "source": "soy-un-dato-irrelevante"
-#        "source": listadoBusqueda(leerAtractivo)
+        "speech": speech,
+        "displayText": speech,
+        # "data": data,
+        # "contextOut": [],
+        "source": "apiai-weather-webhook-sample"
         }
+
     result = req.get("result")#invocar el result del json
     parameters = result.get("parameters")#invocar el parameters dentro de result
     atractivos = parameters.get("atractivos")#DATO TRAÍDO DE API.AI - ATRACTIVOS
