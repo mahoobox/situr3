@@ -75,7 +75,49 @@ finFBCard = ']}}}}'
 
 def makeWebhookResult(req):
     if req.get("result").get("action") != "buscarAtractivos":
-        return {}
+        speech2 = "Mira 😃, encontré nada de resultados"
+
+        print("Response:")
+        print(speech)
+        return {
+            "speech": "",
+            "messages": [
+            {
+            "type": 0,
+            "platform": "facebook",
+            "speech": "Dame un momento, estoy buscando entre mis archivos...🔍"
+            },
+            {
+            "type": 0,
+            "platform": "facebook",
+            "speech": speech2
+            }
+#        {
+#          "type": 2,
+#          "platform": "facebook",
+#          "title": "Por favor escoge un elemento",
+#          "replies": [
+#            "Ver más"
+#          ]
+#        },
+#        {
+#          "type": 2,
+#          "platform": "facebook",
+#          "title": "Por favor escoge un elemento",
+#         "replies": [
+#            "Ver más"
+#          ]
+#        }
+        ],
+#        "speech": speech,
+#        "displayText": speech,
+#        "data" :listadoBusqueda(leerAtractivo),
+#        "data" :fbMsg2,
+#        "contextOut": [],
+        "contextOut": [{"name":"desdepython", "lifespan":2}],
+        "source": "soy-un-dato-irrelevante"
+#        "source": listadoBusqueda(leerAtractivo)
+    }
     result = req.get("result")#invocar el result del json
     parameters = result.get("parameters")#invocar el parameters dentro de result
     atractivos = parameters.get("atractivos")#DATO TRAÍDO DE API.AI - ATRACTIVOS
