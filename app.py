@@ -74,7 +74,7 @@ finFBCard = ']}}}}'
 
 
 def makeWebhookResult(req):
-'''    if req.get("result").get("action") == "buscarAtractivos":
+    if req.get("result").get("action") == "buscarAtractivos":
         speech2 = "Mira 😃, soy un atractivo"
 
         print("Response:")
@@ -86,21 +86,7 @@ def makeWebhookResult(req):
             # "data": data,
             # "contextOut": [],
             "source": "apiai-weather-webhook-sample"
-        }'''
-    if req.get("result").get("action") == "buscarCiudad":
-        speech3 = "Mira 😃, soy un municipio"
-
-        print("Response:")
-        print(speech3)
-
-        return {
-            "speech": speech3,
-            "displayText": speech3,
-            # "data": data,
-            # "contextOut": [],
-            "source": "apiai-weather-webhook-sample"
         }
-
 
     result = req.get("result")#invocar el result del json
     parameters = result.get("parameters")#invocar el parameters dentro de result
