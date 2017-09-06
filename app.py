@@ -81,11 +81,11 @@ def makeWebhookResult(req):
         print(speech)
 
         return {
-        "speech": speech,
-        "displayText": speech,
-        # "data": data,
-        # "contextOut": [],
-        "source": "apiai-weather-webhook-sample"
+            "speech": speech,
+            "displayText": speech,
+            # "data": data,
+            # "contextOut": [],
+            "source": "apiai-weather-webhook-sample"
         }
 
     result = req.get("result")#invocar el result del json
