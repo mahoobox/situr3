@@ -76,7 +76,7 @@ finFBCard = ']}}}}'
 def makeWebhookResult(req):
     accion=req.get("result").get("action")
     if req.get("result").get("action") == "buscarAtractivos":
-        speech2 = "Mira 😃, soy un atractivo conocido como" + accion
+        speech2 = "Mira 😃, soy un atractivo conocido como: " + accion
 
         print("Response:")
         print(speech2)
