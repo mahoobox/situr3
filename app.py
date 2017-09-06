@@ -73,50 +73,6 @@ inicioFBCard = '{"facebook" : {"attachment" : {"type" : "template","payload" : {
 finFBCard = ']}}}}'
 
 
-putafuncion = """{
-            "facebook": {
-              "attachment": {
-                "type": "template",
-                "payload": {
-                  "template_type": "generic",
-                  "elements": [
-                    {
-                      "title": "HE VUELTO y con más",
-                      "image_url": "http://www.boyaca.gov.co/SecCultura/images/MARCA%20REGION%20BOYACA%20ES%20PARA%20VIVIRLA-1.jpg",
-                      "subtitle": "soy la descripcion",
-                      "buttons": [
-                        {
-                          "type": "web_url",
-                          "url": "http://situr.boyaca.gov.co",
-                          "title": "boton3"
-                        }
-                      ]
-                    },
-                    {
-                      "title": "soy el otro titulo",
-                      "image_url": "https://www.dondevive.org/wp-content/uploads/2015/08/donde-viven-los-conejos.jpg",
-                      "subtitle": "soy la descripción",
-                      "default_action": {
-                        "type": "web_url",
-                        "url": "https://www.moovrika.com/m/4167",
-                        "webview_height_ratio": "tall"
-                      },
-                      "buttons": [
-                        {
-                          "type": "web_url",
-                          "url": "http://situr.boyaca.gov.co",
-                          "title": "boton3"
-                        }
-                      ]
-                    }
-                  ]
-                }
-              }
-            }
-          }"""
-
-putafuncion = json.loads(putafuncion)
-
 def makeWebhookResult(req):
     if req.get("result").get("action") != "buscarAtractivos":
         return {}
