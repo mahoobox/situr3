@@ -87,7 +87,7 @@ def makeWebhookResult(req):
             # "contextOut": [],
             "source": "apiai-weather-webhook-sample"
         }'''
-    if req.get("result").get("action") == "buscarMunicipios":
+    if req.get("result").get("action") == "buscarCiudad":
         speech3 = "Mira 😃, soy un municipio"
 
         print("Response:")
