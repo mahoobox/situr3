@@ -74,7 +74,7 @@ finFBCard = ']}}}}'
 
 
 def makeWebhookResult(req):
-    if req.get("result").get("action") != "buscarAtractivos":
+    if req.get("result").get("action") != "buscarAtractivosNO":
         return {}
     result = req.get("result")#invocar el result del json
     parameters = result.get("parameters")#invocar el parameters dentro de result
