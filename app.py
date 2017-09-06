@@ -113,8 +113,7 @@ def makeWebhookResult(req):
             # "contextOut": [],
             "source": "apiai-weather-webhook-sample"
         }
-    else:
-        return {}
+ 
 
     result = req.get("result")#invocar el result del json
     parameters = result.get("parameters")#invocar el parameters dentro de result
