@@ -100,20 +100,7 @@ def makeWebhookResult(req):
             # "contextOut": [],
             "source": "apiai-weather-webhook-sample"
         }
-    elif req.get("result").get("action") == "buscarCategoria":
-        speech2 = "Mira 😃, soy una categoria"
 
-        print("Response:")
-        print(speech2)
-
-        return {
-            "speech": speech2,
-            "displayText": speech2,
-            # "data": data,
-            # "contextOut": [],
-            "source": "apiai-weather-webhook-sample"
-        }
- 
 
     result = req.get("result")#invocar el result del json
     parameters = result.get("parameters")#invocar el parameters dentro de result
