@@ -76,40 +76,40 @@ finFBCard = ']}}}}'
 def makeWebhookResult(req):
     if req.get("result").get("action") != "buscarAtractivos":
         return {}
-    result = req.get("result")#invocar el result del json
-    parameters = result.get("parameters")#invocar el parameters dentro de result
-    atractivos = parameters.get("atractivos")#DATO TRAÍDO DE API.AI - ATRACTIVOS
+        result = req.get("result")#invocar el result del json
+        parameters = result.get("parameters")#invocar el parameters dentro de result
+        atractivos = parameters.get("atractivos")#DATO TRAÍDO DE API.AI - ATRACTIVOS
 
     #URL BASE CONSULTA ATRACTIVOS JSON
-    baseUrlAtractivos = "http://situr.boyaca.gov.co/wp-json/wp/v2/atractivo_turistico?per_page=10&orderby=relevance&search="#URL Base Atractivos
-    retirarEspacios = atractivos.replace(" ",  "%20")#Retirar Espacios Atractivos
+        baseUrlAtractivos = "http://situr.boyaca.gov.co/wp-json/wp/v2/atractivo_turistico?per_page=10&orderby=relevance&search="#URL Base Atractivos
+        retirarEspacios = atractivos.replace(" ",  "%20")#Retirar Espacios Atractivos
 
-    leerAtractivo = json.loads(urlopen(baseUrlAtractivos + retirarEspacios).read())
-    cantidadResultados = str(len(leerAtractivo))#Contar Cantidad de Resultados Encontrados
+        leerAtractivo = json.loads(urlopen(baseUrlAtractivos + retirarEspacios).read())
+        cantidadResultados = str(len(leerAtractivo))#Contar Cantidad de Resultados Encontrados
 
-    speech = "Mira 😃, encontré " + cantidadResultados+ " resultados"
+        speech = "Mira 😃, encontré " + cantidadResultados+ " resultados"
 
-    print("Response:")
-    print(speech)
+        print("Response:")
+        print(speech)
 
-    return {
-        "speech": "",
-        "messages": [
-        {
-        "type": 0,
-        "platform": "facebook",
-        "speech": "Dame un momento, estoy buscando entre mis archivos...🔍"
-        },
-        {
-        "type": 0,
-        "platform": "facebook",
-        "speech": speech
-        },
-        {
-          "type": 4,
-          "platform": "facebook",
-          "payload": listadoBusqueda(leerAtractivo)
-        }
+        return {
+            "speech": "",
+            "messages": [
+            {
+            "type": 0,
+            "platform": "facebook",
+            "speech": "Dame un momento, estoy buscando entre mis archivos...🔍"
+            },
+            {
+            "type": 0,
+            "platform": "facebook",
+            "speech": speech
+           },
+            {
+             "type": 4,
+             "platform": "facebook",
+             "payload": listadoBusqueda(leerAtractivo)
+           }
 #        {
 #          "type": 2,
 #          "platform": "facebook",
@@ -132,10 +132,10 @@ def makeWebhookResult(req):
 #        "data" :listadoBusqueda(leerAtractivo),
 #        "data" :fbMsg2,
 #        "contextOut": [],
-        "contextOut": [{"name":"desdepython", "lifespan":2}],
-        "source": "soy-un-dato-irrelevante"
+            "contextOut": [{"name":"desdepython", "lifespan":2}],
+            "source": "soy-un-dato-irrelevante"
 #        "source": listadoBusqueda(leerAtractivo)
-    }
+        }
 
 """    return {
         "speech": "",
