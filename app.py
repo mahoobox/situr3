@@ -74,15 +74,15 @@ finFBCard = ']}}}}'
 
 
 def makeWebhookResult(req):
-    if req.get("result").get("action") != "buscarAtractivos":
+    if req.get("result").get("action") == "buscarAtractivos":
         speech2 = "Mira 😃, encontré nada de resultados"
 
         print("Response:")
-        print(speech)
+        print(speech2)
 
         return {
-            "speech": speech,
-            "displayText": speech,
+            "speech": speech2,
+            "displayText": speech2,
             # "data": data,
             # "contextOut": [],
             "source": "apiai-weather-webhook-sample"
