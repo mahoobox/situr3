@@ -83,8 +83,7 @@ def makeWebhookResult(req):
         #URL BASE CONSULTA ATRACTIVOS JSON
         baseUrl = "http://situr.boyaca.gov.co/wp-json/wp/v2/atractivo_turistico?per_page=10&orderby=relevance&search="#URL Base Atractivos
 
-        speech = "Mira 😃, soy un atractivo conocido como: " + accionEntrante
-        speechtest = "Hola soy el resultado de lo qu eencontraste"
+        tipoIntent = " atractivos turísticos"#Tipo de intención
 
 
     listaMensajesBuscando = ["Dame un momento, estoy buscando entre mis archivos...🔍", "Buscando...🔍", "Revisare entre mis archivos...🔍"]#Mensajes que indican que se está realizando la búsqueda
@@ -92,10 +91,10 @@ def makeWebhookResult(req):
     
     retirarEspacios = atractivos.replace(" ",  "%20")#Retirar Espacios Atractivos
 
-    leerJsonSitur = json.loads(urlopen(baseUrl + retirarEspacios).read())
-    cantidadResultados = str(len(leerJsonSitur))#Contar Cantidad de Resultados Encontrados
+    leerJsonSitur = json.loads(urlopen(baseUrl + retirarEspacios).read())#Leer JSON SITUR
 
-#    speech = "Mira 😃, encontré " + cantidadResultados+ " resultados"
+    cantidadResultados = str(len(leerJsonSitur))#Contar Cantidad de Resultados Encontrados
+    speechResultados = "Mira 😃, encontré " + cantidadResultados+ tipoIntent
 
     ##### ACA DEBE TERMINARSE LA FUNCIÓN LOCAL
 
@@ -114,7 +113,7 @@ def makeWebhookResult(req):
         {
         "type": 0,
         "platform": "facebook",
-        "speech": speech
+        "speech": speechResultados
         },
         {
           "type": 4,
