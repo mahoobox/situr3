@@ -81,19 +81,19 @@ def makeWebhookResult(req):
         atractivos = parameters.get("atractivos")#DATO TRAÍDO DE API.AI - ATRACTIVOS
 
         #URL BASE CONSULTA ATRACTIVOS JSON
-        baseUrlAtractivos = "http://situr.boyaca.gov.co/wp-json/wp/v2/atractivo_turistico?per_page=10&orderby=relevance&search="#URL Base Atractivos
+        baseUrl = "http://situr.boyaca.gov.co/wp-json/wp/v2/atractivo_turistico?per_page=10&orderby=relevance&search="#URL Base Atractivos
 
 
         speech = "Mira 😃, soy un atractivo conocido como: " + accionEntrante
         speechtest = "Hola soy el resultado de lo qu eencontraste"
 
 
-    listaMensajesBuscando = ["Dame un momento, estoy buscando entre mis archivos...🔍", "Buscando...🔍", "Revisare entre mis archivos...🔍"]
-    msgsBuscando = random.choice(listaMensajesBuscando)    
+    listaMensajesBuscando = ["Dame un momento, estoy buscando entre mis archivos...🔍", "Buscando...🔍", "Revisare entre mis archivos...🔍"]#Mensajes que indican que se está realizando la búsqueda
+    msgsBuscando = random.choice(listaMensajesBuscando)#Seleccion aleatoria de un mensaje
     
     retirarEspacios = atractivos.replace(" ",  "%20")#Retirar Espacios Atractivos
 
-    leerAtractivo = json.loads(urlopen(baseUrlAtractivos + retirarEspacios).read())
+    leerAtractivo = json.loads(urlopen(baseUrl + retirarEspacios).read())
     cantidadResultados = str(len(leerAtractivo))#Contar Cantidad de Resultados Encontrados
 
 #    speech = "Mira 😃, encontré " + cantidadResultados+ " resultados"
