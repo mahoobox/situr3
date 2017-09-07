@@ -10,7 +10,6 @@ from urllib.error import HTTPError
 
 import json
 import os
-import random
 
 import re #retira etiquetas HTML de la descripción
 
@@ -89,8 +88,7 @@ def makeWebhookResult(req):
         speech = "Mira 😃, soy un atractivo conocido como: " + accionEntrante
     
 
-    mensajeuno = ["msg1","msg2","msg3"]
-    mensajebusqueda=random.choice(mensajeuno)
+    
     
     retirarEspacios = atractivos.replace(" ",  "%20")#Retirar Espacios Atractivos
 
