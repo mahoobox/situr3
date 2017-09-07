@@ -10,6 +10,7 @@ from urllib.error import HTTPError
 
 import json
 import os
+import random
 
 import re #retira etiquetas HTML de la descripción
 
@@ -85,7 +86,9 @@ def makeWebhookResult(req):
 
         speech = "Mira 😃, soy un atractivo conocido como: " + accionEntrante
         speechtest = "Hola soy el resultado de lo qu eencontraste"
-    
+
+        lista = [2, 190, False, "hola", "pelota", 123]
+        speechrandom = random.choice(lista)    
 
     
     
@@ -107,7 +110,7 @@ def makeWebhookResult(req):
         {
         "type": 0,
         "platform": "facebook",
-        "speech": speechtest
+        "speech": speechrandom
 #        "speech": "Dame un momento, estoy buscando entre mis archivos...🔍"
         },
         {
