@@ -83,7 +83,6 @@ def makeWebhookResult(req):
         #URL BASE CONSULTA ATRACTIVOS JSON
         baseUrl = "http://situr.boyaca.gov.co/wp-json/wp/v2/atractivo_turistico?per_page=10&orderby=relevance&search="#URL Base Atractivos
 
-
         speech = "Mira 😃, soy un atractivo conocido como: " + accionEntrante
         speechtest = "Hola soy el resultado de lo qu eencontraste"
 
@@ -93,8 +92,8 @@ def makeWebhookResult(req):
     
     retirarEspacios = atractivos.replace(" ",  "%20")#Retirar Espacios Atractivos
 
-    leerAtractivo = json.loads(urlopen(baseUrl + retirarEspacios).read())
-    cantidadResultados = str(len(leerAtractivo))#Contar Cantidad de Resultados Encontrados
+    leerJsonSitur = json.loads(urlopen(baseUrl + retirarEspacios).read())
+    cantidadResultados = str(len(leerJsonSitur))#Contar Cantidad de Resultados Encontrados
 
 #    speech = "Mira 😃, encontré " + cantidadResultados+ " resultados"
 
@@ -120,7 +119,7 @@ def makeWebhookResult(req):
         {
           "type": 4,
           "platform": "facebook",
-          "payload": listadoBusqueda(leerAtractivo)
+          "payload": listadoBusqueda(leerJsonSitur)
         }
 #        {
 #          "type": 2,
@@ -141,12 +140,12 @@ def makeWebhookResult(req):
         ],
 #        "speech": speech,
 #        "displayText": speech,
-#        "data" :listadoBusqueda(leerAtractivo),
+#        "data" :listadoBusqueda(leerJsonSitur),
 #        "data" :fbMsg2,
 #        "contextOut": [],
         "contextOut": [{"name":"desdepython", "lifespan":2}],
         "source": "soy-un-dato-irrelevante"
-#        "source": listadoBusqueda(leerAtractivo)
+#        "source": listadoBusqueda(leerJsonSitur)
     }
 
 """    return {
@@ -241,12 +240,12 @@ def makeWebhookResult(req):
         ],
 #        "speech": speech,
 #        "displayText": speech,
-#        "data" :listadoBusqueda(leerAtractivo),
+#        "data" :listadoBusqueda(leerJsonSitur),
 #        "data" :fbMsg2,
 #        "contextOut": [],
         "contextOut": [{"name":"desdepython", "lifespan":2}],
         "source": "soy-un-dato-irrelevante"
-#        "source": listadoBusqueda(leerAtractivo)
+#        "source": listadoBusqueda(leerJsonSitur)
     }"""
 
 if __name__ == '__main__':
