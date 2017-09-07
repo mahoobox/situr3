@@ -96,7 +96,7 @@ def makeWebhookResult(req):
 
 
 
-    listaMensajesBuscando = ["_Dame un momento, estoy buscando entre mis archivos...🔍", "_Buscando...🔍", "_Revisaré entre mis archivos...🔍"]#Mensajes que indican que se está realizando la búsqueda
+    listaMensajesBuscando = ["Dame un momento, estoy buscando entre mis archivos...🔍", "Buscando...🔍", "Revisaré entre mis archivos...🔍"]#Mensajes que indican que se está realizando la búsqueda
     msgsBuscando = random.choice(listaMensajesBuscando)#Seleccion aleatoria de un mensaje
     
     retirarEspacios = atractivos.replace(" ",  "%20")#Retirar Espacios Atractivos
