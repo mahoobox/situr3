@@ -74,33 +74,29 @@ finFBCard = ']}}}}'
 
 
 def makeWebhookResult(req):
-    accion=req.get("result").get("action")
-    if accion == "buscarAtractivos":
-        speech2 = "Mira 😃, soy un atractivo conocido como: " + accion
+    accionEntrante=req.get("result").get("action")
+    if accionEntrante == "buscarAtractivos":
+        result = req.get("result")#invocar el result del json
+        parameters = result.get("parameters")#invocar el parameters dentro de result
+        atractivos = parameters.get("atractivos")#DATO TRAÍDO DE API.AI - ATRACTIVOS
 
-        print("Response:")
-        print(speech2)
+        #URL BASE CONSULTA ATRACTIVOS JSON
+        baseUrlAtractivos = "http://situr.boyaca.gov.co/wp-json/wp/v2/atractivo_turistico?per_page=10&orderby=relevance&search="#URL Base Atractivos
 
-        return {
-            "speech": speech2,
-            "displayText": speech2,
-            # "data": data,
-            # "contextOut": [],
-            "source": "apiai-weather-webhook-sample"
-        }
 
-    result = req.get("result")#invocar el result del json
-    parameters = result.get("parameters")#invocar el parameters dentro de result
-    atractivos = parameters.get("atractivos")#DATO TRAÍDO DE API.AI - ATRACTIVOS
+        speech = "Mira 😃, soy un atractivo conocido como: " + accionEntrante
+    
 
-    #URL BASE CONSULTA ATRACTIVOS JSON
-    baseUrlAtractivos = "http://situr.boyaca.gov.co/wp-json/wp/v2/atractivo_turistico?per_page=10&orderby=relevance&search="#URL Base Atractivos
+    
+    
     retirarEspacios = atractivos.replace(" ",  "%20")#Retirar Espacios Atractivos
 
     leerAtractivo = json.loads(urlopen(baseUrlAtractivos + retirarEspacios).read())
     cantidadResultados = str(len(leerAtractivo))#Contar Cantidad de Resultados Encontrados
 
-    speech = "Mira 😃, encontré " + cantidadResultados+ " resultados"
+#    speech = "Mira 😃, encontré " + cantidadResultados+ " resultados"
+
+    ##### ACA DEBE TERMINARSE LA FUNCIÓN LOCAL
 
     print("Response:")
     print(speech)
