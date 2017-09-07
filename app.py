@@ -87,11 +87,10 @@ def makeWebhookResult(req):
 
 
         speech = "Mira 😃, soy un atractivo conocido como: " + accionEntrante
-        speech5 = "Soy el mensaje de entrada "
     
 
-#    mensajeuno = ["msg1","msg2","msg3"]
-
+    mensajeuno = ["msg1","msg2","msg3"]
+    mensajebusqueda=random.choice(mensajeuno)
     
     retirarEspacios = atractivos.replace(" ",  "%20")#Retirar Espacios Atractivos
 
@@ -111,8 +110,7 @@ def makeWebhookResult(req):
         {
         "type": 0,
         "platform": "facebook",
-        "speech": speech5
-#        "speech": "Dame un momento, estoy buscando entre mis archivos...🔍"
+        "speech": "Dame un momento, estoy buscando entre mis archivos...🔍"
         },
         {
         "type": 0,
