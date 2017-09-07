@@ -10,6 +10,7 @@ from urllib.error import HTTPError
 
 import json
 import os
+import random
 
 import re #retira etiquetas HTML de la descripción
 
@@ -72,6 +73,7 @@ inicioFBCard = '{"facebook" : {"attachment" : {"type" : "template","payload" : {
 
 finFBCard = ']}}}}'
 
+def
 
 def makeWebhookResult(req):
     accionEntrante=req.get("result").get("action")
@@ -87,7 +89,8 @@ def makeWebhookResult(req):
         speech = "Mira 😃, soy un atractivo conocido como: " + accionEntrante
     
 
-    
+    mensajeuno = ["msg1","msg2","msg3"]
+    mensajebusqueda=random.choice(mensajeuno)
     
     retirarEspacios = atractivos.replace(" ",  "%20")#Retirar Espacios Atractivos
 
@@ -107,7 +110,8 @@ def makeWebhookResult(req):
         {
         "type": 0,
         "platform": "facebook",
-        "speech": "Dame un momento, estoy buscando entre mis archivos...🔍"
+        "speech": mensajebusqueda
+#        "speech": "Dame un momento, estoy buscando entre mis archivos...🔍"
         },
         {
         "type": 0,

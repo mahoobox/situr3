@@ -1,23 +1,4 @@
-accion = str(input("Ingrese el atractivo que desea buscar:   "))
+import random
 
-
-if accion == "tema1":
-        speech2 = "Mira 😃, soy un atractivo conocido como: " + accion
-
-        print("Response:")
-        print(speech2)
-
-elif accion == "tema2":
-        speech2 = "Mira 😃, soy un atractivo conocido como: " + accion
-
-        print("Response:")
-        print(speech2)
-
-elif accion == "tema3":
-        speech2 = "Mira 😃, soy un atractivo conocido como: " + accion
-
-        print("Response:")
-        print(speech2)
-
-else:
-    print ("hola nose")
+lista = [2, 190, False, "hola", "pelota", 123]
+print(random.choice(lista))
