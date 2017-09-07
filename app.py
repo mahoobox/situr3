@@ -84,6 +84,7 @@ def makeWebhookResult(req):
 
 
         speech = "Mira 😃, soy un atractivo conocido como: " + accionEntrante
+        speechtest = "Hola soy el resultado de lo qu eencontraste"
     
 
     
@@ -106,7 +107,8 @@ def makeWebhookResult(req):
         {
         "type": 0,
         "platform": "facebook",
-        "speech": "Dame un momento, estoy buscando entre mis archivos...🔍"
+        "speech": speechtest
+#        "speech": "Dame un momento, estoy buscando entre mis archivos...🔍"
         },
         {
         "type": 0,
