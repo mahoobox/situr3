@@ -90,7 +90,7 @@ def makeWebhookResult(req):
     
 
     mensajeuno = ["msg1","msg2","msg3"]
-    mensajebusqueda=random.choice(mensajeuno)
+    mensajebusqueda="random.choice(mensajeuno)"
     
     retirarEspacios = atractivos.replace(" ",  "%20")#Retirar Espacios Atractivos
 
