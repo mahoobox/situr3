@@ -70,7 +70,6 @@ def listadoBusqueda(urlBaseJson):
 
 
 inicioFBCard = '{"facebook" : {"attachment" : {"type" : "template","payload" : {"template_type" : "generic","elements" : ['
-
 finFBCard = ']}}}}'
 
 def makeWebhookResult(req):
