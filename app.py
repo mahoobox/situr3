@@ -84,6 +84,16 @@ def makeWebhookResult(req):
 
         speech = " atractivos turísticos"
 
+    elif accionEntrante == "buscarCiudad":
+        result = req.get("result")#invocar el result del busjson
+        parameters = result.get("parameters")#invocar el parameters dentro de result
+        atractivos = parameters.get("atractivos")#DATO TRAÍDO DE API.AI - ATRACTIVOS
+
+        #URL BASE CONSULTA ATRACTIVOS JSON
+        baseUrl = "http://situr.boyaca.gov.co/wp-json/wp/v2/atractivo_turistico?per_page=10&orderby=relevance&search="#URL Base Atractivos
+
+        speech = " atractivos turísticos en " + accionEntrante
+
 
     listaMensajesBuscando = ["Dame un momento, estoy buscando entre mis archivos...🔍", "Buscando...🔍", "Revisare entre mis archivos...🔍"]#Mensajes que indican que se está realizando la búsqueda
     msgsBuscando = random.choice(listaMensajesBuscando)#Seleccion aleatoria de un mensaje
