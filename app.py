@@ -83,7 +83,7 @@ def makeWebhookResult(req):
         #URL BASE CONSULTA ATRACTIVOS JSON
         baseUrl = "http://situr.boyaca.gov.co/wp-json/wp/v2/atractivo_turistico?per_page=10&orderby=relevance&search="#URL Base Atractivos
 
-        speech = " atractivos turisticos"
+        speech = " atractivos turisticos."
 
 
     listaMensajesBuscando = ["Dame un momento, estoy buscando entre mis archivos...🔍", "Buscando...🔍", "Revisare entre mis archivos...🔍"]#Mensajes que indican que se está realizando la búsqueda
@@ -94,7 +94,7 @@ def makeWebhookResult(req):
     leerJsonSitur = json.loads(urlopen(baseUrl + retirarEspacios).read())#Leer JSON SITUR
 
     cantidadResultados = str(len(leerJsonSitur))#Contar Cantidad de Resultados Encontrados
-    speechResultados = "Mira 😃, encontré " + cantidadResultados+ " resultados" + speech
+    speechResultados = "Mira 😃, encontré " + cantidadResultados + speech
 
     ##### ACA DEBE TERMINARSE LA FUNCIÓN LOCAL
 
