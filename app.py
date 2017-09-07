@@ -94,7 +94,7 @@ def makeWebhookResult(req):
     leerJsonSitur = json.loads(urlopen(baseUrl + retirarEspacios).read())#Leer JSON SITUR
 
     cantidadResultados = str(len(leerJsonSitur))#Contar Cantidad de Resultados Encontrados
-    speechResultados = "Mira 😃, encontré " + cantidadResultados+ " resultados"
+    speechResultados = "Mira 😃, encontré " + cantidadResultados+ " resultados" + speech
 
     ##### ACA DEBE TERMINARSE LA FUNCIÓN LOCAL
 
