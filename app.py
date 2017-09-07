@@ -76,16 +76,18 @@ def
 
 def makeWebhookResult(req):
     accionEntrante=req.get("result").get("action")
-    if accionEntrante == "buscarAtractivos":
-        result = req.get("result")#invocar el result del json
-        parameters = result.get("parameters")#invocar el parameters dentro de result
-        atractivos = parameters.get("atractivos")#DATO TRAÍDO DE API.AI - ATRACTIVOS
+    if accionEntrante != "buscarAtractivos":
+        return {}
+        
+    result = req.get("result")#invocar el result del busjson
+    parameters = result.get("parameters")#invocar el parameters dentro de result
+    atractivos = parameters.get("atractivos")#DATO TRAÍDO DE API.AI - ATRACTIVOS
 
         #URL BASE CONSULTA ATRACTIVOS JSON
-        baseUrlAtractivos = "http://situr.boyaca.gov.co/wp-json/wp/v2/atractivo_turistico?per_page=10&orderby=relevance&search="#URL Base Atractivos
+    baseUrlAtractivos = "http://situr.boyaca.gov.co/wp-json/wp/v2/atractivo_turistico?per_page=10&orderby=relevance&search="#URL Base Atractivos
 
 
-        speech = "Mira 😃, soy un atractivo conocido como: " + accionEntrante
+    speech = "Mira 😃, soy un atractivo conocido como: " + accionEntrante
     
 
     
