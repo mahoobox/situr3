@@ -79,6 +79,8 @@ def makeWebhookResult(req):
         parameters = result.get("parameters")#invocar el parameters dentro de result
         atractivos = parameters.get("atractivos")#DATO TRAÍDO DE API.AI - ATRACTIVOS
 
+        cadenaConsulta = atractivos
+
         #URL BASE CONSULTA ATRACTIVOS JSON
         baseUrl = "http://situr.boyaca.gov.co/wp-json/wp/v2/atractivo_turistico?per_page=10&orderby=relevance&search="#URL Base Atractivos
 
@@ -87,19 +89,34 @@ def makeWebhookResult(req):
     elif accionEntrante == "buscarCiudad":
         result = req.get("result")#invocar el result del busjson
         parameters = result.get("parameters")#invocar el parameters dentro de result
-        atractivos = parameters.get("municipios")#DATO TRAÍDO DE API.AI - ATRACTIVOS
+        municipios = parameters.get("municipios")#DATO TRAÍDO DE API.AI - ATRACTIVOS
+
+        cadenaConsulta = municipios
 
         #URL BASE CONSULTA ATRACTIVOS JSON
         baseUrl = "http://situr.boyaca.gov.co/wp-json/wp/v2/atractivo_turistico?per_page=10&orderby=relevance&search="#URL Base Atractivos
 
-        speech = " en la ciudad"
+        speech = " atractivos turísticos en la ciudad"
+
+    elif accionEntrante == "buscarAtractivoCiudad":
+        result = req.get("result")#invocar el result del busjson
+        parameters = result.get("parameters")#invocar el parameters dentro de result
+        atractivos = parameters.get("atractivos")#DATO TRAÍDO DE API.AI - ATRACTIVOS
+        municipios = parameters.get("municipios")#DATO TRAÍDO DE API.AI - ATRACTIVOS
+
+        cadenaConsulta = atractivos + municipios
+
+        #URL BASE CONSULTA ATRACTIVOS JSON
+        baseUrl = "http://situr.boyaca.gov.co/wp-json/wp/v2/atractivo_turistico?per_page=10&orderby=relevance&search="#URL Base Atractivos
+
+        speech = " atractivos turísticos en la ciudad"
 
 
 
     listaMensajesBuscando = ["Dame un momento, estoy buscando entre mis archivos...🔍", "Buscando...🔍", "Revisaré entre mis archivos...🔍"]#Mensajes que indican que se está realizando la búsqueda
     msgsBuscando = random.choice(listaMensajesBuscando)#Seleccion aleatoria de un mensaje
     
-    retirarEspacios = atractivos.replace(" ",  "%20")#Retirar Espacios Atractivos
+    retirarEspacios = cadenaConsulta.replace(" ",  "%20")#Retirar Espacios Atractivos
 
     leerJsonSitur = json.loads(urlopen(baseUrl + retirarEspacios).read())#Leer JSON SITUR
 
