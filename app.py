@@ -91,10 +91,10 @@ def makeWebhookResult(req):
         parameters = result.get("parameters")#invocar el parameters dentro de result
         municipios = parameters.get("municipios")#DATO TRAÍDO DE API.AI - ATRACTIVOS
 
-        cadenaConsulta = municipios
+        cadenaConsulta = ""
 
         #URL BASE CONSULTA ATRACTIVOS JSON
-        baseUrl = "http://situr.boyaca.gov.co/wp-json/wp/v2/atractivo_turistico?per_page=10&orderby=relevance&search="#URL Base Atractivos
+        baseUrl = "http://situr.boyaca.gov.co/wp-json/wp/v2/atractivo_turistico?tags="+municipios+"&per_page=10"#URL Base Atractivos
 
         speech = " atractivos turísticos en la ciudad"
 
