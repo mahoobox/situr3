@@ -11,7 +11,6 @@ from urllib.error import HTTPError
 import json
 import os
 import random
-import mysql.connector
 
 import re #retira etiquetas HTML de la descripción
 
@@ -22,11 +21,6 @@ from flask import make_response
 # Flask app should start in global layout
 app = Flask(__name__)
 
-
-cnx = mysql.connector.connect(user='sitursit_bot', password='RwfMXSUurWCX',
-                              host='192.95.22.65',
-                              database='sitursit_bot')
-cnx.close()
 
 @app.route('/webhook', methods=['POST'])
 def webhook():
