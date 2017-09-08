@@ -120,7 +120,7 @@ def makeWebhookResult(req):
         cadenaConsulta = ""
 
         #URL BASE CONSULTA ATRACTIVOS JSON
-        baseUrl = "http://situr.boyaca.gov.co/wp-json/wp/v2/pst?tags="+municipios+"&categories="+categorias_prestadores+"66&per_page=10"#URL Base Atractivos
+        baseUrl = "http://situr.boyaca.gov.co/wp-json/wp/v2/pst?tags="+municipios+"&categories="+categorias_prestadores+"&per_page=10"#URL Base Atractivos
 
         speech = " prestadores de servicios en esta ciudad"
 
