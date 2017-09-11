@@ -25,7 +25,7 @@ app = Flask(__name__)
 
 soyversion = sys.version
 
-
+"""
 db = MySQLdb.connect(host="192.95.22.65:3306",    # tu host, usualmente localhost
                      user="sitursit_bot",         # tu usuario
                      passwd="RwfMXSUurWCX",  # tu password
@@ -41,7 +41,7 @@ cur.execute("SELECT * FROM city")
 # Imprimir la primera columna de todos los registros
 for row in cur.fetchall():
     salidabase=(row[0])
-
+"""
 @app.route('/webhook', methods=['POST'])
 def webhook():
     req = request.get_json(silent=True, force=True)
