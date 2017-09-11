@@ -25,8 +25,22 @@ app = Flask(__name__)
 
 soyversion = sys.version
 
-#db = MySQLdb.connect('192.95.22.65:3306','sitursit_bot','RwfMXSUurWCX','sitursit_bot')
 
+db = MySQLdb.connect(host="192.95.22.65:3306",    # tu host, usualmente localhost
+                     user="sitursit_bot",         # tu usuario
+                     passwd="RwfMXSUurWCX",  # tu password
+                     db="sitursit_bot")        # el nombre de la base de datos
+
+# Debes crear un objeto Cursor. Te permitirá
+# ejecutar todos los queries que necesitas
+cur = db.cursor()
+
+# Usa todas las sentencias SQL que quieras
+cur.execute("SELECT * FROM city")
+
+# Imprimir la primera columna de todos los registros
+for row in cur.fetchall():
+    salidabase=(row[0])
 
 @app.route('/webhook', methods=['POST'])
 def webhook():
@@ -115,7 +129,7 @@ def makeWebhookResult(req):
         #URL BASE CONSULTA ATRACTIVOS JSON
         baseUrl = "http://situr.boyaca.gov.co/wp-json/wp/v2/atractivo_turistico?tags="+municipios+"&per_page=10&orderby=relevance&search="#URL Base Atractivos
 
-        speech = " resultados para este atractivo en la ciudad    Versión: " + soyversion + " - Consulta - "
+        speech = " resultados para este atractivo en la ciudad    Versión: " + soyversion + " - Consulta - " + salidabase
 
     elif accionEntrante == "buscarPrestador":
         result = req.get("result")#invocar el result del busjson
