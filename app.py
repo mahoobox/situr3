@@ -11,7 +11,7 @@ from urllib.error import HTTPError
 import json
 import os
 import random
-import mysqlclient
+import MySQLdb
 
 import re #retira etiquetas HTML de la descripción
 
