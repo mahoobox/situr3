@@ -25,23 +25,7 @@ app = Flask(__name__)
 
 soyversion = sys.version
 
-try:
-  # Create new database connection.
-    db = MySQLdb.connect('192.95.22.65:3306','sitursit_bot','RwfMXSUurWCX','sitursit_bot')
-  # Query the version of the MySQL database.
-    db.query("SELECT version()")
-  # Assign the query results to a local variable.
-    result = db.use_result()
-  # Print the results.
-    print "MySQL Version: %s " % result.fetch_row()[0]
-except MySQLdb.Error, e:
-  # Print the error.
-    print "ERROR %d: %s" % (e.args[0], e.args[1])
-    sys.exit(1)
-finally:
-  # Close the connection when it is open.
-    if db:
-        db.close()
+db = MySQLdb.connect('192.95.22.65:3306','sitursit_bot','RwfMXSUurWCX','sitursit_bot')
 
 
 @app.route('/webhook', methods=['POST'])
@@ -131,7 +115,7 @@ def makeWebhookResult(req):
         #URL BASE CONSULTA ATRACTIVOS JSON
         baseUrl = "http://situr.boyaca.gov.co/wp-json/wp/v2/atractivo_turistico?tags="+municipios+"&per_page=10&orderby=relevance&search="#URL Base Atractivos
 
-        speech = " resultados para este atractivo en la ciudad    Versión: " + soyversion
+        speech = " resultados para este atractivo en la ciudad    Versión: " + soyversion + " - Consulta - " + db
 
     elif accionEntrante == "buscarPrestador":
         result = req.get("result")#invocar el result del busjson
