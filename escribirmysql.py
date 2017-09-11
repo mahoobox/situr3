@@ -1,4 +1,4 @@
-import MySQLdb
+"""import MySQLdb
  
 DB_HOST = '192.95.22.65' 
 DB_USER = 'sitursit_bot' 
@@ -21,4 +21,9 @@ def run_query(query=''):
     cursor.close()                 # Cerrar el cursor 
     conn.close()                   # Cerrar la conexión 
  
-    return data
+    return data"""
+import sys
+
+soyversion = sys.version
+
+print(soyversion)

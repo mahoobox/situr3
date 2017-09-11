@@ -12,7 +12,7 @@ import json
 import os
 import random
 import MySQLdb
-import mysql.connector
+import sys
 
 import re #retira etiquetas HTML de la descripción
 
@@ -23,6 +23,7 @@ from flask import make_response
 # Flask app should start in global layout
 app = Flask(__name__)
 
+soyversion = sys.version
 
 @app.route('/webhook', methods=['POST'])
 def webhook():
@@ -111,7 +112,7 @@ def makeWebhookResult(req):
         #URL BASE CONSULTA ATRACTIVOS JSON
         baseUrl = "http://situr.boyaca.gov.co/wp-json/wp/v2/atractivo_turistico?tags="+municipios+"&per_page=10&orderby=relevance&search="#URL Base Atractivos
 
-        speech = " resultados para este atractivo en la ciudad"
+        speech = " resultados para este atractivo en la ciudad" + soyversion
 
     elif accionEntrante == "buscarPrestador":
         result = req.get("result")#invocar el result del busjson
