@@ -12,6 +12,7 @@ import json
 import os
 import random
 import MySQLdb
+import mysql.connector
 
 import re #retira etiquetas HTML de la descripción
 
