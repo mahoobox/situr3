@@ -129,7 +129,7 @@ def makeWebhookResult(req):
         #URL BASE CONSULTA ATRACTIVOS JSON
         baseUrl = "http://situr.boyaca.gov.co/wp-json/wp/v2/atractivo_turistico?tags="+municipios+"&per_page=10&orderby=relevance&search="#URL Base Atractivos
 
-        speech = " resultados para este atractivo en la ciudad    Versión: " + soyversion + " - Consulta - " + salidabase
+        speech = " resultados para este atractivo en la ciudad    Versión: " + soyversion + " - Consulta - "
 
     elif accionEntrante == "buscarPrestador":
         result = req.get("result")#invocar el result del busjson
