@@ -25,7 +25,7 @@ app = Flask(__name__)
 
 soyversion = sys.version
 
-db = MySQLdb.connect('192.95.22.65:3306','sitursit_bot','RwfMXSUurWCX','sitursit_bot')
+#db = MySQLdb.connect('192.95.22.65:3306','sitursit_bot','RwfMXSUurWCX','sitursit_bot')
 
 
 @app.route('/webhook', methods=['POST'])
