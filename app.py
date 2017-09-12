@@ -25,6 +25,18 @@ app = Flask(__name__)
 
 soyversion = sys.version
 
+
+def main():
+  # Connect to the MySQL database
+    db = MySQLdb.connect(host = '192.95.22.65:3306', user = 'sitursit_bot', passwd = 'RwfMXSUurWCX', db = 'sitursit_bot')
+    # Check if connection was successful
+    if (db):
+        # Carry out normal procedure
+        databasemauricio= "Connection successful"
+    else:
+        # Terminate
+        databasemauricio = "Connection unsuccessful"
+
 """
 db = MySQLdb.connect(host="192.95.22.65:3306",    # tu host, usualmente localhost
                      user="sitursit_bot",         # tu usuario
