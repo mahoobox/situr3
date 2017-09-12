@@ -131,7 +131,7 @@ def makeWebhookResult(req):
         speech = " atractivos turísticos en la ciudad"
 
     elif accionEntrante == "buscarAtractivoCiudad":
-        maindb()
+        #maindb()
         result = req.get("result")#invocar el result del busjson
         parameters = result.get("parameters")#invocar el parameters dentro de result
         atractivos = parameters.get("atractivos")#DATO TRAÍDO DE API.AI - ATRACTIVOS
