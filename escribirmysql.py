@@ -27,3 +27,38 @@ import sys
 soyversion = sys.version
 
 print(soyversion)
+
+
+import MySQLdb
+
+
+
+def maindb():
+  # Connect to the MySQL database
+    db = MySQLdb.connect(host = '192.95.22.65', user = 'sitursit_bot', passwd = 'RwfMXSUurWCX', db = 'sitursit_bot')
+    cursor = db.cursor()
+
+    sql2 = """INSERT INTO `EMPLOYEE` (`ID`, `FIRST_NAME`, `LAST_NAME`, `AGE`, `SEX`, `INCOME`) VALUES (NULL, 'MAURICIO7', 'MORALES 7', '35', 'M', NULL)"""
+
+    cursor.execute(sql2)
+
+    db.close()
+
+
+
+
+def maindb2():
+  # Connect to the MySQL database
+    db = MySQLdb.connect(host = 'localhost', user = 'admin', passwd = 'd12190', db = 'mysql')
+    # Check if connection was successful
+    if (db):
+        # Carry out normal procedure
+        databasemauricio= "Connection successful"
+        print("me conecté hpt")
+    else:
+        # Terminate
+        databasemauricio = "Connection unsuccessful"
+        print("no me pude conectar")
+
+
+maindb()

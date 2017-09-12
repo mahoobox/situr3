@@ -28,32 +28,16 @@ soyversion = sys.version
 
 def maindb():
   # Connect to the MySQL database
-    db = MySQLdb.connect(host = '192.95.22.65:3306', user = 'sitursit_bot', passwd = 'RwfMXSUurWCX', db = 'sitursit_bot')
-    # Check if connection was successful
-    if (db):
-        # Carry out normal procedure
-        databasemauricio= "Connection successful"
-    else:
-        # Terminate
-        databasemauricio = "Connection unsuccessful"
+    db = MySQLdb.connect(host = '192.95.22.65', user = 'sitursit_bot', passwd = 'RwfMXSUurWCX', db = 'sitursit_bot')
+    cursor = db.cursor()
 
-"""
-db = MySQLdb.connect(host="192.95.22.65:3306",    # tu host, usualmente localhost
-                     user="sitursit_bot",         # tu usuario
-                     passwd="RwfMXSUurWCX",  # tu password
-                     db="sitursit_bot")        # el nombre de la base de datos
+    sql2 = """INSERT INTO `EMPLOYEE` (`ID`, `FIRST_NAME`, `LAST_NAME`, `AGE`, `SEX`, `INCOME`) VALUES (NULL, 'MAURICIO6', 'MORALES 6', '35', 'M', NULL)"""
 
-# Debes crear un objeto Cursor. Te permitirá
-# ejecutar todos los queries que necesitas
-cur = db.cursor()
+    cursor.execute(sql2)
 
-# Usa todas las sentencias SQL que quieras
-cur.execute("SELECT * FROM city")
+    db.close()
 
-# Imprimir la primera columna de todos los registros
-for row in cur.fetchall():
-    salidabase=(row[0])
-"""
+
 @app.route('/webhook', methods=['POST'])
 def webhook():
     req = request.get_json(silent=True, force=True)
@@ -131,7 +115,7 @@ def makeWebhookResult(req):
         speech = " atractivos turísticos en la ciudad"
 
     elif accionEntrante == "buscarAtractivoCiudad":
-        #maindb()
+        maindb()
         result = req.get("result")#invocar el result del busjson
         parameters = result.get("parameters")#invocar el parameters dentro de result
         atractivos = parameters.get("atractivos")#DATO TRAÍDO DE API.AI - ATRACTIVOS
