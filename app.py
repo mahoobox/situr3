@@ -26,14 +26,14 @@ app = Flask(__name__)
 soyversion = sys.version
 
 
-def maindb():
+def maindb(sqlcons):
   # Connect to the MySQL database
     db = MySQLdb.connect(host = '192.95.22.65', user = 'sitursit_bot', passwd = 'RwfMXSUurWCX', db = 'sitursit_bot')
     cursor = db.cursor()
 
-    sql2 = """INSERT INTO `atractivos_cons` (`ID`, `fecha_hora`, `sexo`, `edad`, `ubicacion`, `atractivo_buscado`) VALUES (NULL, NULL, 'M', '28', 'Líbano, Colombia', 'casa terratota')"""
+ #   sql2 = """INSERT INTO `atractivos_cons` (`ID`, `fecha_hora`, `sexo`, `edad`, `ubicacion`, `atractivo_buscado`) VALUES (NULL, NULL, 'M', '28', 'Líbano, Colombia', 'casa terratota')"""
 
-    cursor.execute(sql2)
+    cursor.execute(sqlcons)
 
     db.close()
 
@@ -94,6 +94,9 @@ def makeWebhookResult(req):
         result = req.get("result")#invocar el result del busjson
         parameters = result.get("parameters")#invocar el parameters dentro de result
         atractivos = parameters.get("atractivos")#DATO TRAÍDO DE API.AI - ATRACTIVOS
+
+        sql = """INSERT INTO `atractivos_cons` (`ID`, `fecha_hora`, `sexo`, `edad`, `ubicacion`, `atractivo_buscado`) VALUES (NULL, NULL, 'M', '28', 'Líbano, Colombia', '"""+atractivos+"""')"""
+        maindb(sql)
 
         cadenaConsulta = atractivos
 
