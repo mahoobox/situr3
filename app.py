@@ -31,7 +31,7 @@ def maindb():
     db = MySQLdb.connect(host = '192.95.22.65', user = 'sitursit_bot', passwd = 'RwfMXSUurWCX', db = 'sitursit_bot')
     cursor = db.cursor()
 
-    sql2 = """INSERT INTO `atractivos_cons` (`ID`, `fecha_hora`, `sexo`, `edad`, `ubicacion`, `atractivo_buscado`) VALUES (NULL, NULL, 'M', '28', 'Líbano, Colombia', 'laguna de tota')"""
+    sql2 = """INSERT INTO `atractivos_cons` (`ID`, `fecha_hora`, `sexo`, `edad`, `ubicacion`, `atractivo_buscado`) VALUES (NULL, NULL, 'M', '28', 'Líbano, Colombia', 'casa terratota')"""
 
     cursor.execute(sql2)
 
