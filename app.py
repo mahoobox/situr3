@@ -26,7 +26,7 @@ app = Flask(__name__)
 soyversion = sys.version
 
 
-def main():
+def maindb():
   # Connect to the MySQL database
     db = MySQLdb.connect(host = '192.95.22.65:3306', user = 'sitursit_bot', passwd = 'RwfMXSUurWCX', db = 'sitursit_bot')
     # Check if connection was successful
@@ -131,6 +131,7 @@ def makeWebhookResult(req):
         speech = " atractivos turísticos en la ciudad"
 
     elif accionEntrante == "buscarAtractivoCiudad":
+        maindb()
         result = req.get("result")#invocar el result del busjson
         parameters = result.get("parameters")#invocar el parameters dentro de result
         atractivos = parameters.get("atractivos")#DATO TRAÍDO DE API.AI - ATRACTIVOS
