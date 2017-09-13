@@ -30,6 +30,8 @@ print(soyversion)
 
 
 import MySQLdb
+import time
+
 
 
 
@@ -38,7 +40,11 @@ def maindb():
     db = MySQLdb.connect(host = '192.95.22.65', user = 'sitursit_bot', passwd = 'RwfMXSUurWCX', db = 'sitursit_bot')
     cursor = db.cursor()
 
-    valorconsultado = "hola mundo"
+    valorconsultado = "y aun mas consultas de acá"
+    fechayhora= str(time.time())
+    print(fechayhora)
+    fechayhora2="1505308957.3476646"
+
 
     sql2 = """INSERT INTO `atractivos_cons` (`ID`, `fecha_hora`, `sexo`, `edad`, `ubicacion`, `atractivo_buscado`) VALUES (NULL, NULL, 'M', '28', 'Líbano, Colombia', '"""+valorconsultado+"""')"""
 
