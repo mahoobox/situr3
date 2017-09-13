@@ -110,6 +110,9 @@ def makeWebhookResult(req):
         parameters = result.get("parameters")#invocar el parameters dentro de result
         municipios = parameters.get("municipios")#DATO TRAÍDO DE API.AI - ATRACTIVOS
 
+        sql = """INSERT INTO `ciudades_cons` (`ID`, `fecha_hora`, `sexo`, `edad`, `ubicacion`, `ciudad_buscada`) VALUES (NULL, NULL, NULL, NULL, NULL, '"""+municipios+"""')"""
+        maindb(sql)
+
         cadenaConsulta = ""
 
         #URL BASE CONSULTA ATRACTIVOS JSON

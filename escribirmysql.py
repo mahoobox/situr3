@@ -38,6 +38,7 @@ import time
 def maindb():
   # Connect to the MySQL database
     db = MySQLdb.connect(host = '192.95.22.65', user = 'sitursit_bot', passwd = 'RwfMXSUurWCX', db = 'sitursit_bot')
+    #db = MySQLdb.connect(host = '23.96.113.148', user = 'SITUR_BOT', passwd = 'O9pIeuNfF1BMQM1W', db = 'SITUR_BOT')
     cursor = db.cursor()
 
     valorconsultado = "y aun mas consultas de acá"
