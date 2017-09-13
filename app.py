@@ -134,13 +134,16 @@ def makeWebhookResult(req):
         #URL BASE CONSULTA ATRACTIVOS JSON
         baseUrl = "http://situr.boyaca.gov.co/wp-json/wp/v2/atractivo_turistico?tags="+municipios+"&per_page=10&orderby=relevance&search="#URL Base Atractivos
 
-        speech = " resultados para este atractivo en la ciudad    Versión: " + soyversion + " - Consulta - "
+        speech = " resultados para este atractivo en la ciudad"
 
     elif accionEntrante == "buscarPrestador":
         result = req.get("result")#invocar el result del busjson
         parameters = result.get("parameters")#invocar el parameters dentro de result
         categorias_prestadores = parameters.get("categorias_prestadores")#DATO TRAÍDO DE API.AI - ATRACTIVOS
         municipios = parameters.get("municipios")#DATO TRAÍDO DE API.AI - ATRACTIVOS
+
+        sql = """INSERT INTO `pst_cons` (`ID`, `fecha_hora`, `sexo`, `edad`, `ubicacion`, `atractivo_buscado`, `ciudad_buscada`) VALUES (NULL, NULL, NULL, NULL, NULL, '"""+categorias_prestadores+"""','"""+str(municipios)+"""')"""
+        maindb(sql)
 
         cadenaConsulta = ""
 
