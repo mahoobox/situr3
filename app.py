@@ -130,7 +130,7 @@ def makeWebhookResult(req):
        # sql = """INSERT INTO `atractivo_ciudad_cons` (`ID`, `fecha_hora`, `sexo`, `edad`, `ubicacion`, `atractivo_buscado`, `ciudad_buscada`) VALUES (NULL, NULL, NULL, NULL, NULL, 'parquecitos bot','25')"""
         #maindb(sql)
 
-        cadenaConsulta = atractivos + " " + municipios
+        cadenaConsulta = atractivos
 
         #URL BASE CONSULTA ATRACTIVOS JSON
         baseUrl = "http://situr.boyaca.gov.co/wp-json/wp/v2/atractivo_turistico?tags="+municipios+"&per_page=10&orderby=relevance&search="#URL Base Atractivos
