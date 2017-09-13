@@ -142,7 +142,7 @@ def makeWebhookResult(req):
         categorias_prestadores = parameters.get("categorias_prestadores")#DATO TRAÍDO DE API.AI - ATRACTIVOS
         municipios = parameters.get("municipios")#DATO TRAÍDO DE API.AI - ATRACTIVOS
 
-        sql = """INSERT INTO `pst_cons` (`ID`, `fecha_hora`, `sexo`, `edad`, `ubicacion`, `atractivo_buscado`, `ciudad_buscada`) VALUES (NULL, NULL, NULL, NULL, NULL, '"""+categorias_prestadores+"""','"""+str(municipios)+"""')"""
+        sql = """INSERT INTO `pst_cons` (`ID`, `fecha_hora`, `sexo`, `edad`, `ubicacion`, `tipo_pst_buscado`, `ciudad_buscada`) VALUES (NULL, NULL, NULL, NULL, NULL, '"""+categorias_prestadores+"""','"""+str(municipios)+"""')"""
         maindb(sql)
 
         cadenaConsulta = ""
