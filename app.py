@@ -121,16 +121,15 @@ def makeWebhookResult(req):
         speech = " atractivos turísticos en la ciudad"
 
     elif accionEntrante == "buscarAtractivoCiudad":
-        maindb()
         result = req.get("result")#invocar el result del busjson
         parameters = result.get("parameters")#invocar el parameters dentro de result
         atractivos = parameters.get("atractivos")#DATO TRAÍDO DE API.AI - ATRACTIVOS
         municipios = parameters.get("municipios")#DATO TRAÍDO DE API.AI - ATRACTIVOS
 
-       # sql = """INSERT INTO `atractivo_ciudad_cons` (`ID`, `fecha_hora`, `sexo`, `edad`, `ubicacion`, `atractivo_buscado`, `ciudad_buscada`) VALUES (NULL, NULL, NULL, NULL, NULL, 'parquecitos bot','25')"""
-        #maindb(sql)
+        sql = """INSERT INTO `atractivo_ciudad_cons` (`ID`, `fecha_hora`, `sexo`, `edad`, `ubicacion`, `atractivo_buscado`, `ciudad_buscada`) VALUES (NULL, NULL, NULL, NULL, NULL, 'parquecitos bot','25')"""
+        maindb(sql)
 
-        cadenaConsulta = atractivos
+        cadenaConsulta = atractivos + " " + municipios
 
         #URL BASE CONSULTA ATRACTIVOS JSON
         baseUrl = "http://situr.boyaca.gov.co/wp-json/wp/v2/atractivo_turistico?tags="+municipios+"&per_page=10&orderby=relevance&search="#URL Base Atractivos
