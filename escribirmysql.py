@@ -46,8 +46,12 @@ def maindb():
     print(fechayhora)
     fechayhora2="1505308957.3476646"
 
+    atractivos = "lago de tota"
+    municipios = 75
 
-    sql2 = """INSERT INTO `atractivos_cons` (`ID`, `fecha_hora`, `sexo`, `edad`, `ubicacion`, `atractivo_buscado`) VALUES (NULL, NULL, 'M', '28', 'Líbano, Colombia', '"""+valorconsultado+"""')"""
+
+    #sql2 = """INSERT INTO `atractivos_cons` (`ID`, `fecha_hora`, `sexo`, `edad`, `ubicacion`, `atractivo_buscado`) VALUES (NULL, NULL, 'M', '28', 'Líbano, Colombia', '"""+valorconsultado+"""')"""
+    sql2 = """INSERT INTO `atractivo_ciudad_cons` (`ID`, `fecha_hora`, `sexo`, `edad`, `ubicacion`, `atractivo_buscado`, `ciudad_buscada`) VALUES (NULL, NULL, NULL, NULL, NULL, '"""+atractivos+"""','"""+municipios+"""')"""
 
     cursor.execute(sql2)
 
