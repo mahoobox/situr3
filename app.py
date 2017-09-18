@@ -206,7 +206,7 @@ def makeWebhookResult(req):
         {
           "type": 2,
           "platform": "facebook",
-          "title": "¿Necesitas ayuda?",
+          "title": "",
           "replies": [
             "obtener ayuda"
           ]
