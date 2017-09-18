@@ -210,15 +210,12 @@ def makeWebhookResult(req):
           "replies": [
             "obtener ayuda"
           ]
-        }
-#        {
-#          "type": 2,
-#          "platform": "facebook",
-#          "title": "Por favor escoge un elemento",
-#         "replies": [
-#            "Ver más"
-#          ]
-#        }
+        },
+        {
+          "type": 4,
+          "platform": "facebook",
+          "payload": {"facebook":{"attachment":{"type":"audio","payload":{"url":"https://example.com/audio/test.mp3"}}}}
+        },
         ],
 #        "speech": speech,
 #        "displayText": speech,
