@@ -202,15 +202,15 @@ def makeWebhookResult(req):
           "type": 4,
           "platform": "facebook",
           "payload": listadoBusqueda(leerJsonSitur)
+        },
+        {
+          "type": 2,
+          "platform": "facebook",
+          "title": "¿Necesitas ayuda?",
+          "replies": [
+            "obtener ayuda"
+          ]
         }
-#        {
-#          "type": 2,
-#          "platform": "facebook",
-#          "title": "Por favor escoge un elemento",
-#          "replies": [
-#            "Ver más"
-#          ]
-#        },
 #        {
 #          "type": 2,
 #          "platform": "facebook",
