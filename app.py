@@ -210,12 +210,12 @@ def makeWebhookResult(req):
           "replies": [
             "obtener ayuda"
           ]
-        },
-        {
-          "type": 4,
-          "platform": "facebook",
-          "payload": {"facebook":{"attachment":{"type":"audio","payload":{"url":"http://audios.enfoqueregional.co/201210161216.m4a"}}}}
-        },
+        }
+#        {
+#          "type": 4,
+#          "platform": "facebook",
+#          "payload": {"facebook":{"attachment":{"type":"audio","payload":{"url":"http://audios.enfoqueregional.co/201210161216.m4a"}}}}
+#        },
         ],
 #        "speech": speech,
 #        "displayText": speech,
