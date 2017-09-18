@@ -19,7 +19,7 @@ for x in range(0,len(leer)):
     archivo.write(str((nombre) +'\n'))
     print (nombre+","+str(idtag)+","+slug)
 
-"""
+
 #EXTRAER ATRACTIVOS TURÍSTICOS DE SITUR
 leer = json.loads(urlopen('http://situr.boyaca.gov.co/wp-json/wp/v2/atractivo_turistico').read())
 cantidadResultados = str(len(leer))#Contar Cantidad de Resultados Encontrados
@@ -27,3 +27,14 @@ for x in range(0,len(leer)):
     nombre = leer[x]['title']['rendered']
     archivo.write(str((nombre) +'\n'))
     print (nombre)
+"""
+
+#EXTRAER CATEGORÍAS DE SITUR
+leer = json.loads(urlopen('http://www.situr.boyaca.gov.co/wp-json/wp/v2/categories').read())
+cantidadResultados = str(len(leer))#Contar Cantidad de Resultados Encontrados
+for x in range(0,len(leer)):
+    nombre = leer[x]['name']
+    idcat = leer[x]['id']
+    parent = leer[x]['parent']
+    archivo.write(str(nombre)+';'+str(idcat)+';'+str(parent)+'\n')
+    print (str(nombre)+';'+str(idcat)+';'+str(parent)+'\n')
