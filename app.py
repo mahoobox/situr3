@@ -28,7 +28,7 @@ soyversion = sys.version
 
 def maindb(sqlcons):
   # Connect to the MySQL database
-    db = MySQLdb.connect(host = '192.95.22.65', user = 'sitursit_bot', passwd = 'RwfMXSUurWCX', db = 'sitursit_bot')
+    db = MySQLdb.connect(host = '192.95.22.65', user = 'sitursit_bot2', passwd = 'RwfMXSUurWCX', db = 'sitursit_bot')
     cursor = db.cursor()
 
  #   sql2 = """INSERT INTO `atractivos_cons` (`ID`, `fecha_hora`, `sexo`, `edad`, `ubicacion`, `atractivo_buscado`) VALUES (NULL, NULL, 'M', '28', 'Líbano, Colombia', 'casa terratota')"""
