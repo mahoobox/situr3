@@ -214,7 +214,7 @@ def makeWebhookResult(req):
         {
           "type": 4,
           "platform": "facebook",
-          "payload": {"facebook":{"attachment":{"type":"audio","payload":{"url":"https://example.com/audio/test.mp3"}}}}
+          "payload": {"facebook":{"attachment":{"type":"audio","payload":{"url":"http://www.enfoqueregional.co/wp-content/uploads/2017/07/Comunitarias-210717.m4a"}}}}
         },
         ],
 #        "speech": speech,
