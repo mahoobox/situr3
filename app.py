@@ -215,9 +215,16 @@ def makeWebhookResult(req):
           "type": 2,
           "platform": "facebook",
           "title": "¿Necesitas ayudas?",
-          "replies": [
-            "obtener ayudas"
-          ]
+          "replies": {
+               "content_type": "text",
+               "title": "Red",
+               "payload": "red"
+            },
+            {
+               "content_type": "text",
+               "title": "Green",
+               "payload": "green"
+            }
         }
 #        {
 #          "type": 4,
